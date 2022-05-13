@@ -1,0 +1,44 @@
+<style>
+    #tableContainer{
+        margin-left:32%;
+        margin-top: 2%;        
+    }
+
+    td{
+        min-width: 150px;
+        border-bottom: 1px solid gray;
+
+    }
+
+    th{
+        background-color: gray;
+    }
+
+    h2{
+        margin-left: 140px;
+    }
+
+</style>
+
+
+{{#if productos.length}}
+<div id="tableContainer" > 
+    <h2>Lista de Productos</h2>
+    <div >
+        <table >
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Foto</th>
+            </tr>
+            {{#each productos}}
+            <tr>
+                <td>{{this.nombre}}</td>
+                <td style="text-align:center">${{this.precio}}</td>
+                <td style="text-align:center"><img width="50" src={{this.fotoUrl}} alt="not found" ></td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</div>
+{{/if}}
