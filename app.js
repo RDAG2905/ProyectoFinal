@@ -36,7 +36,8 @@ app.set("view engine","hbs")
 
 
 app.use(cookieParser())
-//app.use(getSession)
+app.use(getSession)
+/* 
 app.use(session({  
     store: MongoStore.create({ 
         mongoUrl: config.get('mongoAtlas.connection'),
@@ -49,7 +50,7 @@ app.use(session({
         expires : new Date(getMiliseconds() + 60000)
     } 
 }))
-
+*/
 ///////////////////////////////////////////////////////////////////////
 /*         Middleware para verificar si la sesión expiró           */
 
