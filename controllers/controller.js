@@ -1,26 +1,39 @@
 
-const login = (req, res) => {
- 
-let bienvenida
-let contador = 0
-if (req.session.nombre) {    
-  req.session.contador = req.session.contador + 1
-  bienvenida = `Bienvenido ${req.session.nombre}, visitaste la pagina ${req.session.contador} veces`
- 
-} else {
-  req.session.nombre = req.body.nombre || 'Desconocido'
-  req.session.contador = 1
-  bienvenida = `Bienvenido ${req.session.nombre}`   
-}
+
+
+
+const postLogin = (req, res)=> {
+  req.session.nombre = req.body.username
+  console.log(req.session)
+  let bienvenida =`Bienvenido ${req.session.nombre}`
   res.render("welcome",{bienvenida})
 }
 
 
+const getFailLogin = (req, res) =>{
+  console.log('error en login');
+  res.sendFile(global.root + '/public/ErrorLogin.html');
+}
+
+function postSignup (req, res) {
+  var user = req.user;
+  let bienvenida =`Usuario generado ${user.username}`
+  res.render("welcome",{bienvenida})
+ 
+}
+
+function getFailSignup (req, res) {
+  console.log('error en signup');
+  res.sendFile(global.root + '/public/ErrorSignup.html');
+}
 
 const logout = (req,res) => {
     let nombre = req.session.nombre || 'Desconocido'
     req.session.destroy( err => {      
-        if(!err) res.render("Despedida",{nombre})
+        if(!err) {
+          console.log(req.session)
+          res.render("Despedida",{nombre})
+        }
         else res.send({status: 'Logout ERROR', body: err})
     })
 }
@@ -49,5 +62,5 @@ const info = (req,res) => {
 
 
 module.exports = {
-    login,logout,info
+    postLogin,getFailLogin,postSignup,getFailSignup,logout,info
 }

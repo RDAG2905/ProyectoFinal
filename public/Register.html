@@ -12,18 +12,17 @@
 <body>
     <br>
     <div class="jumbotron" id="contenedor">
-        <h2 class="text-primary">Login de Usuario</h1>
+        <h2 class="text-primary">Registro de Usuario</h1>
             <br>
         <form action="/login" method="post" >           
             <input type="text" class="form-control" id="username" placeholder="EMAIL">
             <input type="password" class="form-control" id="password" placeholder="PASSWORD">
             <br>
             <div class="form-group">
-                 <input type="button" value="Login" class="btn btn-sm btn-primary" onclick="login()" id="btnEnviar">
+                <input type="button" value="Registrarse" class="btn btn-sm btn-primary" onclick="registrarse()" id="btnRegistrar">   
             </div>
-            
             <div class="form-group">
-                <input type="button" value="Registrarse" class="btn btn-sm btn-primary" onclick="getRegisterView()" id="btnRegistrar">   
+                 <input type="button" value="Login" class="btn btn-sm btn-primary" onclick="getLoginView()" id="btnEnviar">
             </div>
                     
         </form>

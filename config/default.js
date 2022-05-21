@@ -11,6 +11,9 @@
         secret:{
             "value":'shhhhhhhhhhhhhhhhhhhhh'
         },
+        mongoDB: {
+            "connection": 'mongodb://localhost:27017/autenticacion'         
+        },
         tipoPersistencia:{
             "persistenciaA":'productoMongo',
             'persistenciaB':'carritoMongo',

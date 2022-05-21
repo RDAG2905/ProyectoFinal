@@ -5,14 +5,85 @@ const validateSession = require('./middlewares/validateSession')
 const getMiliseconds = require('./helpers/getMiliseconds')
 const controller = require('./controllers/controller')
 const getSession= require('./helpers/getSession')
-/* ------------------------------------------------*/
-/*           Persistencia por MongoDB              */
-/* ------------------------------------------------*/
-const MongoStore = require('connect-mongo')
-const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true }
-/* ------------------------------------------------*/
+const passport = require('passport')
+const LocalStrategy = require('passport-local').Strategy
+const User = require('./models/User');
+const Db = require('./controllers/DbController')
+const config = require('config');
+global.root = __dirname;
+const bCrypt = require('bcrypt');
 
 
+passport.use('signup', new LocalStrategy({
+    passReqToCallback: true
+  },
+    (req, username, password, done) => {
+      User.findOne({ 'username': username }, function (err, user) {
+  
+        if (err) {
+          console.log('Error in SignUp: ' + err);
+          return done(err);
+        }
+  
+        if (user) {
+          console.log('User already exists');
+          return done(null, false)
+        }
+        const newUser = {
+            username: username,
+            password: createHash(password)
+          }
+       
+  
+        User.create(newUser, (err, userWithId) => {
+          if (err) {
+            console.log('Error in Saving user: ' + err);
+            return done(err);
+          }
+          console.log(user)
+          console.log('User Registration succesful');
+          return done(null, userWithId);
+        });
+      });
+    })
+  )
+  
+  passport.use('login', new LocalStrategy(
+    (username, password, done) => {
+      User.findOne({ username }, (err, user) => {
+        if (err)
+          return done(err);
+  
+        if (!user) {
+          console.log('User Not Found with email ' + username);
+          return done(null, false);
+        }
+  
+        if (!isValidPassword(user, password)) {
+          console.log('Invalid Password');
+          return done(null, false);
+        }
+  
+        return done(null, user);
+      });
+    })
+  );
+  
+  passport.serializeUser((user, done) => {
+    done(null, user._id);
+  });
+  
+  passport.deserializeUser((id, done) => {
+    User.findById(id, done);
+  });
+  
+  function isValidPassword(user, password) {
+    return bCrypt.compareSync(password, user.password);
+  }
+  
+  function createHash(password) {
+    return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
+  }
 
 const app = express()
 app.use(express.json())
@@ -20,7 +91,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.static('public'));
 const handlebars = require('express-handlebars')    
 const { header, redirect } = require('express/lib/response')
-const config = require('config')
+
 app.engine(
     "hbs",
     handlebars.engine({
@@ -38,29 +109,44 @@ app.set("view engine","hbs")
 app.use(cookieParser())
 app.use(getSession)
 /* 
-app.use(session({  
-    store: MongoStore.create({ 
-        mongoUrl: config.get('mongoAtlas.connection'),
-        mongoOptions: advancedOptions
-    }),
-    secret: config.get('secret.value'),
+app.use(session({
+    secret: 'shhhhhhhhhhhhhhhhhhhhh',
     resave: false,
-    saveUninitialized: false ,
+    saveUninitialized: false,
     cookie: {
-        expires : new Date(getMiliseconds() + 60000)
-    } 
+        expires : new Date(getMiliseconds() + 600000)
+    }
 }))
 */
+app.use(passport.initialize())
+app.use(passport.session())
+
 ///////////////////////////////////////////////////////////////////////
 /*         Middleware para verificar si la sesión expiró           */
 
 app.use(validateSession)
 
 //////////////////////////////////////////////////////////////////////
+app.use((req, res, next) => {
+    next()
+  });
 
-app.post('/login', controller.login)
-app.get('/logout', controller.logout)
-app.get('/info',controller.info)
+app.post("/login",passport.authenticate('login', { failureRedirect: '/failLogin' }), controller.postLogin)
+app.get('/failLogin', controller.getFailLogin);
+app.post('/signup', passport.authenticate('signup', { successRedirect: '/signup', failureRedirect: '/failSignup' }), controller.postSignup);
+app.get('/failSignup', controller.getFailSignup);
+app.get('/signup', controller.postLogin);
+app.get('/logout', controller.logout);
+app.get('/info', controller.info);
+
+
+
+
+Db.conectarDB(config.get('mongoDB.connection'), err => {
+    if (err) return console.log('error en conexión de base de datos', err);
+    console.log('BASE DE DATOS CONECTADA');
+})
+
 
 
 const PORT = config.get('server.port')||process.env.port

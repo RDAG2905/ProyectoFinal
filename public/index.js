@@ -1,7 +1,8 @@
 
 
 const login =()=>{
-  let nombre = document.querySelector('#nombre').value
+  let username = document.querySelector('#username').value
+  let password = document.querySelector('#password').value
   fetch('/login', {
     method: "post",
     headers: {
@@ -9,7 +10,8 @@ const login =()=>{
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      nombre: nombre    
+      username: username,
+      password: password  
     })
   })
   .then(response => response.text()
@@ -19,6 +21,27 @@ const login =()=>{
     error)
 }
 
+
+const registrarse =()=>{
+  let username = document.querySelector('#username').value
+  let password = document.querySelector('#password').value
+  fetch('/signup', {
+    method: "post",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      username: username,
+      password: password  
+    })
+  })
+  .then(response => response.text()
+    )
+  .then(plantilla => document.querySelector('body').innerHTML = plantilla)
+  .catch(error=>
+    error)
+}
 
 
 const logout =()=>{
@@ -33,8 +56,10 @@ const logout =()=>{
   .then(response => 
     response.text())
   .then(plantilla => {
-    document.querySelector('body').innerHTML = plantilla  
-    init()
+    setTimeout(()=>{
+      init()
+    },2000) 
+    document.querySelector('body').innerHTML = plantilla     
   })
   .catch(error=>
     error)
@@ -52,10 +77,30 @@ const init = ()=>{
   })
   .then(response => response.text())
   .then(plantilla => 
-    { setTimeout(()=>{},40000) 
+    { 
       document.querySelector('body').innerHTML = plantilla})
   .catch(error => alert(error))
 }
+
+
+
+const getRegisterView = ()=>{
+  redireccionar('/registerView');
+}
+
+
+const getLoginView = ()=>{
+  redireccionar('/');
+}
+
+
+
+function redireccionar(pagina) {
+  location.href = pagina;
+} 
+
+
+
 
 
 

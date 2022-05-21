@@ -41,11 +41,23 @@ td {
     min-width: 600px;
 }
 
-#labelNombre,#btnEnviar{
-    margin-left: 0px;
-}
 
 .alert{  
     width:100%;
     margin-left:5%;
+}
+
+#btnRegistrar,#btnEnviar{
+    margin-left: -70px;
+}
+
+#containerError{
+    margin-left:10%;
+    margin-top:5%;
+    width:80%;
+}
+
+#btnBackToLogin{
+    width:150px;
+    margin-left: 38%;
 }
