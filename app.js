@@ -11,7 +11,7 @@ const User = require('./models/User');
 const Db = require('./controllers/DbController')
 const config = require('config');
 global.root = __dirname;
-const bCrypt = require('bcrypt');
+const bCrypt = require('./helpers/bCryptHelper')
 
 
 passport.use('signup', new LocalStrategy({
@@ -31,7 +31,7 @@ passport.use('signup', new LocalStrategy({
         }
         const newUser = {
             username: username,
-            password: createHash(password)
+            password: bCrypt.createHash(password)
           }
        
   
@@ -59,7 +59,7 @@ passport.use('signup', new LocalStrategy({
           return done(null, false);
         }
   
-        if (!isValidPassword(user, password)) {
+        if (!bCrypt.isValidPassword(user, password)) {
           console.log('Invalid Password');
           return done(null, false);
         }
@@ -77,13 +77,7 @@ passport.use('signup', new LocalStrategy({
     User.findById(id, done);
   });
   
-  function isValidPassword(user, password) {
-    return bCrypt.compareSync(password, user.password);
-  }
-  
-  function createHash(password) {
-    return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
-  }
+ 
 
 const app = express()
 app.use(express.json())
@@ -108,16 +102,7 @@ app.set("view engine","hbs")
 
 app.use(cookieParser())
 app.use(getSession)
-/* 
-app.use(session({
-    secret: 'shhhhhhhhhhhhhhhhhhhhh',
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-        expires : new Date(getMiliseconds() + 600000)
-    }
-}))
-*/
+
 app.use(passport.initialize())
 app.use(passport.session())
 
@@ -138,6 +123,8 @@ app.get('/failSignup', controller.getFailSignup);
 app.get('/signup', controller.postLogin);
 app.get('/logout', controller.logout);
 app.get('/info', controller.info);
+app.get('/registerView', controller.getRegisterView);
+
 
 
 

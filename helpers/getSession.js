@@ -10,5 +10,5 @@ const sesion = session({
                     expires : new Date(getMiliseconds() + 600000)
                 }
               })
-
-              module.exports = sesion
+              
+module.exports = sesion

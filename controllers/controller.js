@@ -4,7 +4,6 @@
 
 const postLogin = (req, res)=> {
   req.session.nombre = req.body.username
-  console.log(req.session)
   let bienvenida =`Bienvenido ${req.session.nombre}`
   res.render("welcome",{bienvenida})
 }
@@ -22,10 +21,19 @@ function postSignup (req, res) {
  
 }
 
+
 function getFailSignup (req, res) {
   console.log('error en signup');
   res.sendFile(global.root + '/public/ErrorSignup.html');
 }
+
+
+
+function getRegisterView (req, res) {
+  res.sendFile(global.root + '/public/Register.html');
+}
+
+
 
 const logout = (req,res) => {
     let nombre = req.session.nombre || 'Desconocido'
@@ -62,5 +70,5 @@ const info = (req,res) => {
 
 
 module.exports = {
-    postLogin,getFailLogin,postSignup,getFailSignup,logout,info
+    postLogin,getFailLogin,getRegisterView,postSignup,getFailSignup,logout,info
 }
