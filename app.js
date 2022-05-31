@@ -126,42 +126,18 @@ app.get('/failSignup', controller.getFailSignup);
 app.get('/signup', controller.postLogin);
 app.get('/logout', controller.logout);
 app.get('/registerView', controller.getRegisterView);
-app.get('/info',(req,res)=>{
-  let argumentos = []
-  process.argv.forEach(function (val, index, array) {
-    argumentos.push(val)
-  })
-  let valores =  {
-                  arguments : argumentos,
-                  plataforma : process.platform,
-                  version : process.version,
-                  rss : process.memoryUsage().rss,
-                  execPath : process.execPath,
-                  processId : process.pid,
-                  folder : process.cwd()
- 
-                }
-  res.render('processInfo',valores)
-})
 
+app.get('/info',controller.info)
 app.use('/api/randoms',randomRouter)
 
-
-
-
-
-Db.conectarDB(config.get('mongoDB.connection'), err => {
-  
+Db.conectarDB(process.env.MONGODBCONNECTION, err => {  
     if (err) return console.log('error en conexión de base de datos', err);
     console.log('BASE DE DATOS CONECTADA');
 })
 
 
-
-
 let {PORT} = parseArgs(process.argv.slice(2)) ;
 if (!PORT) { PORT = 8080}
-console.log(process.env)
 
 app.listen(PORT, () => { 
     console.log(`Servidor express escuchando en el puerto ${PORT}`)
