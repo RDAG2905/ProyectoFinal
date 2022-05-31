@@ -61,3 +61,27 @@ td {
     width:150px;
     margin-left: 38%;
 }
+
+.inputGray{
+ border: none;
+ background-color: #ddd;
+ border-radius: 4px;
+ height:40px;
+ width:350px;
+ margin-bottom: 20px;
+ padding: 10px;
+}
+
+
+body{
+    background-color:#ddd;
+}
+
+
+.newContainer{
+    margin-left: 15%;
+    margin-right: 10%;
+}
+
+
+

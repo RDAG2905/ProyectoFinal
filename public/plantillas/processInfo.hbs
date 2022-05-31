@@ -1,0 +1,86 @@
+
+
+<br>
+<div class="newContainer">
+    <label for="">ARGUMENTOS DEL PROCESO : </label>
+        
+        {{#each this.arguments}}
+            <div class="row">
+                <div class="col-xs-4">
+                        <input type="text" class="inputGray" value="{{this}}">
+                </div>
+            </div>
+            
+        {{/each}}
+        <br>
+        <div class="row">   
+            <div class="col-xs-3">
+                <label for="">Platform : </label>
+            </div>
+            <div class="col-xs-4">
+                <input type="text" class="inputGray" value="{{this.plataforma}}">
+            </div>
+        </div>
+
+        <div class="row">   
+            <div class="col-xs-3">
+                <label for="">Versión : </label>
+            </div>
+            <div class="col-xs-4">
+                <input type="text" class="inputGray" value="{{this.version}}">   
+            </div>
+        </div>
+
+        <div class="row">   
+            <div class="col-xs-3">
+                <label for="">ExecPath : </label>
+            </div>
+            <div class="col-xs-4">
+                <input type="text" class="inputGray"  value="{{this.execPath}}">
+            </div>
+        </div>
+
+        <div class="row"> 
+            <div class="col-xs-3">
+                <label for="">Pid : </label>
+            </div>
+            <div class="col-xs-4">
+                <input type="text" class="inputGray" value="{{this.processId}}" disabled>
+            </div>
+        </div>
+
+        <div class="row"> 
+            <div class="col-xs-3">
+                <label for="">RSS : </label>
+            </div>
+            <div class="col-xs-4">
+                <input type="text" class="inputGray" value="{{this.rss}}" disabled>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-xs-3">
+                <label for="">Folder : </label>
+            </div>
+            <div class="col-xs-4">
+                <input type="text" class="inputGray" value="{{this.folder}}" disabled>
+            </div>
+        </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  

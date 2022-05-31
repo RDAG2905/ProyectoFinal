@@ -65,7 +65,7 @@ const info = (req,res) => {
   console.log(req.sessionStore)
   console.log('--------------------------------------')
 
- res.sen('info ok')
+ res.send('info ok')
 }
 
 
