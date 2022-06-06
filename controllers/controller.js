@@ -60,7 +60,8 @@ const info = (req,res) => {
                   rss : process.memoryUsage().rss,
                   execPath : process.execPath,
                   processId : process.pid,
-                  folder : process.cwd()
+                  folder : process.cwd(),
+                  procesadores : process.env.NUMBER_OF_PROCESSORS
  
                 }
   res.render('processInfo',valores)

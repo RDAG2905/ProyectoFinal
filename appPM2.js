@@ -20,7 +20,7 @@ const cluster = require('cluster')
 const {cpus} = require('os')
 let {PORT} = parseArgs(process.argv.slice(2)) ;
 if (!PORT) { PORT = 8080}
-const modoCluster = process.argv[4] == 'CLUSTER'
+
 
 passport.use('signup', new LocalStrategy({
     passReqToCallback: true
@@ -90,23 +90,7 @@ passport.use('signup', new LocalStrategy({
   /// Definiendo el número de procesos
   ////////////////////////////////////
 
-if (modoCluster && cluster.isPrimary) {
-    const numCPUs = cpus().length
 
-    console.log(`Número de procesadores: ${numCPUs}`)
-    console.log(`PID MASTER ${process.pid}`)
-
-    for (let i = 0; i < numCPUs; i++) {
-        cluster.fork()
-    }
-
-    cluster.on('exit', worker => {
-        console.log('Worker', worker.process.pid, 'died', new Date().toLocaleString())
-        cluster.fork()
-    })
-
-
-} else {
 
 const app = express()
 app.use(express.json())
@@ -166,4 +150,3 @@ app.listen(PORT, () => {
     console.log(`Servidor express escuchando en el puerto ${PORT}`)
 })
 
-}

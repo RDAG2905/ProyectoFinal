@@ -1,0 +1,62 @@
+
+MODO CLUSTER
+--------------
+pm2 start app.js --name serverCluster --watch -i max  -- 8081
+
+MODO FORK
+---------
+pm2 start app.js --name serverFork --watch  -- 8080
+
+pm2 list
+┌─────┬──────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name             │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├─────┼──────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 1   │ --8080           │ default     │ 1.0.0   │ fork    │ 0        │ 0      │ 0    │ stopped   │ 0%       │ 0b       │ RDAG     │ disabled │
+│ 0   │ app              │ default     │ 1.0.0   │ fork    │ 0        │ 0      │ 0    │ stopped   │ 0%       │ 0b       │ RDAG     │ disabled │
+│ 2   │ server1          │ default     │ 1.0.0   │ fork    │ 0        │ 0      │ 0    │ stopped   │ 0%       │ 0b       │ RDAG     │ disabled │
+│ 3   │ server2          │ default     │ 1.0.0   │ fork    │ 0        │ 0      │ 681  │ stopped   │ 0%       │ 0b       │ RDAG     │ disabled │
+│ 4   │ server3          │ default     │ 1.0.0   │ fork    │ 0        │ 0      │ 623  │ stopped   │ 0%       │ 0b       │ RDAG     │ disabled │
+│ 5   │ server4          │ default     │ 1.0.0   │ fork    │ 0        │ 0      │ 622  │ stopped   │ 0%       │ 0b       │ RDAG     │ disabled │
+│ 6   │ server5          │ default     │ 1.0.0   │ fork    │ 0        │ 0      │ 617  │ stopped   │ 0%       │ 0b       │ RDAG     │ disabled │
+│ 7   │ serverCluster    │ default     │ 1.0.0   │ cluster │ 2332     │ 43s    │ 0    │ online    │ 0%       │ 51.4mb   │ RDAG     │ enabled  │
+│ 8   │ serverCluster    │ default     │ 1.0.0   │ cluster │ 2808     │ 43s    │ 0    │ online    │ 0%       │ 51.3mb   │ RDAG     │ enabled  │
+│ 9   │ serverCluster    │ default     │ 1.0.0   │ cluster │ 19576    │ 43s    │ 0    │ online    │ 0%       │ 51.0mb   │ RDAG     │ enabled  │
+│ 10  │ serverCluster    │ default     │ 1.0.0   │ cluster │ 20432    │ 42s    │ 0    │ online    │ 0%       │ 51.6mb   │ RDAG     │ enabled  │
+│ 11  │ serverCluster    │ default     │ 1.0.0   │ cluster │ 13480    │ 42s    │ 0    │ online    │ 0%       │ 51.1mb   │ RDAG     │ enabled  │
+│ 12  │ serverCluster    │ default     │ 1.0.0   │ cluster │ 16916    │ 42s    │ 0    │ online    │ 0%       │ 50.9mb   │ RDAG     │ enabled│ 13  │ serverCluster    │ default     │ 1.0.0   │ cluster │ 16084    │ 41s    │ 0    │ online    │ 0%       │ 51.2mb   │ RDAG     │ enabled  │
+│ 14  │ serverCluster    │ default     │ 1.0.0   │ cluster │ 2916     │ 40s    │ 0    │ online    │ 0%       │ 51.5mb   │ RDAG     │ enabled  │
+│ 15  │ serverFork       │ default     │ 1.0.0   │ fork    │ 10524    │ 0s     │ 0    │ online    │ 0%       │ 34.6mb   │ RDAG     │ enabled  │
+└─────┴──────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+PS C:\Users\RDAG\Documents\CODERHOUSE\Clase 29\Ngix> pm2 delete all
+[PM2] Applying action deleteProcessId on app [all](ids: [
+   0,  1,  2,  3,  4,  5,
+   6,  7,  8,  9, 10, 11,
+  12, 13, 14, 15
+])
+[PM2] [app](0) ✓
+[PM2] [--8080](1) ✓
+[PM2] [server1](2) ✓
+[PM2] [server2](3) ✓
+[PM2] [server3](4) ✓
+[PM2] [server4](5) ✓
+[PM2] [server5](6) ✓
+[PM2] [serverCluster](8) ✓
+[PM2] [serverCluster](7) ✓
+[PM2] [serverCluster](10) ✓
+[PM2] [serverCluster](9) ✓
+[PM2] [serverCluster](11) ✓
+[PM2] [serverCluster](12) ✓
+[PM2] [serverCluster](14) ✓
+[PM2] [serverCluster](13) ✓
+[PM2] [serverFork](15) ✓
+┌─────┬───────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐    
+│ id  │ name      │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │    
+└─────┴───────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘ 
+
+PARA LA ULTIMA PARTE DEL DESAFIO CON NGINX 
+-----------------------------------------
+pm2 start app.js --name server1 -- 8080
+pm2 start app.js --name server2 -- 8082
+pm2 start app.js --name server3 -- 8083
+pm2 start app.js --name server4 -- 8084
+pm2 start app.js --name server5 -- 8085
