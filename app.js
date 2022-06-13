@@ -21,6 +21,8 @@ const {cpus} = require('os')
 let {PORT} = parseArgs(process.argv.slice(2)) ;
 if (!PORT) { PORT = 8080}
 const modoCluster = process.argv[4] == 'CLUSTER'
+const compression = require('compression')
+const logger = require('./logger.js')
 
 passport.use('signup', new LocalStrategy({
     passReqToCallback: true
@@ -29,12 +31,12 @@ passport.use('signup', new LocalStrategy({
       User.findOne({ 'username': username }, function (err, user) {
   
         if (err) {
-          console.log('Error in SignUp: ' + err);
+          logger.error('Error in SignUp: ' + err);
           return done(err);
         }
   
         if (user) {
-          console.log('User already exists');
+          logger.info('User already exists');
           return done(null, false)
         }
         const newUser = {
@@ -45,11 +47,11 @@ passport.use('signup', new LocalStrategy({
   
         User.create(newUser, (err, userWithId) => {
           if (err) {
-            console.log('Error in Saving user: ' + err);
+            logger.error('Error in Saving user: ' + err);
             return done(err);
           }
-          console.log(user)
-          console.log('User Registration succesful');
+          logger.info(user)
+          logger.info('User Registration succesful');
           return done(null, userWithId);
         });
       });
@@ -63,12 +65,12 @@ passport.use('signup', new LocalStrategy({
           return done(err);
   
         if (!user) {
-          console.log('User Not Found with email ' + username);
+          logger.info('User Not Found with email ' + username);
           return done(null, false);
         }
   
         if (!bCrypt.isValidPassword(user, password)) {
-          console.log('Invalid Password');
+          logger.info('Invalid Password');
           return done(null, false);
         }
   
@@ -93,16 +95,15 @@ passport.use('signup', new LocalStrategy({
 if (modoCluster && cluster.isPrimary) {
     const numCPUs = cpus().length
 
-    console.log(`Número de procesadores: ${numCPUs}`)
-    console.log(`PID MASTER ${process.pid}`)
+    logger.info(`Número de procesadores: ${numCPUs}`)
+    logger.info(`PID MASTER ${process.pid}`)
 
     for (let i = 0; i < numCPUs; i++) {
         cluster.fork()
     }
 
     cluster.on('exit', worker => {
-        console.log('Worker', worker.process.pid, 'died', new Date().toLocaleString())
-        cluster.fork()
+         logger.info('Worker', worker.process.pid, 'died', new Date().toLocaleString())
     })
 
 
@@ -141,9 +142,7 @@ app.use(passport.session())
 app.use(validateSession)
 
 //////////////////////////////////////////////////////////////////////
-app.use((req, res, next) => {
-    next()
-  });
+
 
 app.post("/login",passport.authenticate('login', { failureRedirect: '/failLogin' }), controller.postLogin)
 app.get('/failLogin', controller.getFailLogin);
@@ -153,17 +152,32 @@ app.get('/signup', controller.postLogin);
 app.get('/logout', controller.logout);
 app.get('/registerView', controller.getRegisterView);
 
+//// Compression //// 
+app.get('/infoZip',compression(),controller.info)
+ 
+/////////////////////
+
 app.get('/info',controller.info)
 app.use('/api/randoms',randomRouter)
+app.use((req, res, next) => {
+  const { url, method } = req
+  const respuesta = `Ruta ${req.originalUrl} y metodo ${req.method} no implementados`
+  logger.warn(respuesta)
+    next()
+});
 
 Db.conectarDB(process.env.MONGODBCONNECTION, err => {  
-    if (err) return console.log('error en conexión de base de datos', err);
-    console.log('BASE DE DATOS CONECTADA');
+    if (err) //return console.log('error en conexión de base de datos', err);
+    logger.error(`error en conexión de base de datos : ${err}`)
+    else
+    logger.info('BASE DE DATOS CONECTADA');
 })
 
 
 app.listen(PORT, () => {    
-    console.log(`Servidor express escuchando en el puerto ${PORT}`)
+    logger.info(`Servidor express escuchando en el puerto ${PORT}`)
 })
+
+app.on('error', error => logger.error(`Error en servidor: ${error}`))
 
 }

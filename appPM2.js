@@ -22,6 +22,7 @@ let {PORT} = parseArgs(process.argv.slice(2)) ;
 if (!PORT) { PORT = 8080}
 
 
+
 passport.use('signup', new LocalStrategy({
     passReqToCallback: true
   },
@@ -138,6 +139,7 @@ app.get('/logout', controller.logout);
 app.get('/registerView', controller.getRegisterView);
 
 app.get('/info',controller.info)
+
 app.use('/api/randoms',randomRouter)
 
 Db.conectarDB(process.env.MONGODBCONNECTION, err => {  

@@ -1,4 +1,4 @@
-
+const logger = require('../logger.js')
 
 
 
@@ -10,7 +10,7 @@ const postLogin = (req, res)=> {
 
 
 const getFailLogin = (req, res) =>{
-  console.log('error en login');
+  logger.error('error en login');
   res.sendFile(global.root + '/public/ErrorLogin.html');
 }
 
@@ -23,7 +23,7 @@ function postSignup (req, res) {
 
 
 function getFailSignup (req, res) {
-  console.log('error en signup');
+  logger.error('error en signup');
   res.sendFile(global.root + '/public/ErrorSignup.html');
 }
 
@@ -36,10 +36,10 @@ function getRegisterView (req, res) {
 
 
 const logout = (req,res) => {
-    let nombre = req.session.nombre || 'Desconocido'
+    let nombre = req.user || 'Desconocido'
     req.session.destroy( err => {      
         if(!err) {
-          console.log(req.session)
+          logger.info(req.session)
           res.render("Despedida",{nombre})
         }
         else res.send({status: 'Logout ERROR', body: err})
