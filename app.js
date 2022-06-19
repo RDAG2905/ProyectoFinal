@@ -168,7 +168,7 @@ app.use((req, res, next) => {
 });
 
 Db.conectarDB(process.env.MONGODBCONNECTION, err => {  
-    if (err) //return console.log('error en conexión de base de datos', err);
+    if (err) 
     logger.error(`error en conexión de base de datos : ${err}`)
     else
     logger.info('BASE DE DATOS CONECTADA');
