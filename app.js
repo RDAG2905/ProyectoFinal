@@ -167,7 +167,7 @@ app.use((req, res, next) => {
     next()
 });
 
-Db.conectarDB(process.env.MONGODBCONNECTION, err => {  
+Db.conectarDB(process.env.MONGOATLASCONNECTION, err => {  
     if (err) 
     logger.error(`error en conexión de base de datos : ${err}`)
     else
