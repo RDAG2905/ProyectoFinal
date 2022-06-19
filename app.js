@@ -18,8 +18,9 @@ const dotenv = require('dotenv').config()
 const randomRouter = require('./Rutas/RandomRouter')
 const cluster = require('cluster')
 const {cpus} = require('os')
-let {PORT} = parseArgs(process.argv.slice(2)) ;
-if (!PORT) { PORT = 8080}
+//let {PORT} = parseArgs(process.argv.slice(2)) ;
+//if (!PORT) { PORT = 8080}
+let PORT = process.env.PORT
 const modoCluster = process.argv[4] == 'CLUSTER'
 const compression = require('compression')
 const logger = require('./logger.js')
