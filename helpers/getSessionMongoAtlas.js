@@ -1,6 +1,6 @@
 
 const session = require('express-session')
-const config = require('config')
+//const config = require('config')
 const getMiliseconds = require('./getMiliseconds')
 /* ------------------------------------------------*/
 /*           Persistencia por MongoDB              */
@@ -9,7 +9,7 @@ const MongoStore = require('connect-mongo')
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true }
 /* ------------------------------------------------*/
 
-
+/*
 const sesion = session({  
     store: MongoStore.create({ 
         mongoUrl: config.get('mongoAtlas.connection'),
@@ -24,4 +24,4 @@ const sesion = session({
 })
 
 
-module.exports = sesion
+module.exports = sesion */
