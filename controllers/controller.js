@@ -5,8 +5,10 @@ const logger = require('../logger.js')
 const postLogin = (req, res)=> {
   req.session.nombre = req.body.username
   let bienvenida =`Bienvenido ${req.session.nombre}`
-  res.render("welcome",{bienvenida})
+  res.render("Home",{bienvenida})
+  //res.render("welcome",{bienvenida})
 }
+
 
 
 const getFailLogin = (req, res) =>{
@@ -14,12 +16,16 @@ const getFailLogin = (req, res) =>{
   res.sendFile(global.root + '/public/ErrorLogin.html');
 }
 
+
+
 function postSignup (req, res) {
   var user = req.user;
-  let bienvenida =`Usuario generado ${user.username}`
-  res.render("welcome",{bienvenida})
- 
+ let bienvenida =`Usuario generado ${user.username}`
+ res.render("Home",{bienvenida})
+ //res.render("welcome",{bienvenida})
 }
+
+
 
 
 function getFailSignup (req, res) {
@@ -29,8 +35,13 @@ function getFailSignup (req, res) {
 
 
 
+
 function getRegisterView (req, res) {
-  res.sendFile(global.root + '/public/Register.html');
+    try{
+        res.sendFile(global.root + '/public/Register.html');
+      }catch(err){
+        logger.error(err);
+      }
 }
 
 

@@ -1,0 +1,180 @@
+[31merror[39m:   error en login
+[31merror[39m:   error en signup
+[31merror[39m:   error en signup
+[31merror[39m:   error en login
+[31merror[39m:   Error: secret option required for sessions
+    at session (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express-session\index.js:200:12)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:280:10)
+    at cookieParser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\cookie-parser\index.js:57:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+[31merror[39m:   Error: secret option required for sessions
+    at session (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express-session\index.js:200:12)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:280:10)
+    at cookieParser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\cookie-parser\index.js:57:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+[31merror[39m:   Error: secret option required for sessions
+    at session (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express-session\index.js:200:12)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:280:10)
+    at cookieParser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\cookie-parser\index.js:57:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+[31merror[39m:   Error: secret option required for sessions
+    at session (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express-session\index.js:200:12)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:280:10)
+    at cookieParser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\cookie-parser\index.js:57:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+[31merror[39m:   Error: secret option required for sessions
+    at session (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express-session\index.js:200:12)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:280:10)
+    at cookieParser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\cookie-parser\index.js:57:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+[31merror[39m:   Error: secret option required for sessions
+    at session (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express-session\index.js:200:12)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:280:10)
+    at cookieParser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\cookie-parser\index.js:57:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+[31merror[39m:   Error: secret option required for sessions
+    at session (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express-session\index.js:200:12)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:280:10)
+    at cookieParser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\cookie-parser\index.js:57:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+[31merror[39m:   Error: secret option required for sessions
+    at session (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express-session\index.js:200:12)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:280:10)
+    at cookieParser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\cookie-parser\index.js:57:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+[31merror[39m:   Error: secret option required for sessions
+    at session (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express-session\index.js:200:12)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:280:10)
+    at cookieParser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\cookie-parser\index.js:57:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+[31merror[39m:   Error: secret option required for sessions
+    at session (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express-session\index.js:200:12)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:280:10)
+    at cookieParser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\cookie-parser\index.js:57:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+[31merror[39m:   error en signup
+[31merror[39m:   error en signup
+[31merror[39m:   PayloadTooLargeError: request entity too large
+    at readStream (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\raw-body\index.js:156:17)
+    at getRawBody (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\raw-body\index.js:109:12)
+    at read (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\body-parser\lib\read.js:79:3)
+    at jsonParser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\body-parser\lib\types\json.js:135:5)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\middleware\init.js:40:5)
+[31merror[39m:   PayloadTooLargeError: request entity too large
+    at readStream (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\raw-body\index.js:156:17)
+    at getRawBody (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\raw-body\index.js:109:12)
+    at read (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\body-parser\lib\read.js:79:3)
+    at jsonParser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\body-parser\lib\types\json.js:135:5)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\middleware\init.js:40:5)
+[31merror[39m:   SyntaxError: Unexpected token - in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at createStrictSyntaxError (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\body-parser\lib\types\json.js:160:10)
+    at parse (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\body-parser\lib\types\json.js:83:15)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:202:9)
+    at invokeCallback (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\raw-body\index.js:231:16)
+    at done (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\raw-body\index.js:220:7)
+    at IncomingMessage.onEnd (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\raw-body\index.js:280:7)
+    at IncomingMessage.emit (node:events:539:35)
+    at endReadableNT (node:internal/streams/readable:1345:12)
+[31merror[39m:   Unexpected token - in JSON at position 0
+[31merror[39m:   error en signup
+[31merror[39m:   error en signup
+[31merror[39m:   error en signup
+[31merror[39m:   error en signup
+[31merror[39m:   error en signup
+[31merror[39m:   error en signup
+[31merror[39m:   error en signup
+[31merror[39m:   Error in Saving user: ValidationError: tipoUsuario: Path `tipoUsuario` is required., telefono: Path `telefono` is required., direccion: Path `direccion` is required., nombre: Path `nombre` is required.
+[31merror[39m:   usuarios validation failed: tipoUsuario: Path `tipoUsuario` is required., telefono: Path `telefono` is required., direccion: Path `direccion` is required., nombre: Path `nombre` is required.
+[31merror[39m:   Error in Saving user: ValidationError: tipoUsuario: Path `tipoUsuario` is required., telefono: Path `telefono` is required., direccion: Path `direccion` is required., nombre: Path `nombre` is required.
+[31merror[39m:   usuarios validation failed: tipoUsuario: Path `tipoUsuario` is required., telefono: Path `telefono` is required., direccion: Path `direccion` is required., nombre: Path `nombre` is required.
+[31merror[39m:   Error in Saving user: ValidationError: tipoUsuario: Path `tipoUsuario` is required., telefono: Path `telefono` is required., direccion: Path `direccion` is required., nombre: Path `nombre` is required.
+[31merror[39m:   ValidationError: usuarios validation failed: tipoUsuario: Path `tipoUsuario` is required., telefono: Path `telefono` is required., direccion: Path `direccion` is required., nombre: Path `nombre` is required.
+    at model.Document.invalidate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\mongoose\lib\document.js:2966:32)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\mongoose\lib\document.js:2755:17
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\mongoose\lib\schematype.js:1333:9
+    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[31merror[39m:   Error in Saving user: ValidationError: tipoUsuario: Path `tipoUsuario` is required., telefono: Path `telefono` is required., direccion: Path `direccion` is required., nombre: Path `nombre` is required.
+[31merror[39m:   ValidationError: usuarios validation failed: tipoUsuario: Path `tipoUsuario` is required., telefono: Path `telefono` is required., direccion: Path `direccion` is required., nombre: Path `nombre` is required.
+    at model.Document.invalidate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\mongoose\lib\document.js:2966:32)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\mongoose\lib\document.js:2755:17
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\mongoose\lib\schematype.js:1333:9
+    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[31merror[39m:   error en signup
+[31merror[39m:   error en signup
+[31merror[39m:   error en signup
+[31merror[39m:   error en login
+[31merror[39m:   error en signup
+[31merror[39m:   error en login
+[31merror[39m:   error en login

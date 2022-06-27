@@ -18,8 +18,7 @@ const dotenv = require('dotenv').config()
 const randomRouter = require('./Rutas/RandomRouter')
 const cluster = require('cluster')
 const {cpus} = require('os')
-//let {PORT} = parseArgs(process.argv.slice(2)) ;
-//if (!PORT) { PORT = 8080}
+
 let PORT = process.env.PORT
 const modoCluster = process.argv[4] == 'CLUSTER'
 const compression = require('compression')
@@ -29,6 +28,8 @@ passport.use('signup', new LocalStrategy({
     passReqToCallback: true
   },
     (req, username, password, done) => {
+      
+      logger.info(Object.values(req.body))
       User.findOne({ 'username': username }, function (err, user) {
   
         if (err) {
@@ -111,9 +112,13 @@ if (modoCluster && cluster.isPrimary) {
 } else {
 
 const app = express()
-app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+app.use(express.json({limit: '25mb'}));
+app.use(express.urlencoded({limit: '25mb',extended:true}));
+//app.use(express.json())
+//app.use(express.urlencoded({extended:true}))
 app.use(express.static('public'));
+app.use(express.static('files'));
+
 const handlebars = require('express-handlebars')    
 const { header, redirect } = require('express/lib/response')
 
@@ -148,6 +153,8 @@ app.use(validateSession)
 app.post("/login",passport.authenticate('login', { failureRedirect: '/failLogin' }), controller.postLogin)
 app.get('/failLogin', controller.getFailLogin);
 app.post('/signup', passport.authenticate('signup', { successRedirect: '/signup', failureRedirect: '/failSignup' }), controller.postSignup);
+//app.post('/signup', controller.postSignup);
+
 app.get('/failSignup', controller.getFailSignup);
 app.get('/signup', controller.postLogin);
 app.get('/logout', controller.logout);
@@ -160,14 +167,29 @@ app.get('/infoZip',compression(),controller.info)
 
 app.get('/info',controller.info)
 app.use('/api/randoms',randomRouter)
+
+
+///////////// Manejo de rutas no implementadas ////////////////
+
 app.use((req, res, next) => {
   const { url, method } = req
   const respuesta = `Ruta ${req.originalUrl} y metodo ${req.method} no implementados`
-  logger.warn(respuesta)
-    next()
+  res.status(404).send(respuesta)
 });
 
-Db.conectarDB(process.env.MONGOATLASCONNECTION, err => {  
+
+///////////// Manejo de errores global ////////////////
+
+app.use(function(err, req, res, next) {
+  logger.error(err.stack);
+  res.status(500).send('Ocurrió un Error. Consulte con el administrador del sistema');
+ });
+ 
+
+
+
+//Db.conectarDB(process.env.MONGOATLASCONNECTION, err => {  
+Db.conectarDB(process.env.MONGODB, err => { 
     if (err) 
     logger.error(`error en conexión de base de datos : ${err}`)
     else

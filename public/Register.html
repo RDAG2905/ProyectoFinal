@@ -10,14 +10,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 </head>
 <body>
-    <br>
+   
     <div class="jumbotron" id="contenedor">
-        <h2 class="text-primary">Registro de Usuario</h1>
+        <h2 class="text-primary text-center">Registro de Usuario</h1>
             <br>
         <form action="/login" method="post" >           
             <input type="text" class="form-control" id="username" placeholder="EMAIL">
             <input type="password" class="form-control" id="password" placeholder="PASSWORD">
+            <input type="text" class="form-control" id="nombre" placeholder="NOMBRE">
+            <input type="text" class="form-control" id="direccion" placeholder="DIRECCION">
+            <input type="text" class="form-control" id="edad" placeholder="EDAD">
+            <input type="text" class="form-control" id="telefono" placeholder="TELEFONO">
             <br>
+            <div class="form-group">
+                <select name="" id="comboTipoUsuario" class="form-control">
+                 <option value="1">Cliente</option>
+                 <option value="2">Administrador</option>
+                </select>
+            </div>
+        
+            <br>
+            <div class="form-group">
+                <input type="file" name="file" id="foto"/>
+                <!--button type="submit" class="btn btn-sm btn-info">
+                    <span class="glyphicon glyphicon-open" style="margin-left:-10px;"></span>
+                    &nbsp;Subir Foto o Avatar
+                </button-->
+            </div>
+            <br>
+           
             <div class="form-group">
                 <input type="button" value="Registrarse" class="btn btn-sm btn-primary" onclick="registrarse()" id="btnRegistrar">   
             </div>

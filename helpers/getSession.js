@@ -1,10 +1,10 @@
 const session = require('express-session')
 const getMiliseconds = require('../helpers/getMiliseconds')
 
-//const config = require('config')
+const config = require('config')
 
 const sesion = session({
-                secret: process.env.SECRET,
+                secret: process.env.SECRET || config.get('secret.value'),
                 resave: false,
                 saveUninitialized: false,
                 cookie: {
