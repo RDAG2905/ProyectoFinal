@@ -178,3 +178,52 @@
 [31merror[39m:   error en signup
 [31merror[39m:   error en login
 [31merror[39m:   error en login
+[31merror[39m:   error en login
+[31merror[39m:   error en login
+[31merror[39m:   Error: Knex: run
+$ npm install mysql --save
+Cannot find module 'mysql'
+Require stack:
+- C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\knex\lib\dialects\mysql\index.js
+- C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\knex\lib\dialects\index.js
+- C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\knex\lib\knex-builder\internal\config-resolver.js
+- C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\knex\lib\knex-builder\Knex.js
+- C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\knex\lib\index.js
+- C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\knex\knex.js
+- C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\Persistencia\ContenedorSQL.js
+- C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\Dao\ProductosDaoSQL.js
+- C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\Dao\DaoFactory.js
+- C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\Rutas\RouterProductos.js
+- C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\app.js
+    at Client_MySQL.initializeDriver (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\knex\lib\client.js:194:13)
+    at new Client (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\knex\lib\client.js:75:12)
+    at new Client_MySQL (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\knex\lib\dialects\mysql\index.js:21:1)
+    at knex (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\knex\lib\knex-builder\Knex.js:16:28)
+    at new ContenedorSQL (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\Persistencia\ContenedorSQL.js:9:27)
+    at new ProductosDaoSQL (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\Dao\ProductosDaoSQL.js:5:6)
+    at DaoFactory.getDao (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\Dao\DaoFactory.js:19:20)
+    at getDao (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\Rutas\RouterProductos.js:20:20)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\Rutas\RouterProductos.js:27:14
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+[31merror[39m:   TypeError: Cannot read properties of undefined (reading 'usuarioId')
+    at getUserData (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\controllers\controller.js:82:21)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:280:10)
+    at validateSession (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\middlewares\validateSession.js:15:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+[31merror[39m:   ReferenceError: daoFactory is not defined
+    at getUserData (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\controllers\controller.js:83:21)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\index.js:280:10)
+    at validateSession (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\middlewares\validateSession.js:15:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)

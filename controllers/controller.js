@@ -1,12 +1,12 @@
 const logger = require('../logger.js')
-
-
+const session = require('express-session')
+const daoFactory = require('../Dao/DaoFactory')
 
 const postLogin = (req, res)=> {
   req.session.nombre = req.body.username
   let bienvenida =`Bienvenido ${req.session.nombre}`
   res.render("Home",{bienvenida})
-  //res.render("welcome",{bienvenida})
+  
 }
 
 
@@ -37,11 +37,9 @@ function getFailSignup (req, res) {
 
 
 function getRegisterView (req, res) {
-    try{
         res.sendFile(global.root + '/public/Register.html');
-      }catch(err){
         logger.error(err);
-      }
+      
 }
 
 
@@ -79,6 +77,19 @@ const info = (req,res) => {
 }
 
 
+const getUserData = (req,res)=>{
+      let user = session.user
+      let id = user._id
+      let factory = new daoFactory("") 
+      let dao = factory.getDao()  
+      dao.getById(id)
+         .then(data =>
+             //res.send({data})
+             res.render('UserData',data)
+         )        
+}
+
+
 module.exports = {
-    postLogin,getFailLogin,getRegisterView,postSignup,getFailSignup,logout,info
+    postLogin,getFailLogin,getRegisterView,postSignup,getFailSignup,logout,info,getUserData
 }

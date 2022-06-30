@@ -161,15 +161,85 @@ function openTab(evt, name) {
   
   document.getElementById(name).style.display = "block";
   evt.currentTarget.className += " active";
+
+  if(name == "productos"){
+    getProductos()
+  }else
+    if(name == "carrito"){
+      getProductosCarrito()
+  }
+  else
+  if(name == "usuario"){
+    getUserData()
+  }
+  
+}
+
+
+
+//////////////////////////////////////////////////////////
+
+
+const getProductos = ()=>{
+  
+  fetch('/api/productos/', {
+    method: "get",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.text())
+  .then(plantilla => 
+    { 
+      document.querySelector('#productos').innerHTML = plantilla
+    })
+  .catch(error => alert(error))
+ 
+}
+
+
+const getProductosCarrito = ()=>{
+  
+  fetch('/api/carrito/undefined/productos', {
+    method: "get",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.text())
+  .then(plantilla => 
+    { 
+      document.querySelector('#carrito').innerHTML = plantilla
+    })
+  .catch(error => alert(error))
+ 
 }
 
 
 
 
 
-
-
+const getUserData = ()=>{
   
+  fetch('/getUserData', {
+    method: "get",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.text())
+  .then(plantilla => 
+    { 
+      document.querySelector('#usuario').innerHTML = plantilla
+    })
+  .catch(error => alert(error))
+ 
+  }
+
+
 
 
 

@@ -20,7 +20,8 @@
 
 </style>
 
-
+<br>
+<br>
 {{#if productos.length}}
 <div id="tableContainer" > 
     <h2>Lista de Productos</h2>
@@ -41,4 +42,6 @@
         </table>
     </div>
 </div>
+{{else}}
+<div class="alert alert-info text-center" style="width:100%">La lista de productos está vacia</div>
 {{/if}}

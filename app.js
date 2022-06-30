@@ -16,6 +16,8 @@ var util = require('util');
 const parseArgs = require('minimist');
 const dotenv = require('dotenv').config()
 const randomRouter = require('./Rutas/RandomRouter')
+const routerProductos = require('./Rutas/RouterProductos')
+const routerCarrito = require('./Rutas/RouterCarrito')
 const cluster = require('cluster')
 const {cpus} = require('os')
 
@@ -75,7 +77,9 @@ passport.use('signup', new LocalStrategy({
           logger.info('Invalid Password');
           return done(null, false);
         }
-  
+        
+        session.user = user
+        logger.info(session.user)
         return done(null, user);
       });
     })
@@ -159,6 +163,7 @@ app.get('/failSignup', controller.getFailSignup);
 app.get('/signup', controller.postLogin);
 app.get('/logout', controller.logout);
 app.get('/registerView', controller.getRegisterView);
+app.get('/getUserData', controller.getUserData);
 
 //// Compression //// 
 app.get('/infoZip',compression(),controller.info)
@@ -167,7 +172,8 @@ app.get('/infoZip',compression(),controller.info)
 
 app.get('/info',controller.info)
 app.use('/api/randoms',randomRouter)
-
+app.use('/api/productos',routerProductos)
+app.use('/api/carrito',routerCarrito)
 
 ///////////// Manejo de rutas no implementadas ////////////////
 
