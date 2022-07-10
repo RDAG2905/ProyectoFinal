@@ -16,7 +16,7 @@ body * {
 
 
 .btn-primary{
-    width:500px;
+    width:200px;
     margin-left:200px;
     background-color: orangered;
 }
@@ -62,6 +62,8 @@ body * {
     margin-left: 38%;
 }
 
+
+
 .inputGray{
  border: none;
  background-color: #ddd;
@@ -101,9 +103,15 @@ body{
     color:#333;
   }
 
+
+
    .alert{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
    }
+
+
+
+
   /* Style the buttons that are used to open the tab content */
   .tab button {
     background-color: inherit;
@@ -187,7 +195,8 @@ body{
   margin-right: 10%;
 }*/
 table{
-  width: 600px !important;
+  min-width: 700px !important;
+  margin-left:-50px;
 }
 
 #btnAgregarProducto{

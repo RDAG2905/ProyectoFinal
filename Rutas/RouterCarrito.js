@@ -22,7 +22,7 @@ router.post('/',(req,res)=>{
     logger.info(`idUsuario: ${idUsuario}`)
      dao.saveCarrito(idUsuario)
         .then(carritoId => { 
-            logger.info(`carrito ${carritoId}`)
+           // logger.info(`carrito ${carritoId}`)
             let idCarrito = carritoId
             res.send({idCarrito})            
             //res.render("CarritoConProductos",{carrito})
@@ -55,7 +55,7 @@ router.delete('/:id',(req,res)=>{
 //pendiente*****************************
 router.get('/:id/productos',async (req,res)=>{
    let idCarrito = req.params.id
-   logger.info(idCarrito)
+   logger.info(`idCarrito Request: ${idCarrito}`)
    if (idCarrito == "undefined"){
         res.render("CarritoVacio")
    }else{
@@ -69,7 +69,8 @@ router.get('/:id/productos',async (req,res)=>{
             let productos = carrito.productos
             logger.info(util.inspect(productos))
 
-            res.render("tabla",{productos})
+           // res.render("CarritoConProductos",{productos})
+            res.send({productos})
         }  
 
    }

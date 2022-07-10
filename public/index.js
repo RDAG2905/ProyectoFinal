@@ -171,11 +171,10 @@ function openTab(evt, name) {
   evt.currentTarget.className += " active";
 
   if(name == "productos"){
-    getProductos()
+    //getProductos()
   }else
     if(name == "carrito"){
-      
-    //getProductosCarrito()
+      //getProductosCarrito()    
   }
   else
   if(name == "usuario"){
@@ -200,13 +199,16 @@ const getProductos = ()=>{
   })
   .then(response => response.text())
   .then(result =>{
-    document.querySelector('tbody').innerHTML=""
+    //document.querySelector('tbody').innerHTML=""
      cargarTablaProductos(JSON.parse(result),"tablaProductos")  
   })
   
   .catch(error => alert(error))
  
 }
+
+
+
 
 
         const cargarTablaProductos = (lista,tablaX)=>{
@@ -233,6 +235,9 @@ const getProductos = ()=>{
         }
 
 
+
+
+
 const getProductosCarrito = ()=>{
   let idCarrito = getIdCarrito()
   fetch('/api/carrito/' + idCarrito + '/productos', {
@@ -241,13 +246,15 @@ const getProductosCarrito = ()=>{
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     }
+    
   })
   .then(response => response.text())
   .then(result => 
-    { 
+    {
+      //console.log(result) 
      // document.getElementById('divCarrito').innerHTML=""
-     // document.getElementById('divCarrito').innerHTML = plantilla
-      cargarTablaProductos(JSON.parse(result),"tablaProductosCarrito")
+     //document.getElementById('tableCont').innerHTML = result
+     cargarTablaProductos(JSON.parse(result),"tablaProductosCarrito")
       
     })
   .catch(error => alert(error))
@@ -289,6 +296,10 @@ const crearProducto = ()=>{
   precio: precio,
   fotoUrl: fotoUrl
   }
+
+
+
+
 
   ocultarDivAgregar()
   fetch('/api/productos', {
@@ -348,7 +359,7 @@ const crearCarrito = ()=>{
   .then(id => 
     { 
       setIdCarrito(id)
-      //alert(getIdCarrito())
+     
     })
   .catch(error => alert(error))
  
@@ -359,9 +370,8 @@ const crearCarrito = ()=>{
 const getIdFromRow = (element)=>{
   let td = element.parentNode
   let fila = td.parentNode
-  //console.log(fila)
   let id = fila.children[0].textContent
-  //console.log(primerTd)
+ 
   return id
  }
 
@@ -369,13 +379,13 @@ const getIdFromRow = (element)=>{
 const agregarProductoAlCarrito =(element)=>{
   
   let idProducto = getIdFromRow(element)
- // alert(`idProducto: ${idProducto}`)
+ 
   if(getIdCarrito() == 0){
-  //  alert(`id Carrito: ${getIdCarrito()}`)
+         
      crearCarrito(`idProducto : ${idProducto}`)
   }
     let id = getIdCarrito()
-    //alert(`id Carrito: ${id}`)
+   
  
       fetch('/api/carrito/' + id + '/productos', {
         method: "post",
@@ -390,9 +400,11 @@ const agregarProductoAlCarrito =(element)=>{
       })
       .then(response => response.text()
         )
-      .then(plantilla => {
-        document.querySelector('#divCarrito').innerHTML=""
-        document.querySelector('#divCarrito').innerHTML = plantilla})
+      .then(result => {
+        
+       getProductosCarrito()
+       alert('Producto agregado al carrito')
+      })
 
       .catch(error=>
         error)
