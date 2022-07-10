@@ -25,6 +25,8 @@ let PORT = process.env.PORT
 const modoCluster = process.argv[4] == 'CLUSTER'
 const compression = require('compression')
 const logger = require('./logger.js')
+let multer = require('multer');
+let upload = multer();
 
 passport.use('signup', new LocalStrategy({
     passReqToCallback: true
@@ -45,7 +47,13 @@ passport.use('signup', new LocalStrategy({
         }
         const newUser = {
             username: username,
-            password: bCrypt.createHash(password)
+            password: bCrypt.createHash(password),
+            nombre: req.body.nombre,
+            direccion: req.body.direccion,
+            edad : req.body.edad,
+            telefono: req.body.telefono,
+            tipoUsuario : req.body.tipoUsuario,
+            fotoUrl : ""
           }
        
   
@@ -56,6 +64,7 @@ passport.use('signup', new LocalStrategy({
           }
           logger.info(user)
           logger.info('User Registration succesful');
+          session.user = newUser
           return done(null, userWithId);
         });
       });
@@ -77,9 +86,16 @@ passport.use('signup', new LocalStrategy({
           logger.info('Invalid Password');
           return done(null, false);
         }
-        
-        session.user = user
-        logger.info(session.user)
+        user.changuito = 1020
+        passport.session = user
+       /* let changuito = {
+          id : 100000,
+          values : [1,2,3]
+        }*/
+        //passport.session = changuito
+        logger.info(passport.session)
+        //session.user = user
+        //logger.info(session.user)
         return done(null, user);
       });
     })
@@ -120,6 +136,7 @@ app.use(express.json({limit: '25mb'}));
 app.use(express.urlencoded({limit: '25mb',extended:true}));
 //app.use(express.json())
 //app.use(express.urlencoded({extended:true}))
+app.use(upload.array()); 
 app.use(express.static('public'));
 app.use(express.static('files'));
 

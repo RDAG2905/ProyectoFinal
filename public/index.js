@@ -1,5 +1,6 @@
 
 
+
 const login =()=>{
   let username = document.querySelector('#username').value
   let password = document.querySelector('#password').value
@@ -18,12 +19,18 @@ const login =()=>{
   .then(response => response.text()
     )
   .then(plantilla => document.querySelector('body').innerHTML = plantilla)
+
   .catch(error=>
     error)
+  
+    initCarrito()
+    crearCarrito()
 }
 
 
-
+const initCarrito =()=> localStorage.setItem("idCarrito",0)
+const getIdCarrito = () => localStorage.getItem("idCarrito")
+const setIdCarrito =(id)=> localStorage.setItem("idCarrito",id)
 
 
 const registrarse =()=>{
@@ -47,19 +54,20 @@ const registrarse =()=>{
     tipoUsuario
   }
   
- /* let formData = new FormData()
+  let formData = new FormData()
   formData.append('user',user)
   formData.append('foto',foto.files[0])
-  let data = JSON.stringify(formData)
-  console.log(data)*/
+  //let data = JSON.stringify(formData)
+  console.log(formData)
 
   fetch('/signup', {
     method: "post",
     headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'multipart/form-data'
+     // 'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
+    /*body: JSON.stringify({
       username: username,
       password: password,
       nombre : nombre,
@@ -67,8 +75,8 @@ const registrarse =()=>{
       edad:edad,
       telefono:telefono  ,
       tipoUsuario:tipoUsuario   
-    })
- // body: data
+    })*/
+  body: formData
  //body: JSON.stringify(user)
   })
   .then(response => response.text()
@@ -166,7 +174,8 @@ function openTab(evt, name) {
     getProductos()
   }else
     if(name == "carrito"){
-      getProductosCarrito()
+      
+    //getProductosCarrito()
   }
   else
   if(name == "usuario"){
@@ -182,7 +191,7 @@ function openTab(evt, name) {
 
 const getProductos = ()=>{
   
-  fetch('/api/productos/', {
+  fetch('/api/productos/undefined', {
     method: "get",
     headers: {
       'Accept': 'application/json',
@@ -190,18 +199,43 @@ const getProductos = ()=>{
     }
   })
   .then(response => response.text())
-  .then(plantilla => 
-    { 
-      document.querySelector('#productos').innerHTML = plantilla
-    })
+  .then(result =>{
+    document.querySelector('tbody').innerHTML=""
+     cargarTablaProductos(JSON.parse(result),"tablaProductos")  
+  })
+  
   .catch(error => alert(error))
  
 }
 
 
+        const cargarTablaProductos = (lista,tablaX)=>{
+            let productos = lista.productos
+            let tabla = document.getElementById(tablaX);
+            //console.log(tabla)
+            
+            let tablaLlena = "";
+            for (var i =0; i< productos.length; i++){
+              
+                //tablaLlena +=  '<tr>'
+                tablaLlena += '<td style="display:none">' + productos[i]._id + '</td>'
+                tablaLlena += '<td style="width:200px">' + productos[i].nombre + '</td>'
+                tablaLlena += '<td style="text-align:center;width:200px">' + productos[i].precio +  '</td>'
+                tablaLlena += '<td style="text-align:center;width:200px"><img width="50" src=' + productos[i].fotoUrl + ' alt="not found" ></td>'
+                tablaLlena += '<td><button class="btn btn-toolbar" onclick="agregarProductoAlCarrito(this)" style="border-radius: 50%;height:42px;width:42px"><i class="glyphicon glyphicon-shopping-cart" style="color:#337ab7;font-size:18px;"></i></button></td>'
+                tablaLlena += '<td style="margin-left:-80px;"><button class="btn btn-toolbar" style="border-radius: 50%;height:42px;width:42px"><i class="glyphicon glyphicon-floppy-remove" style="color:orangered;font-size:18px;"></i></button></td>'
+              // tablaLlena += '</tr>'
+                let fila = document.createElement('tr')
+                fila.innerHTML= tablaLlena
+                tabla.append(fila)
+                tablaLlena = "";
+          }
+        }
+
+
 const getProductosCarrito = ()=>{
-  
-  fetch('/api/carrito/undefined/productos', {
+  let idCarrito = getIdCarrito()
+  fetch('/api/carrito/' + idCarrito + '/productos', {
     method: "get",
     headers: {
       'Accept': 'application/json',
@@ -209,9 +243,12 @@ const getProductosCarrito = ()=>{
     }
   })
   .then(response => response.text())
-  .then(plantilla => 
+  .then(result => 
     { 
-      document.querySelector('#carrito').innerHTML = plantilla
+     // document.getElementById('divCarrito').innerHTML=""
+     // document.getElementById('divCarrito').innerHTML = plantilla
+      cargarTablaProductos(JSON.parse(result),"tablaProductosCarrito")
+      
     })
   .catch(error => alert(error))
  
@@ -240,14 +277,127 @@ const getUserData = ()=>{
   }
 
 
+/////////////////////////////////
+
+const crearProducto = ()=>{
+  let nombre = document.querySelector('#nombre').value
+  let precio = document.querySelector('#precio').value
+  let fotoUrl = document.querySelector('#fotoUrl').value
+
+  let valores = {
+  nombre: nombre,
+  precio: precio,
+  fotoUrl: fotoUrl
+  }
+
+  ocultarDivAgregar()
+  fetch('/api/productos', {
+    method: "post",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(valores)
+    })
+    .then(response => alert(response.text())
+      )
+    .then(plantilla => 
+      { 
+        document.querySelector('#productos').innerHTML = plantilla
+        alert('Producto creado exitosamete')
+      })
+    .catch(error=>
+      error
+      .then(e=>
+        alert(e)
+      ))
+  
+}
 
 
 
+ const verDivAgregar = ()=>{
+  document.querySelector('#divFormAgregar').style.display = 'block'
+  document.querySelector('#tableContainer').style.display = 'none'
+ }
 
 
 
-
+const ocultarDivAgregar = ()=>{
+  document.querySelector('#divFormAgregar').style.display = 'none'
+  document.querySelector('#tableContainer').style.display = 'block'
+ }
 
 
 
  
+
+
+ 
+
+const crearCarrito = ()=>{
+  
+  fetch('/api/carrito', {
+    method: "post",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.text())
+  .then(id => 
+    { 
+      setIdCarrito(id)
+      //alert(getIdCarrito())
+    })
+  .catch(error => alert(error))
+ 
+}
+
+
+
+const getIdFromRow = (element)=>{
+  let td = element.parentNode
+  let fila = td.parentNode
+  //console.log(fila)
+  let id = fila.children[0].textContent
+  //console.log(primerTd)
+  return id
+ }
+
+
+const agregarProductoAlCarrito =(element)=>{
+  
+  let idProducto = getIdFromRow(element)
+ // alert(`idProducto: ${idProducto}`)
+  if(getIdCarrito() == 0){
+  //  alert(`id Carrito: ${getIdCarrito()}`)
+     crearCarrito(`idProducto : ${idProducto}`)
+  }
+    let id = getIdCarrito()
+    //alert(`id Carrito: ${id}`)
+ 
+      fetch('/api/carrito/' + id + '/productos', {
+        method: "post",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          id: idProducto
+        
+        })
+      })
+      .then(response => response.text()
+        )
+      .then(plantilla => {
+        document.querySelector('#divCarrito').innerHTML=""
+        document.querySelector('#divCarrito').innerHTML = plantilla})
+
+      .catch(error=>
+        error)
+      
+      
+    }
+
+

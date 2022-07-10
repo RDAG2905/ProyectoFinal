@@ -6,5 +6,5 @@ const router = Router()
 
 
 router.get('/getData',(req,res)=>{
-      session.user
+      let user = session.user
 })

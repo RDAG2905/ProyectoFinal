@@ -7,23 +7,29 @@ const daoCarritos = new repository()
 const productosRepo = require('../Dao/ProductosDaoMongoDB')
 const daoProductos = new productosRepo()
 const daoFactory = require('../Dao/DaoFactory')
-//const error = 'carrito no encontrado' 
 const errorProducto = 'producto no encontrado' 
 const config = require('config');
 const session = require('express-session')
 const logger = require('../logger.js')
-
+const { info } = require('../logger.js')
+const passport = require('passport')
+let util = require('util');
 
 router.post('/',(req,res)=>{ 
     let factory = new daoFactory(config.get('tipoPersistencia.persistenciaB')) 
     let dao = factory.getDao()  
-    let idUsuario = session.user.usuarioId
+    let idUsuario = passport.session._id
+    logger.info(`idUsuario: ${idUsuario}`)
      dao.saveCarrito(idUsuario)
-        .then(carrito =>         
-            res.send({carrito}) 
-        )
+        .then(carritoId => { 
+            logger.info(`carrito ${carritoId}`)
+            let idCarrito = carritoId
+            res.send({idCarrito})            
+            //res.render("CarritoConProductos",{carrito})
+         })
         .catch(error =>
-            res.send({error}) 
+            //res.send({error})
+            res.render("Error",{error}) 
         )        
 })
 
@@ -61,6 +67,8 @@ router.get('/:id/productos',async (req,res)=>{
             res.render("Error",{error})
         } else{
             let productos = carrito.productos
+            logger.info(util.inspect(productos))
+
             res.render("tabla",{productos})
         }  
 
@@ -75,36 +83,41 @@ router.get('/:id/productos',async (req,res)=>{
 
 //pendiente**********************************
 router.post('/:id/productos', async (req,res)=>{
-    let idProductoNuevo = req.body.id
+    let idProductoNuevo = req.body
+    //logger.info(`idProductoNuevo: ${Object.values(idProductoNuevo)}`)
     let idCarrito = req.params.id
-     
+     logger.info(`idCarrito: ${idCarrito}`)
     let factory2 = new daoFactory(config.get('tipoPersistencia.persistenciaB')) 
     if(factory2.tipoPersistencia == 'carritoSql'){
-        daoCarritos.AgregarProductoAlCarrito(idCarrito,idProductoNuevo)
+       /* daoCarritos.AgregarProductoAlCarrito(idCarrito,idProductoNuevo)
         .then(
             res.send({'OK':'Producto Agregado con éxito'}) 
         )
         .catch(error=>
             res.send({error}) 
-        )
+        )*/
     
     }else{
   
     let daoCarritos = factory2.getDao()
-    let factory1 = new daoFactory(config.get('tipoPersistencia.persistenciaB')) 
+    let factory1 = new daoFactory(config.get('tipoPersistencia.persistenciaA')) 
     let daoProductos = factory1.getDao()
-    let productoNuevo = await daoProductos.getById(idProductoNuevo)
-    
-        if(!productoNuevo){
+    let productoAgregado = await daoProductos.getById(idProductoNuevo)
+    logger.info(productoAgregado)
+        if(!productoAgregado){
             res.send({errorProducto})
         }else{            
-             daoCarritos.AgregarProductoAlCarrito(idCarrito,productoNuevo)
-                .then(
-                    res.send({'OK':'Producto Agregado con éxito'}) 
+             await daoCarritos.AgregarProductoAlCarrito(idCarrito,productoAgregado)
+             //let cProductos =  ;logger.info(`cProductos: ${cProductos}`)
+                .then(carrito => {
+                    /*let productos = carrito.productos
+                    logger.info(`cProductos: ${productos}`)
+                    res.render("CarritoConProductos",{productos}) }      */
+                    res.send({carrito}) }
                 )
-                .catch(error=>
+                /*.catch(error=>
                     res.send({error}) 
-                )
+                )*/
             
             }
         }   

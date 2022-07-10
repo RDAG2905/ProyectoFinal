@@ -18,13 +18,15 @@ class ContenedorProductosMongo{
      
 
     async getById(idProducto){
-      return await model.findById(idProducto)
+      let id = new mongoose.Types.ObjectId(idProducto)
+      return await model.findById(id)
     }
 
 
     async save(producto){
         const productSaveModel = model(producto);
-        return await productSaveModel.save();
+        await productSaveModel.save();
+        return await this.getAll()
     }
 
 

@@ -2,6 +2,8 @@ const logger = require('../logger.js')
 const session = require('express-session')
 const daoFactory = require('../Dao/DaoFactory')
 
+
+
 const postLogin = (req, res)=> {
   req.session.nombre = req.body.username
   let bienvenida =`Bienvenido ${req.session.nombre}`
@@ -20,6 +22,8 @@ const getFailLogin = (req, res) =>{
 
 function postSignup (req, res) {
   var user = req.user;
+  logger.info(`req.body ${req.body}`)
+  logger.info(`req.file ${req.file}`)
  let bienvenida =`Usuario generado ${user.username}`
  res.render("Home",{bienvenida})
  //res.render("welcome",{bienvenida})
@@ -37,9 +41,7 @@ function getFailSignup (req, res) {
 
 
 function getRegisterView (req, res) {
-        res.sendFile(global.root + '/public/Register.html');
-        logger.error(err);
-      
+        res.sendFile(global.root + '/public/Register.html');     
 }
 
 

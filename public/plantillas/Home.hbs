@@ -14,16 +14,138 @@
 
 <!-- Tab content -->
 <div id="productos" class="tabcontent" >
-  
+  <br>
+  <button id="btnAgregarProducto" onclick="verDivAgregar()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Agregar Producto</button>
+
+  <hr>
+
+    <div id="contenedorPrincipal" >
+      <div id="divFormAgregar" style="display:none">
+            <h4 class="text-primary">Ingrese el  Producto</h4>
+            </br>
+            <form action="">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <label >Nombre:</label>
+                  </div>
+                  <div class="col-xs-12">
+                    <input type="text" id="nombre" class="form-control input-xs">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6">
+                    <label for="">Precio:</label>
+                  </div>
+                  <div class="col-xs-12">
+                    <input type="text" id="precio" class="form-control input-xs">
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-xs-6">
+                    <label for="">Foto Url:</label>
+                  </div>
+                  <div class="col-xs-12">
+                    <input type="text" id="fotoUrl" class="form-control input-xs">
+                  </div>
+                </div>
+            </form>
+            
+          </br>
+
+            <button id="btnCrearProducto" onclick="crearProducto()" class="btn btn-primary">Crear Producto</button>
+              
+    </div>
+        <br>
+        <br>
+
+  <div id="tableContainer" > 
+    <h4 class="text-primary">Lista de Productos</h2>
+        <div>
+            <table class="table table-hover" id="tablaProductos">
+                <tr style="background-color:#f5f5f5;">
+                  <th>Id</th>
+                    <th style="width:150px;">Nombre</th>
+                    <th>Precio</th>
+                    <th style="text-align:center;width:150px;">Foto</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+  </div>
+
  
 </div>
 
-<div id="carrito" class="tabcontent">
- 
- 
+<div id="divCarrito" class="tabcontent">
+  <button id="btnAgregarProducto" onclick="verDivAgregar()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Agregar Producto</button>
+
+<hr>
+
+<div id="contenedorPrincipal" >
+  <div id="divFormAgregar" style="display:none">
+        <h4 class="text-primary">Ingrese el  Producto</h4>
+        </br>
+        <form action="">
+            <div class="row">
+              <div class="col-xs-6">
+                <label >Nombre:</label>
+              </div>
+              <div class="col-xs-12">
+                <input type="text" id="nombre" class="form-control input-xs">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6">
+                <label for="">Precio:</label>
+              </div>
+              <div class="col-xs-12">
+                <input type="text" id="precio" class="form-control input-xs">
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-xs-6">
+                <label for="">Foto Url:</label>
+              </div>
+              <div class="col-xs-12">
+                <input type="text" id="fotoUrl" class="form-control input-xs">
+              </div>
+            </div>
+        </form>
+        
+      </br>
+
+        <button id="btnCrearProducto" onclick="crearProducto()" class="btn btn-primary">Crear Producto</button>
+        <button id="btnBuscarProductos" onclick="getProductos()" class="btn btn-primary">Buscar Productos</button>
+          
 </div>
+<br>
+<br>
+ <div id="divListadoPr">
+    <div id="tableContainer">
+      <h4 class="text-primary" id="h4TituloProductos">Lista de Productos</h4>
+        <div>
+              <table class="table table-hover" id="tablaProductosCarrito">
+                <tr style="background-color:#f5f5f5;">
+                  <th>Id</th>
+                    <th >Nombre</th>
+                    <th>Precio</th>
+                    <th style="text-align:center;">Foto</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+              </table>
+        </div>
+      
+    </div>
+ 
+  </div>
 
 <div id="usuario" class="tabcontent">
   <h3>Datos de Registro</h3>
  
 </div>
+
+

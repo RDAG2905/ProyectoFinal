@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const model = require('../models/CarritoMongoDb');    
 const carrito = require('../Business/Carrito')
-const config = require('config')
+const config = require('config');
+const logger = require('../logger');
 const mongoConnectionString = config.get('mongoDB.connection')  
 
 
@@ -15,8 +16,19 @@ class ContenedorCarritoMongo{
     }
    
      
-    async getCarritoConProductos(id){
-      return await model.findById(id)
+    async getCarritoConProductos(idCarrito){
+        logger.info(`carrito con Productos ${idCarrito}`)
+        
+        /*
+        let idCar = idx.idCarrito
+        logger.info(typeof idCar)
+        logger.info(`idx: ${idCar}`)*/
+        logger.info(typeof idCarrito)
+        let carro = JSON.parse(idCarrito)
+        let array = Object.values(carro)
+        logger.info(`carro : ${array[0]}`)
+        let idx = array[0]
+      return await model.findById(idx)
     }
 
 
@@ -24,7 +36,8 @@ class ContenedorCarritoMongo{
     async saveCarrito(idUsuario){
         let unCarrito = new carrito()
         const modelCarrito = model(unCarrito);
-        return await modelCarrito.save();
+        let changuito = await modelCarrito.save();
+        return changuito._id
         
     }
 
@@ -39,10 +52,20 @@ class ContenedorCarritoMongo{
 
 
 
-    async AgregarProductoAlCarrito(idCarrito,producto){
-        let carrito = await this.getCarritoConProductos(idCarrito)
+    async AgregarProductoAlCarrito(idCarro,producto){
+        logger.info(`idCarro: ${idCarro}`)
+        
+        //let idChango =  mongoose.Types.ObjectId.prototype.toHexS
+        //let idChango = mongoose.Types.ObjectId(idCarro.idCarrito)
+        //let idChango =  mongoose.Types.ObjectId.prototype.toHexString(idCarro.idCarrito)
+        //logger.info(`idChango: ${idChango}`)
+        let carrito = await this.getCarritoConProductos(idCarro)
+        logger.info(`carritoDB : ${carrito}`)
         carrito.productos.push(producto)
-        this.editarCarrito(carrito,carrito._id)       
+        let carritoEditado = await this.editarCarrito(carrito,carrito._id) 
+        logger.info(`carritoEditado : ${carritoEditado}`)
+        return carritoEditado
+       // this.getCarritoConProductos(carrito._id)      
     } 
 
 
@@ -58,6 +81,7 @@ class ContenedorCarritoMongo{
 
 
      async editarCarrito(carrito,idBuscado){
+       // let id = new mongoose.Types.ObjectId(idBuscado) 
         return await model.findByIdAndUpdate(idBuscado,carrito)           
     }
 }
