@@ -1,0 +1,18 @@
+
+
+.btn-grey-border {
+    background: #87bb38;
+    color: #fff;
+    border: 1px solid #87bb38;
+}
+
+body {
+    background: #eee;
+    font-family: 'Nunito',sans-serif!important;
+}
+
+Barra de navegación y los contenedores internos Blancos
+
+ver índigo para los botones
+
+

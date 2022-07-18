@@ -14,39 +14,38 @@
     <div class="jumbotron" id="contenedor">
         <h2 class="text-primary text-center">Registro de Usuario</h1>
             <br>
-        <form action="/login" method="post" >           
-            <input type="text" class="form-control" id="username" placeholder="EMAIL">
-            <input type="password" class="form-control" id="password" placeholder="PASSWORD">
-            <input type="text" class="form-control" id="nombre" placeholder="NOMBRE">
-            <input type="text" class="form-control" id="direccion" placeholder="DIRECCION">
-            <input type="text" class="form-control" id="edad" placeholder="EDAD">
-            <input type="text" class="form-control" id="telefono" placeholder="TELEFONO">
+        <form method="post" id="myForm" >           
+            <input type="text" class="form-control" id="username"  name="username" placeholder="EMAIL">
+            <input type="password" class="form-control" id="password" name ="password" placeholder="PASSWORD">
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="NOMBRE">
+            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="DIRECCION">
+            <input type="text" class="form-control" id="edad" name="edad"  placeholder="EDAD">
+            <input type="text" class="form-control" id="telefono"name="telefono" placeholder="TELEFONO">
             <br>
             <div class="form-group">
-                <select name="" id="comboTipoUsuario" class="form-control">
-                 <option value="1">Cliente</option>
-                 <option value="2">Administrador</option>
+                <select name="tipoUsuario" id="comboTipoUsuario" class="form-control">
+                 <option value="false">Cliente</option>
+                 <option value="true">Administrador</option>
                 </select>
             </div>
-        
+        </form>
             <br>
+        <form id="formFile">
             <div class="form-group">
-                <input type="file" name="file" id="foto"/>
-                <!--button type="submit" class="btn btn-sm btn-info">
-                    <span class="glyphicon glyphicon-open" style="margin-left:-10px;"></span>
-                    &nbsp;Subir Foto o Avatar
-                </button-->
+                <input type="file" name="myFile" id="foto"/>
+               
             </div>
+        </form>
             <br>
            
             <div class="form-group">
-                <input type="button" value="Registrarse" class="btn btn-sm btn-primary" onclick="registrarse()" id="btnRegistrar">   
+                <input type="button" value="Registrarse" class="btn btn-sm btn-primary" onclick="upload()" id="btnRegistrar">   
             </div>
             <div class="form-group">
                  <input type="button" value="Login" class="btn btn-sm btn-primary" onclick="getLoginView()" id="btnEnviar">
             </div>
                     
-        </form>
+
     </div>
     
 </body>

@@ -28,9 +28,13 @@ const login =()=>{
 }
 
 
+
+
 const initCarrito =()=> localStorage.setItem("idCarrito",0)
 const getIdCarrito = () => localStorage.getItem("idCarrito")
 const setIdCarrito =(id)=> localStorage.setItem("idCarrito",id)
+
+
 
 
 const registrarse =()=>{
@@ -42,8 +46,7 @@ const registrarse =()=>{
   let telefono = document.querySelector('#telefono').value
   let selection = document.getElementById("comboTipoUsuario");
   let tipoUsuario = selection.selectedOptions[0].value
-  //console.log(`tipoUsuario: ${tipoUsuario}`)
-  let foto = document.querySelector('#foto')
+  let fotoUrl = pathFoto
   let user = {
     username,
     password,
@@ -51,37 +54,59 @@ const registrarse =()=>{
     direccion,
     edad,
     telefono,
-    tipoUsuario
+    tipoUsuario,
+    fotoUrl
   }
-  
-  let formData = new FormData()
-  formData.append('user',user)
-  formData.append('foto',foto.files[0])
-  //let data = JSON.stringify(formData)
-  console.log(formData)
-
+ 
   fetch('/signup', {
     method: "post",
-    headers: {
+   headers: {
       'Accept': 'application/json',
-      'Content-Type': 'multipart/form-data'
-     // 'Content-Type': 'application/json'
-    },
-    /*body: JSON.stringify({
+     'Content-Type': 'application/json'
+   },
+    body: JSON.stringify({
       username: username,
       password: password,
       nombre : nombre,
       direccion : direccion,
       edad:edad,
-      telefono:telefono  ,
-      tipoUsuario:tipoUsuario   
-    })*/
-  body: formData
- //body: JSON.stringify(user)
+      telefono:telefono,
+      tipoUsuario:tipoUsuario,
+      fotoUrl:fotoUrl  
+    })
+  
   })
   .then(response => response.text()
     )
-  .then(plantilla => document.querySelector('body').innerHTML = plantilla)
+  .then(res => alert(res))
+  //.then(plantilla => document.querySelector('body').innerHTML = plantilla)
+  .catch(error=>
+    error)
+}
+
+
+
+let pathFoto = ''
+const upload =()=>{
+  
+  let form = document.querySelector('#formFile')
+  let formData = new FormData(form)
+  console.log(formData)
+  debugger
+
+  fetch('/files/uploadfile', {
+    method: "post", 
+  body: formData
+ 
+  })
+  .then(response =>response.text()   
+  )
+  .then(texto =>{
+    let urlFoto = JSON.parse(texto)
+    pathFoto = urlFoto.path
+    console.log(pathFoto)
+    registrarse()
+  }) 
   .catch(error=>
     error)
 }
@@ -110,6 +135,7 @@ const logout =()=>{
   .catch(error=>
     error)
 }
+
 
 
 
@@ -199,7 +225,7 @@ const getProductos = ()=>{
   })
   .then(response => response.text())
   .then(result =>{
-    //document.querySelector('tbody').innerHTML=""
+    
      cargarTablaProductos(JSON.parse(result),"tablaProductos")  
   })
   
@@ -214,19 +240,22 @@ const getProductos = ()=>{
         const cargarTablaProductos = (lista,tablaX)=>{
             let productos = lista.productos
             let tabla = document.getElementById(tablaX);
-            //console.log(tabla)
+          
+            while(tabla.rows.length > 1) { tabla.deleteRow(1); } 
             
             let tablaLlena = "";
             for (var i =0; i< productos.length; i++){
-              
-                //tablaLlena +=  '<tr>'
+                 
                 tablaLlena += '<td style="display:none">' + productos[i]._id + '</td>'
                 tablaLlena += '<td style="width:200px">' + productos[i].nombre + '</td>'
                 tablaLlena += '<td style="text-align:center;width:200px">' + productos[i].precio +  '</td>'
                 tablaLlena += '<td style="text-align:center;width:200px"><img width="50" src=' + productos[i].fotoUrl + ' alt="not found" ></td>'
-                tablaLlena += '<td><button class="btn btn-toolbar" onclick="agregarProductoAlCarrito(this)" style="border-radius: 50%;height:42px;width:42px"><i class="glyphicon glyphicon-shopping-cart" style="color:#337ab7;font-size:18px;"></i></button></td>'
-                tablaLlena += '<td style="margin-left:-80px;"><button class="btn btn-toolbar" style="border-radius: 50%;height:42px;width:42px"><i class="glyphicon glyphicon-floppy-remove" style="color:orangered;font-size:18px;"></i></button></td>'
-              // tablaLlena += '</tr>'
+                if(tablaX == 'tablaProductos'){
+                  tablaLlena += '<td><button class="btn btn-toolbar" onclick="agregarProductoAlCarrito(this)" style="border-radius: 50%;height:42px;width:42px"><i class="glyphicon glyphicon-shopping-cart" style="color:#337ab7;font-size:18px;"></i></button></td>'
+                }else{
+                 // tablaLlena += '<td style="margin-left:-80px;"><button class="btn btn-toolbar" style="border-radius: 50%;height:42px;width:42px"><i class="glyphicon glyphicon-floppy-remove" style="color:orangered;font-size:18px;"></i></button></td>'
+                }
+                
                 let fila = document.createElement('tr')
                 fila.innerHTML= tablaLlena
                 tabla.append(fila)
@@ -251,9 +280,7 @@ const getProductosCarrito = ()=>{
   .then(response => response.text())
   .then(result => 
     {
-      //console.log(result) 
-     // document.getElementById('divCarrito').innerHTML=""
-     //document.getElementById('tableCont').innerHTML = result
+      
      cargarTablaProductos(JSON.parse(result),"tablaProductosCarrito")
       
     })
@@ -358,12 +385,66 @@ const crearCarrito = ()=>{
   .then(response => response.text())
   .then(id => 
     { 
+      console.log(`carrito id from server : ${id}`)
       setIdCarrito(id)
      
     })
   .catch(error => alert(error))
  
 }
+
+
+
+const eliminarCarrito = ()=>{
+  let id = getIdCarrito()
+  fetch('/api/carrito/' + id, {
+    method: "delete",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.text())
+  .then(carrito => 
+    { 
+      let tabla = document.getElementById('tablaProductosCarrito');          
+      while(tabla.rows.length > 1) { tabla.deleteRow(1); } 
+      initCarrito();
+      crearCarrito();
+      alert('El carrito ha sido eliminado')
+     
+    })
+  .catch(error => alert(error))
+ 
+}
+
+
+
+
+const crearPedido = ()=>{
+  let carrito = JSON.parse(getIdCarrito())
+  console.log(`id Carrito: ${carrito.idCarrito}`)
+  console.log(typeof(carrito.idCarrito))
+  fetch('/api/pedidos/crearPedido', {
+    method: "post",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body:JSON.stringify({
+    
+      carrito
+    })
+  })
+  .then(response => response.text())
+  .then(msg => 
+    { 
+     alert(msg)    
+    })
+  .catch(error => alert(error))
+ 
+}
+
 
 
 
@@ -374,6 +455,9 @@ const getIdFromRow = (element)=>{
  
   return id
  }
+
+
+
 
 
 const agregarProductoAlCarrito =(element)=>{

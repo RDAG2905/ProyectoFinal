@@ -17,16 +17,9 @@ class ContenedorCarritoMongo{
    
      
     async getCarritoConProductos(idCarrito){
-        logger.info(`carrito con Productos ${idCarrito}`)
-        
-        /*
-        let idCar = idx.idCarrito
-        logger.info(typeof idCar)
-        logger.info(`idx: ${idCar}`)*/
-        logger.info(typeof idCarrito)
         let carro = JSON.parse(idCarrito)
         let array = Object.values(carro)
-        logger.info(`carro : ${array[0]}`)
+        //logger.info(`carro : ${array[0]}`)
         let idx = array[0]
       return await model.findById(idx)
     }
@@ -53,19 +46,16 @@ class ContenedorCarritoMongo{
 
 
     async AgregarProductoAlCarrito(idCarro,producto){
-        logger.info(`idCarro: ${idCarro}`)
-        logger.info(`producto Agregado Al carrito: ${producto}`)
-        //let idChango =  mongoose.Types.ObjectId.prototype.toHexS
-        //let idChango = mongoose.Types.ObjectId(idCarro.idCarrito)
-        //let idChango =  mongoose.Types.ObjectId.prototype.toHexString(idCarro.idCarrito)
-        //logger.info(`idChango: ${idChango}`)
+        //logger.info(`idCarro: ${idCarro}`)
+        //logger.info(`producto Agregado Al carrito: ${producto}`)
+        
         let carrito = await this.getCarritoConProductos(idCarro)
-        logger.info(`carritoDB : ${carrito}`)
+        //logger.info(`carritoDB : ${carrito}`)
         carrito.productos.push(producto)
-      //  let carritoEditado = await this.editarCarrito(carrito,carrito._id) 
+      
          this.editarCarrito(carrito,carrito._id)
          .then(carritoEditado =>{
-            logger.info(`carritoEditado : ${carritoEditado}`)
+         //   logger.info(`carritoEditado : ${carritoEditado}`)
             return carrito
          } 
          )
@@ -87,11 +77,11 @@ class ContenedorCarritoMongo{
 
 
      async editarCarrito(carrito,idBuscado){
-        logger.info(`carrito a editar: ${carrito}`)
-        logger.info(`idBuscado a editar: ${idBuscado}`)
+       // logger.info(`carrito a editar: ${carrito}`)
+       // logger.info(`idBuscado a editar: ${idBuscado}`)
        // let id = new mongoose.Types.ObjectId(idBuscado) 
        return await model.findByIdAndUpdate(idBuscado,carrito) 
-        //await model.updateOne()(idBuscado,carrito)        
+           
     }
 }
 

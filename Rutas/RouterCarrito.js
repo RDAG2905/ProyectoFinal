@@ -15,20 +15,21 @@ const { info } = require('../logger.js')
 const passport = require('passport')
 let util = require('util');
 
+
 router.post('/',(req,res)=>{ 
     let factory = new daoFactory(config.get('tipoPersistencia.persistenciaB')) 
     let dao = factory.getDao()  
     let idUsuario = passport.session._id
-    logger.info(`idUsuario: ${idUsuario}`)
+  
      dao.saveCarrito(idUsuario)
         .then(carritoId => { 
-           // logger.info(`carrito ${carritoId}`)
+           
             let idCarrito = carritoId
             res.send({idCarrito})            
-            //res.render("CarritoConProductos",{carrito})
+            
          })
         .catch(error =>
-            //res.send({error})
+           
             res.render("Error",{error}) 
         )        
 })
@@ -53,10 +54,11 @@ router.delete('/:id',(req,res)=>{
 
  
 //pendiente*****************************
+
 router.get('/:id/productos',async (req,res)=>{
    let idCarrito = req.params.id
-   logger.info(`idCarrito Request: ${idCarrito}`)
-   if (idCarrito == "undefined"){
+  
+   if (idCarrito == ("undefined" || null || 0 )){
         res.render("CarritoVacio")
    }else{
         let factory = new daoFactory(config.get('tipoPersistencia.persistenciaB')) 
@@ -67,9 +69,6 @@ router.get('/:id/productos',async (req,res)=>{
             res.render("Error",{error})
         } else{
             let productos = carrito.productos
-            logger.info(util.inspect(productos))
-
-           // res.render("CarritoConProductos",{productos})
             res.send({productos})
         }  
 
@@ -85,9 +84,9 @@ router.get('/:id/productos',async (req,res)=>{
 //pendiente**********************************
 router.post('/:id/productos', async (req,res)=>{
     let idProductoNuevo = req.body
-    //logger.info(`idProductoNuevo: ${Object.values(idProductoNuevo)}`)
+    
     let idCarrito = req.params.id
-     logger.info(`idCarrito: ${idCarrito}`)
+   
     let factory2 = new daoFactory(config.get('tipoPersistencia.persistenciaB')) 
     if(factory2.tipoPersistencia == 'carritoSql'){
        /* daoCarritos.AgregarProductoAlCarrito(idCarrito,idProductoNuevo)
@@ -104,16 +103,14 @@ router.post('/:id/productos', async (req,res)=>{
     let factory1 = new daoFactory(config.get('tipoPersistencia.persistenciaA')) 
     let daoProductos = factory1.getDao()
     let productoAgregado = await daoProductos.getById(idProductoNuevo)
-    logger.info(productoAgregado)
+   
         if(!productoAgregado){
             res.send({errorProducto})
         }else{            
              await daoCarritos.AgregarProductoAlCarrito(idCarrito,productoAgregado)
-             //let cProductos =  ;logger.info(`cProductos: ${cProductos}`)
+           
                 .then(carrito => {
-                    /*let productos = carrito.productos
-                    logger.info(`cProductos: ${productos}`)
-                    res.render("CarritoConProductos",{productos}) }      */
+                   
                     res.send({carrito}) }
                 )
                 /*.catch(error=>

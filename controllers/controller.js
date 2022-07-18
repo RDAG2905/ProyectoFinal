@@ -1,6 +1,9 @@
 const logger = require('../logger.js')
 const session = require('express-session')
 const daoFactory = require('../Dao/DaoFactory')
+const passport = require('passport')
+const {notificarRegistro} = require('../helpers/mailSender')
+const { createTransport} = require('nodemailer')
 
 
 
@@ -13,6 +16,7 @@ const postLogin = (req, res)=> {
 
 
 
+
 const getFailLogin = (req, res) =>{
   logger.error('error en login');
   res.sendFile(global.root + '/public/ErrorLogin.html');
@@ -20,13 +24,14 @@ const getFailLogin = (req, res) =>{
 
 
 
-function postSignup (req, res) {
-  var user = req.user;
-  logger.info(`req.body ${req.body}`)
-  logger.info(`req.file ${req.file}`)
- let bienvenida =`Usuario generado ${user.username}`
- res.render("Home",{bienvenida})
- //res.render("welcome",{bienvenida})
+
+const postSignup =  async (req, res)=> {
+ 
+  notificarRegistro()
+  let success = "Usuario registrado con éxito"
+  res.send({ success})
+ 
+ 
 }
 
 
@@ -46,8 +51,9 @@ function getRegisterView (req, res) {
 
 
 
+
 const logout = (req,res) => {
-    let nombre = req.user || 'Desconocido'
+    let nombre = passport.session.username || 'Desconocido'
     req.session.destroy( err => {      
         if(!err) {
           logger.info(req.session)
@@ -79,16 +85,20 @@ const info = (req,res) => {
 }
 
 
+
+
 const getUserData = (req,res)=>{
-      let user = session.user
-      let id = user._id
+      let user = passport.session
+      logger.info(`user data : ${user}`)
+      res.render('UserData',user)
+      /*let id = user._id
       let factory = new daoFactory("") 
       let dao = factory.getDao()  
       dao.getById(id)
          .then(data =>
-             //res.send({data})
-             res.render('UserData',data)
-         )        
+             
+             res.render('UserData',user)
+         )  */      
 }
 
 

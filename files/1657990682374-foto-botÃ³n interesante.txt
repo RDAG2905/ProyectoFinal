@@ -1,0 +1,22 @@
+.ns-rit18-e-16 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    border: 1px solid #4AB101;
+    position: relative;
+    font-weight: 400;
+    text-align: center;
+    text-transform: capitalize;}
+
+.ns-pcwtx-e-10 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    border: 1px solid #0088ff;
+    position: relative;
+    font-weight: 400;
+    text-align: center;
+    text-transform: capitalize;
+}

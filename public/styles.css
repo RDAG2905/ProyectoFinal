@@ -62,6 +62,9 @@ body * {
     margin-left: 38%;
 }
 
+#btnLogout{
+  margin-left:-80px;
+}
 
 
 .inputGray{

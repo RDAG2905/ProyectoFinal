@@ -10,7 +10,7 @@ const LocalStrategy = require('passport-local').Strategy
 const User = require('./models/User');
 const Db = require('./controllers/DbController')
 const config = require('config');
-global.root = __dirname;
+
 const bCrypt = require('./helpers/bCryptHelper')
 let util = require('util');
 const parseArgs = require('minimist');
@@ -18,6 +18,7 @@ const dotenv = require('dotenv').config()
 const randomRouter = require('./Rutas/RandomRouter')
 const routerProductos = require('./Rutas/RouterProductos')
 const routerCarrito = require('./Rutas/RouterCarrito')
+const routerPedidos = require('./Rutas/RouterPedidos')
 const cluster = require('cluster')
 const {cpus} = require('os')
 
@@ -25,15 +26,20 @@ let PORT = process.env.PORT
 const modoCluster = process.argv[4] == 'CLUSTER'
 const compression = require('compression')
 const logger = require('./logger.js')
-let multer = require('multer');
-let upload = multer();
+const uploadFilesRouter = require('./Rutas/uploadFileRouter.js')
+const path = require('path')
+
+
+global.root = __dirname;
+global.adminEmail = "tyrel.ullrich@ethereal.email"
+global.celAdmin = ""
 
 passport.use('signup', new LocalStrategy({
     passReqToCallback: true
   },
     (req, username, password, done) => {
       
-      logger.info(Object.values(req.body))
+     // logger.info(Object.values(req.body))
       User.findOne({ 'username': username }, function (err, user) {
   
         if (err) {
@@ -45,6 +51,7 @@ passport.use('signup', new LocalStrategy({
           logger.info('User already exists');
           return done(null, false)
         }
+        
         const newUser = {
             username: username,
             password: bCrypt.createHash(password),
@@ -53,7 +60,7 @@ passport.use('signup', new LocalStrategy({
             edad : req.body.edad,
             telefono: req.body.telefono,
             tipoUsuario : req.body.tipoUsuario,
-            fotoUrl : ""
+            fotoUrl : req.body.fotoUrl
           }
        
   
@@ -62,15 +69,17 @@ passport.use('signup', new LocalStrategy({
             logger.error('Error in Saving user: ' + err);
             return done(err);
           }
-          logger.info(user)
+          
           logger.info('User Registration succesful');
-          session.user = newUser
+          passport.session = newUser
+        //  logger.info(`usuarioSession : ${passport.session}`)
           return done(null, userWithId);
         });
       });
     })
   )
   
+
   passport.use('login', new LocalStrategy(
     (username, password, done) => {
       User.findOne({ username }, (err, user) => {
@@ -86,21 +95,18 @@ passport.use('signup', new LocalStrategy({
           logger.info('Invalid Password');
           return done(null, false);
         }
-        user.changuito = 1020
+        logger.info(`__dirname: ${__dirname}`)
         passport.session = user
-       /* let changuito = {
-          id : 100000,
-          values : [1,2,3]
-        }*/
-        //passport.session = changuito
-        logger.info(passport.session)
-        //session.user = user
-        //logger.info(session.user)
+       
+       // logger.info(passport.session)
+       
         return done(null, user);
       });
     })
   );
   
+
+
   passport.serializeUser((user, done) => {
     done(null, user._id);
   });
@@ -134,11 +140,11 @@ if (modoCluster && cluster.isPrimary) {
 const app = express()
 app.use(express.json({limit: '25mb'}));
 app.use(express.urlencoded({limit: '25mb',extended:true}));
-//app.use(express.json())
-//app.use(express.urlencoded({extended:true}))
-app.use(upload.array()); 
+
 app.use(express.static('public'));
-app.use(express.static('files'));
+app.use(express.static(path.join(__dirname, "/files")));
+//app.use(express.static('files'));
+
 
 const handlebars = require('express-handlebars')    
 const { header, redirect } = require('express/lib/response')
@@ -171,13 +177,14 @@ app.use(validateSession)
 //////////////////////////////////////////////////////////////////////
 
 
-app.post("/login",passport.authenticate('login', { failureRedirect: '/failLogin' }), controller.postLogin)
+app.post("/login",passport.authenticate('login', { failureRedirect: '/failLogin' }),controller.postLogin)
 app.get('/failLogin', controller.getFailLogin);
-app.post('/signup', passport.authenticate('signup', { successRedirect: '/signup', failureRedirect: '/failSignup' }), controller.postSignup);
+app.post('/signup', passport.authenticate('signup', { successRedirect: '/signup', failureRedirect: '/failSignup' }));
 //app.post('/signup', controller.postSignup);
+//app.post('/upload',upload.single('myFile'));
 
 app.get('/failSignup', controller.getFailSignup);
-app.get('/signup', controller.postLogin);
+app.get('/signup', controller.postSignup);
 app.get('/logout', controller.logout);
 app.get('/registerView', controller.getRegisterView);
 app.get('/getUserData', controller.getUserData);
@@ -191,6 +198,8 @@ app.get('/info',controller.info)
 app.use('/api/randoms',randomRouter)
 app.use('/api/productos',routerProductos)
 app.use('/api/carrito',routerCarrito)
+app.use('/api/pedidos',routerPedidos)
+app.use('/files', uploadFilesRouter)
 
 ///////////// Manejo de rutas no implementadas ////////////////
 
