@@ -14,53 +14,53 @@
 
 <!-- Tab content -->
 <div id="productos" class="tabcontent" >
-       <br>
+       <!--br>
       <button id="btnAgregarProducto" onclick="verDivAgregar()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Agregar Producto</button>
 
-      <hr>
+      <hr-->
 
       <div id="contenedorPrincipal" >
-                <div id="divFormAgregar" style="display:none">
-                      <h4 class="text-primary">Ingrese el  Producto</h4>
-                      </br>
-                          <form action="">
+                <!--div id="divFormAgregar" style="display:none">
+                    <h4 class="text-primary">Ingrese el  Producto</h4>
+                    </br>
+                        <form action="">
 
                                 <div class="row">
-                                  <div class="col-xs-6">
+                                <div class="col-xs-6">
                                     <label >Nombre:</label>
-                                  </div>
-                                  <div class="col-xs-12">
+                                </div>
+                                <div class="col-xs-12">
                                     <input type="text" id="nombre" class="form-control input-xs">
-                                  </div>
+                                </div>
                                 </div>  
 
                                 <div class="row">
-                                  <div class="col-xs-6">
+                                <div class="col-xs-6">
                                     <label for="">Precio:</label>
-                                  </div>
-                                  <div class="col-xs-12">
+                                </div>
+                                <div class="col-xs-12">
                                     <input type="text" id="precio" class="form-control input-xs">
-                                  </div>
                                 </div>
-                              
+                                </div>
+                            
                                 <div class="row">
-                                  <div class="col-xs-6">
+                                <div class="col-xs-6">
                                     <label for="">Foto Url:</label>
-                                  </div>
-                                  <div class="col-xs-12">
-                                    <input type="text" id="fotoUrl" class="form-control input-xs">
-                                  </div>
                                 </div>
-                          </form>
-                      
-                      </br>
+                                <div class="col-xs-12">
+                                    <input type="text" id="fotoUrl" class="form-control input-xs">
+                                </div>
+                                </div>
+                        </form>
+                    
+                    </br>
 
                     <button id="btnCrearProducto" onclick="crearProducto()" class="btn btn-primary">Crear Producto</button>
              
-                </div>   
-          <br> 
-           <button id="btnBuscarProductos" onclick="getProductos()" class="btn btn-primary">Buscar Productos</button>  
-      </div>
+                </div-->   
+             <br> 
+            <button id="btnBuscarProductos" onclick="getProductos()" class="btn btn-primary">Buscar Productos</button>  
+        </div>
               <br>
               <br>      
 
@@ -110,9 +110,15 @@
                       </thead>
                     </table>
                     <br>
-                    <div id="divTotalGeneral">
-                      <label for="">Total General</label>
-                      <input type="number" id="totalGeneral" value="0" disabled>
+                    <div id="divTotalGeneral" class="row">
+                        <div class="col-xs-3">
+                            <label for="" class="text-primary">Total General</label>
+                        </div>
+                        <div  class="col-xs-3">
+                            <input type="number" id="totalGeneral" value="0" disabled>
+                        </div>
+                     
+                      
                     </div>
               </div>
             

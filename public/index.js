@@ -1,7 +1,9 @@
+//const { ConferenceContext } = require("twilio/lib/rest/insights/v1/conference")
 
 
 
 const login =()=>{
+  
   let username = document.querySelector('#username').value
   let password = document.querySelector('#password').value
   fetch('/login', {
@@ -25,6 +27,7 @@ const login =()=>{
   
     initCarrito()
     crearCarrito()
+    
 }
 
 
@@ -238,7 +241,8 @@ const getProductos = ()=>{
 
 
         const cargarTablaProductos = (lista,tablaX)=>{
-            let productos = lista.productos
+          
+            let productos = lista.productos || lista.chango.productos
             let tabla = document.getElementById(tablaX);
           
             while(tabla.rows.length > 1) { tabla.deleteRow(1); } 
@@ -251,15 +255,20 @@ const getProductos = ()=>{
                 tablaLlena += '<td style="text-align:center;width:200px">' + productos[i].precio +  '</td>'
                 tablaLlena += '<td style="text-align:center;width:200px"><img width="50" src=' + productos[i].fotoUrl + ' alt="not found" ></td>'
                 if(tablaX == 'tablaProductos'){
-                  tablaLlena += '<td><button class="btn btn-toolbar" onclick="agregarProductoAlCarrito(this)" style="border-radius: 50%;height:42px;width:42px"><i class="glyphicon glyphicon-shopping-cart" style="color:#337ab7;font-size:18px;"></i></button></td>'
+                  tablaLlena += `<td><input type="number" class="form-control" style="width:70px;" value="${(productos[i].cantidad != undefined)? productos[i].cantidad : 0 }"/>`+ '</td>'
+                  tablaLlena += '<td><button class="btn btn-toolbar" onclick="agregarProductoAlCarrito(this)" style="border-radius: 50%;height:42px;width:42px;margin-left:5px;"><i class="glyphicon glyphicon-shopping-cart" style="color:#337ab7;font-size:18px;margin-left:-3px;"></i></button></td>'
+                  tablaLlena += '<td ><button class="btn btn-toolbar" style="border-radius: 50%;height:42px;width:42px;margin-left:5px;" onclick="eliminarProducto()"><i class="glyphicon glyphicon-floppy-remove" style="color:orangered;font-size:18px;margin-left:-3px;"></i></button></td>'
                 }else{
-                 // tablaLlena += '<td style="margin-left:-80px;"><button class="btn btn-toolbar" style="border-radius: 50%;height:42px;width:42px"><i class="glyphicon glyphicon-floppy-remove" style="color:orangered;font-size:18px;"></i></button></td>'
+                  tablaLlena += `<td><input type="number" class="form-control" style="width:70px;" disabled value="${(productos[i].cantidad != undefined)? productos[i].cantidad : 0 }"/>`+ '</td>'
                 }
                 
                 let fila = document.createElement('tr')
                 fila.innerHTML= tablaLlena
                 tabla.append(fila)
                 tablaLlena = "";
+          }
+          if(lista.chango){
+            document.querySelector('#totalGeneral').value = lista.chango.totalGeneral
           }
         }
 
@@ -280,7 +289,10 @@ const getProductosCarrito = ()=>{
   .then(response => response.text())
   .then(result => 
     {
-      
+    console.log(result)
+    console.log(typeof(result))
+    let res = JSON.parse(result)
+    console.log(`res: ${res.chango}`)
      cargarTablaProductos(JSON.parse(result),"tablaProductosCarrito")
       
     })
@@ -383,10 +395,13 @@ const crearCarrito = ()=>{
     }
   })
   .then(response => response.text())
-  .then(id => 
+  .then(result => 
     { 
-      console.log(`carrito id from server : ${id}`)
-      setIdCarrito(id)
+      console.log(`carrito id from server : ${result}`)
+      console.log(typeof result)
+      setIdCarrito(result)
+      let id = JSON.parse(result).idCarrito
+      localStorage.setItem("idCarritoString",id)
      
     })
   .catch(error => alert(error))
@@ -412,6 +427,7 @@ const eliminarCarrito = ()=>{
       initCarrito();
       crearCarrito();
       alert('El carrito ha sido eliminado')
+      document.querySelector('#totalGeneral').value= 0
      
     })
   .catch(error => alert(error))
@@ -422,18 +438,17 @@ const eliminarCarrito = ()=>{
 
 
 const crearPedido = ()=>{
-  let carrito = JSON.parse(getIdCarrito())
-  console.log(`id Carrito: ${carrito.idCarrito}`)
-  console.log(typeof(carrito.idCarrito))
+
+  id = localStorage.getItem("idCarritoString")
+  
   fetch('/api/pedidos/crearPedido', {
     method: "post",
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body:JSON.stringify({
-    
-      carrito
+    body:JSON.stringify({    
+      id
     })
   })
   .then(response => response.text())
@@ -447,12 +462,13 @@ const crearPedido = ()=>{
 
 
 
-
+let cantidadProducto = 0
 const getIdFromRow = (element)=>{
   let td = element.parentNode
   let fila = td.parentNode
   let id = fila.children[0].textContent
- 
+  cantidadProducto = fila.children[4].children[0].value
+  //debugger
   return id
  }
 
@@ -463,37 +479,41 @@ const getIdFromRow = (element)=>{
 const agregarProductoAlCarrito =(element)=>{
   
   let idProducto = getIdFromRow(element)
- 
-  if(getIdCarrito() == 0){
-         
-     crearCarrito(`idProducto : ${idProducto}`)
-  }
-    let id = getIdCarrito()
+    
+     if(cantidadProducto > 0){
+       
+        if(getIdCarrito() == 0){             
+          crearCarrito(`idProducto : ${idProducto}`)
+        }
+          let id = getIdCarrito()
    
- 
-      fetch('/api/carrito/' + id + '/productos', {
-        method: "post",
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          id: idProducto
-        
-        })
-      })
-      .then(response => response.text()
-        )
-      .then(result => {
-        
-       getProductosCarrito()
-       alert('Producto agregado al carrito')
-      })
+            fetch('/api/carrito/' + id + '/productos', {
+              method: "post",
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                id: idProducto,
+                cantidad: cantidadProducto
+              
+              })
+            })
+            .then(response => response.text()
+              )
+            .then(result => {
+              
+            console.log(`result agregar producto ${result}`) 
+            getProductosCarrito()
+            alert('Producto agregado al carrito')
+            })
 
-      .catch(error=>
-        error)
-      
-      
+            .catch(error=>
+              error)
+            
+        }else{
+          alert('Debe seleccionar la cantidad')
+        }
     }
 
 

@@ -26,6 +26,7 @@
     "nodemailer": "^6.7.7",
     "passport": "^0.5.3",
     "passport-local": "^1.0.0",
+    "twilio": "^3.79.0",
     "winston": "^3.7.2"
   }
 }

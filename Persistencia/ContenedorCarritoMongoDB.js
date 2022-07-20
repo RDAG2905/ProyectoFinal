@@ -4,7 +4,7 @@ const carrito = require('../Business/Carrito')
 const config = require('config');
 const logger = require('../logger');
 const mongoConnectionString = config.get('mongoDB.connection')  
-
+const util = require('util')
 
 class ContenedorCarritoMongo{
        
@@ -17,9 +17,9 @@ class ContenedorCarritoMongo{
    
      
     async getCarritoConProductos(idCarrito){
+        logger.info(`idCarrito :${idCarrito}, typeof : ${typeof(idCarrito)}`)
         let carro = JSON.parse(idCarrito)
         let array = Object.values(carro)
-        //logger.info(`carro : ${array[0]}`)
         let idx = array[0]
       return await model.findById(idx)
     }
@@ -27,7 +27,7 @@ class ContenedorCarritoMongo{
 
 
     async saveCarrito(idUsuario){
-        let unCarrito = new carrito()
+        let unCarrito = new carrito(undefined)
         const modelCarrito = model(unCarrito);
         let changuito = await modelCarrito.save();
         return changuito._id
@@ -46,20 +46,18 @@ class ContenedorCarritoMongo{
 
 
     async AgregarProductoAlCarrito(idCarro,producto){
-        //logger.info(`idCarro: ${idCarro}`)
-        //logger.info(`producto Agregado Al carrito: ${producto}`)
-        
+       
         let carrito = await this.getCarritoConProductos(idCarro)
         //logger.info(`carritoDB : ${carrito}`)
         carrito.productos.push(producto)
       
-         this.editarCarrito(carrito,carrito._id)
-         .then(carritoEditado =>{
-         //   logger.info(`carritoEditado : ${carritoEditado}`)
-            return carrito
-         } 
-         )
-       
+        let carritoEditado = await this.editarCarrito(carrito,carrito._id)
+         //.then(carritoEditado =>{
+         //   return carrito
+         //} 
+         //)
+         logger.info(`carrito editado agregar: ${util.inspect(carritoEditado)}`)
+        return carritoEditado;
        
        // this.getCarritoConProductos(carrito._id)      
     } 

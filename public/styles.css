@@ -63,7 +63,7 @@ body * {
 }
 
 #btnLogout{
-  margin-left:-80px;
+  margin-left:-10%;
 }
 
 
@@ -94,7 +94,8 @@ body{
     overflow: hidden;
    /* border: 1px solid #ccc;*/
    /* background-color: #f1f1f1;*/
-    background-color: #f5f5f5;
+   /* background-color: #f5f5f5;*/
+    background-color: black;
     width:160%;
     margin-left:-200px;
     margin-right:-100px;
@@ -118,8 +119,9 @@ body{
   /* Style the buttons that are used to open the tab content */
   .tab button {
     background-color: inherit;
-    color:#5bc0de;
-    color:#337ab7;
+  /*  color:#5bc0de;
+    color:#337ab7;*/
+    color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     width:120px;
@@ -208,4 +210,8 @@ table{
 
 td{
   padding-left:10px;
+}
+
+#divTotalGeneral *{
+  margin-left: 85%;
 }

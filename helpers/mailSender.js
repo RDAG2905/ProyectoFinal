@@ -2,24 +2,33 @@ const passport = require("passport")
 const {transporter} = require('../helpers/nodeMailerHelper')
 const logger = require('../logger.js')
 
-const {username,nombre,direccion,telefono} = passport.session
-let textoUserName = `<br>username : ${username}</br>`
-let textoNombre = `<br>nombre : ${nombre}</br>`
-let textoDireccion= `<br>direccion : ${direccion}</br>`
-let textoTelefono= `<br>telefono : ${telefono}</br>`
 
-let mensajeRegistro = textoUserName + textoNombre + textoDireccion + textoTelefono
- 
 
-const notificarRegistro = async ()=>{
+
+
+const getMessage =(body)=>{
+   const {username,nombre,direccion,telefono} = passport.session
+   logger.info(`passport.session getMessage : ${passport.session}`)
+   let textoUserName = `<br>username : ${username}</br>`
+   let textoNombre = `<br>nombre : ${nombre}</br>`
+   let textoDireccion= `<br>direccion : ${direccion}</br>`
+   let textoTelefono= `<br>telefono : ${telefono}</br>`
+   
+   let mensajeRegistro = textoUserName + textoNombre + textoDireccion + textoTelefono
+   return mensajeRegistro
+}
+
+
+
+const notificarRegistro = async (body)=>{
   
+   let mensaje = getMessage(body)
     const mailRegisterOptions = {
-        from: username,
+        from: body.username,
         to: global.adminEmail,
         subject: 'Nuevo Registro',
-        html: mensajeRegistro
+        html: mensaje
      }
-
 
  try {
     let info = await transporter.sendMail(mailRegisterOptions)
@@ -32,21 +41,40 @@ const notificarRegistro = async ()=>{
 
 
 
-const notificarPedido = async (listaDeProductos)=>{
+const armarPedidoHtml = (chango)=>{
+   let mensajePedido = ""
+   let productos = chango.productos
+   productos.forEach(element => {
+     let producto = `<br>producto : ${element.nombre}</br>`
+     let precio = `<br>precio : ${element.precio}</br>`
+     let cantidad = `<br>cantidad : ${element.cantidad}</br>`
+     let salto = '<br>-----------------</br>'
+     mensajePedido += (producto + precio + cantidad + salto)
+   });
+mensajePedido += `<br>total : ${chango.totalGeneral}</br>`
+mensajePedido += '<br>-----------------</br>'
+return mensajePedido
+}
+
+
+
+const notificarPedido = async (chango)=>{
   
-    
+   let mensajePedido = armarPedidoHtml(chango) 
+   let {username } = passport.session
+
     const mailPedidoOptions = {
         from: username,
         to: global.adminEmail,
         subject: 'Nuevo Pedido de ' + username,
-        html: listaDeProductos
-    }
+        html: mensajePedido
+      }
 
  try {
     let info = await transporter.sendMail(mailPedidoOptions)
     logger.info(info)
  } catch (error) {
-    logger.error(err)
+    logger.error(error)
  }
 
 }

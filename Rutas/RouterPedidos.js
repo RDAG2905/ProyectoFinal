@@ -6,6 +6,8 @@ const daoFactory = require('../Dao/DaoFactory')
 const logger = require('../logger')
 const {notificarPedido} = require('../helpers/mailSender') 
 const util = require('util')
+const { enviarSms , enviarWhatsapp } = require('../helpers/twilioHelper')
+let Changuito = require('../Business/Carrito')
 
 
 router.post('/crearPedido', async (req,res)=>{
@@ -15,7 +17,7 @@ router.post('/crearPedido', async (req,res)=>{
         let dao = factory.getDao()
         let carrito;
         try {
-            carrito = await dao.getCarritoConProductos(carritoReq.carrito)
+            carrito = await dao.getCarritoConProductos(JSON.stringify(carritoReq))
         } catch (error) {
             logger.error(error)
         }
@@ -25,16 +27,12 @@ router.post('/crearPedido', async (req,res)=>{
             logger.info(`carrito vacio :  ${carrito}`)
             res.send({error})
         } else{
-            let productos = carrito.productos
-            //logger.info(`productos: ${productos}`)
+           
             let lista = ""
-           
-            productos.array.forEach(element => {
-                logger.info(`productos pare el email : ${element}`)
-                lista += element.toString() 
-            });
-           
-            notificarPedido(lista)
+            let chango = new Changuito(carrito)
+            notificarPedido(chango)
+            enviarSms('Su pedido ha sido recibido y se encuentra en proceso')
+
             let msg = "Se ha notificado el pedido"
             res.send({msg})
         }

@@ -4,13 +4,18 @@ const daoFactory = require('../Dao/DaoFactory')
 const passport = require('passport')
 const {notificarRegistro} = require('../helpers/mailSender')
 const { createTransport} = require('nodemailer')
-
+const util = require('util')
 
 
 const postLogin = (req, res)=> {
   req.session.nombre = req.body.username
   let bienvenida =`Bienvenido ${req.session.nombre}`
-  res.render("Home",{bienvenida})
+  if(req.session.isAdmin){
+    res.render("Home",{bienvenida})
+  }else{
+    res.render("HomeClientes",{bienvenida})
+  }
+  
   
 }
 
@@ -26,12 +31,12 @@ const getFailLogin = (req, res) =>{
 
 
 const postSignup =  async (req, res)=> {
- 
-  notificarRegistro()
+  logger.info('req.body : ' + util.inspect(req.body))
+  notificarRegistro(req.body)
   let success = "Usuario registrado con éxito"
   res.send({ success})
  
- 
+ <2.036+9
 }
 
 

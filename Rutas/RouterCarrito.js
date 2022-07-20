@@ -14,23 +14,25 @@ const logger = require('../logger.js')
 const { info } = require('../logger.js')
 const passport = require('passport')
 let util = require('util');
-
+let ProductoCarrito = require('../Business/ProductoCarrito')
+let Changuito = require('../Business/Carrito')
 
 router.post('/',(req,res)=>{ 
     let factory = new daoFactory(config.get('tipoPersistencia.persistenciaB')) 
     let dao = factory.getDao()  
-    let idUsuario = passport.session._id
+    let id = passport.session._id
   
-     dao.saveCarrito(idUsuario)
+     dao.saveCarrito(id)
         .then(carritoId => { 
            
             let idCarrito = carritoId
+           // logger.info(`idCarrito: ${idCarrito}`)
             res.send({idCarrito})            
             
          })
         .catch(error =>
            
-            res.render("Error",{error}) 
+            res.send({error}) 
         )        
 })
 
@@ -57,19 +59,33 @@ router.delete('/:id',(req,res)=>{
 
 router.get('/:id/productos',async (req,res)=>{
    let idCarrito = req.params.id
-  
+   let carrito 
+   let chango
    if (idCarrito == ("undefined" || null || 0 )){
         res.render("CarritoVacio")
    }else{
         let factory = new daoFactory(config.get('tipoPersistencia.persistenciaB')) 
         let dao = factory.getDao()
-        let carrito = await dao.getCarritoConProductos(idCarrito)
+        try {
+            carrito = await dao.getCarritoConProductos(idCarrito)
+            logger.info(`carrito get productos ${carrito}`)
+            chango = new Changuito(carrito)
+            logger.info(`chango get productos  ${util.inspect(chango)}`)
+            logger.info(Object.entries(chango))
+        } catch (error) {
+            logger.error(error)
+            let err = 'Error al recuperar los productos del Carrito'
+            res.send({err})
+        }
+       
+        
         if(!carrito){           
             let error = 'Carrito de compras vacio'
-            res.render("Error",{error})
+            res.send({error})
         } else{
-            let productos = carrito.productos
-            res.send({productos})
+            //let productos = carrito.productos
+            //res.send({productos})
+            res.send({chango})
         }  
 
    }
@@ -83,39 +99,41 @@ router.get('/:id/productos',async (req,res)=>{
 
 //pendiente**********************************
 router.post('/:id/productos', async (req,res)=>{
-    let idProductoNuevo = req.body
-    
+   
+    const { id,cantidad } = req.body
+    logger.info(`cantidad: ${cantidad}`)
     let idCarrito = req.params.id
    
     let factory2 = new daoFactory(config.get('tipoPersistencia.persistenciaB')) 
     if(factory2.tipoPersistencia == 'carritoSql'){
-       /* daoCarritos.AgregarProductoAlCarrito(idCarrito,idProductoNuevo)
-        .then(
-            res.send({'OK':'Producto Agregado con éxito'}) 
-        )
-        .catch(error=>
-            res.send({error}) 
-        )*/
-    
+       
     }else{
   
     let daoCarritos = factory2.getDao()
     let factory1 = new daoFactory(config.get('tipoPersistencia.persistenciaA')) 
     let daoProductos = factory1.getDao()
-    let productoAgregado = await daoProductos.getById(idProductoNuevo)
-   
+    let productoAgregado = await daoProductos.getById(id)
+    let productoCarrito = new ProductoCarrito(productoAgregado)
+    productoCarrito.cantidad = cantidad
+   // logger.info(`productoCarrito: ${productoCarrito}`)
+    
         if(!productoAgregado){
             res.send({errorProducto})
         }else{            
-             await daoCarritos.AgregarProductoAlCarrito(idCarrito,productoAgregado)
+            try {
+               let carrito = await daoCarritos.AgregarProductoAlCarrito(idCarrito,productoCarrito)
+           //    logger.info('carrito from DB: ' + util.inspect(carrito))
+               let chango = new Changuito(carrito)
+            //   logger.info('chango: ' + util.inspect(chango))
+               res.send({chango}) 
+            } catch (error) {
+               logger.error(error)
+               let msgError = 'Error al recuperar el carrito'               
+               res.send({msgError}) 
+            }
+            
            
-                .then(carrito => {
-                   
-                    res.send({carrito}) }
-                )
-                /*.catch(error=>
-                    res.send({error}) 
-                )*/
+              
             
             }
         }   

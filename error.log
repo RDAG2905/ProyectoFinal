@@ -1042,3 +1042,52 @@ Require stack:
 [31merror[39m:   Unexpected token o in JSON at position 1
 [31merror[39m:   Unexpected token d in JSON at position 2
 [31merror[39m:   Unexpected token o in JSON at position 1
+[31merror[39m:   Unexpected token o in JSON at position 1
+[31merror[39m:   SyntaxError: Unexpected token o in JSON at position 1
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\body-parser\lib\types\json.js:89:19)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:202:9)
+    at invokeCallback (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\raw-body\index.js:231:16)
+    at done (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\raw-body\index.js:220:7)
+    at IncomingMessage.onEnd (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\raw-body\index.js:280:7)
+    at IncomingMessage.emit (node:events:539:35)
+    at endReadableNT (node:internal/streams/readable:1345:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+[31merror[39m:   Unexpected token u in JSON at position 0
+[31merror[39m:   Unexpected token u in JSON at position 0
+[31merror[39m:   Unexpected token u in JSON at position 0
+[31merror[39m:   Unexpected token o in JSON at position 1
+[31merror[39m:   Unexpected token o in JSON at position 1
+[31merror[39m:   Unexpected token o in JSON at position 1
+[31merror[39m:   Mail command failed: 501 Error: Bad sender address syntax
+[31merror[39m:   dao.getCarritoConProductos is not a function
+[31merror[39m:   dao.getCarritoConProductos is not a function
+[31merror[39m:   Error: Please upload a file
+    at uploadFileController (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\controllers\uploadFiles.js:8:23)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\express\lib\router\route.js:144:13)
+    at done (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\multer\lib\make-middleware.js:49:68)
+    at Multipart.<anonymous> (C:\Users\RDAG\Documents\CODERHOUSE\Clase 36\3aEntregaIntermedia\node_modules\multer\lib\make-middleware.js:166:7)
+    at Multipart.emit (node:events:527:28)
+    at emitCloseNT (node:internal/streams/destroy:138:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+[31merror[39m:   The From phone number +14156884237 is not a valid, SMS-capable inbound phone number or short code for your account.
+[31merror[39m:   The From phone number +541125111726 is not a valid, SMS-capable inbound phone number or short code for your account.
+[31merror[39m:   The From phone number +541125111726 is not a valid, SMS-capable inbound phone number or short code for your account.
+[31merror[39m:   connect ETIMEDOUT 54.36.85.113:587
+[31merror[39m:   The From phone number +5491156646937 is not a valid, SMS-capable inbound phone number or short code for your account.
+[31merror[39m:   connect ETIMEDOUT 54.36.85.113:587
+[31merror[39m:   The From phone number +5491125111726 is not a valid, SMS-capable inbound phone number or short code for your account.
+[31merror[39m:   connect ETIMEDOUT 54.36.85.113:587
+[31merror[39m:   The From phone number +5491125111726 is not a valid, SMS-capable inbound phone number or short code for your account.
+[31merror[39m:   carrito_id is not defined
+[31merror[39m:   carrito_id is not defined
+[31merror[39m:   carrito_id is not defined
+[31merror[39m:   carrito_id is not defined
+[31merror[39m:   Cannot read properties of undefined (reading 'forEach')
+[31merror[39m:   Cannot read properties of undefined (reading 'forEach')
+[31merror[39m:   Cannot read properties of undefined (reading 'forEach')
+[31merror[39m:   error en login
+[31merror[39m:   The From phone number +5491125111726 is not a valid, SMS-capable inbound phone number or short code for your account.

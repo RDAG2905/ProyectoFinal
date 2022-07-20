@@ -32,7 +32,7 @@ const path = require('path')
 
 global.root = __dirname;
 global.adminEmail = "tyrel.ullrich@ethereal.email"
-global.celAdmin = ""
+global.celAdmin = "+5491125111726"
 
 passport.use('signup', new LocalStrategy({
     passReqToCallback: true
@@ -72,7 +72,7 @@ passport.use('signup', new LocalStrategy({
           
           logger.info('User Registration succesful');
           passport.session = newUser
-        //  logger.info(`usuarioSession : ${passport.session}`)
+          logger.info(`usuarioSession : ${passport.session}`)
           return done(null, userWithId);
         });
       });
@@ -98,7 +98,6 @@ passport.use('signup', new LocalStrategy({
         logger.info(`__dirname: ${__dirname}`)
         passport.session = user
        
-       // logger.info(passport.session)
        
         return done(null, user);
       });
@@ -180,8 +179,6 @@ app.use(validateSession)
 app.post("/login",passport.authenticate('login', { failureRedirect: '/failLogin' }),controller.postLogin)
 app.get('/failLogin', controller.getFailLogin);
 app.post('/signup', passport.authenticate('signup', { successRedirect: '/signup', failureRedirect: '/failSignup' }));
-//app.post('/signup', controller.postSignup);
-//app.post('/upload',upload.single('myFile'));
 
 app.get('/failSignup', controller.getFailSignup);
 app.get('/signup', controller.postSignup);
