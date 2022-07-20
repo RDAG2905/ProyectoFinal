@@ -257,7 +257,7 @@ const getProductos = ()=>{
                 if(tablaX == 'tablaProductos'){
                   tablaLlena += `<td><input type="number" class="form-control" style="width:70px;" value="${(productos[i].cantidad != undefined)? productos[i].cantidad : 0 }"/>`+ '</td>'
                   tablaLlena += '<td><button class="btn btn-toolbar" onclick="agregarProductoAlCarrito(this)" style="border-radius: 50%;height:42px;width:42px;margin-left:5px;"><i class="glyphicon glyphicon-shopping-cart" style="color:#337ab7;font-size:18px;margin-left:-3px;"></i></button></td>'
-                  tablaLlena += '<td ><button class="btn btn-toolbar" style="border-radius: 50%;height:42px;width:42px;margin-left:5px;" onclick="eliminarProducto()"><i class="glyphicon glyphicon-floppy-remove" style="color:orangered;font-size:18px;margin-left:-3px;"></i></button></td>'
+                  tablaLlena += '<td ><button class="btn btn-toolbar" style="border-radius: 50%;height:42px;width:42px;margin-left:5px;" onclick="eliminarProducto(this)"><i class="glyphicon glyphicon-floppy-remove" style="color:orangered;font-size:18px;margin-left:-3px;"></i></button></td>'
                 }else{
                   tablaLlena += `<td><input type="number" class="form-control" style="width:70px;" disabled value="${(productos[i].cantidad != undefined)? productos[i].cantidad : 0 }"/>`+ '</td>'
                 }
@@ -335,11 +335,6 @@ const crearProducto = ()=>{
   precio: precio,
   fotoUrl: fotoUrl
   }
-
-
-
-
-
   ocultarDivAgregar()
   fetch('/api/productos', {
     method: "post",
@@ -361,6 +356,29 @@ const crearProducto = ()=>{
       .then(e=>
         alert(e)
       ))
+  
+}
+
+
+const eliminarProducto = (elem)=>{
+ 
+  let id = getIdFromRow(elem)
+  fetch('/api/productos/'+ id, {
+    method: "DELETE",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+    })
+    .then(response => response.text()
+      )
+    .then(msg => 
+      { 
+        alert(msg)
+      })
+    .catch(error=>   
+        alert(error)
+      )
   
 }
 

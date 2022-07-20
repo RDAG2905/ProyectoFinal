@@ -8,6 +8,7 @@ const error = 'producto no encontrado'
 const daoFactory = require('../Dao/DaoFactory')
 const config = require('config');
 const logger = require('../logger')
+const passport = require('passport')
 
 let tipo = config.get('tipoPersistencia.persistenciaA')
 
@@ -47,11 +48,11 @@ router.get('/:id?',(req,res)=>{
 
 router.post('/',async (req,res)=>{
     let productoNuevo = req.body
-    //logger.info(Object.values(productoNuevo))
+   
     let dao = getDao(tipo)
     await dao.save(productoNuevo)
                 .then(response =>{
-                    //let productos = dao.getAll()
+                   
                     logger.info(response)
                     res.render("productosAdmin",{response}) 
                 }
@@ -82,13 +83,21 @@ router.put('/:id',(req,res)=>{
 
 router.delete('/:id',(req,res)=>{
    let id = req.params.id
-   let dao = getDao(tipo)
-                 dao.delete(id)
-                    .then(productoEliminado =>
-                        res.send({productoEliminado}))
-                    .catch(error=>
-                        res.send({error})
-                    )
+   let {isAdmin} = passport.session
+        if(isAdmin){
+                let dao = getDao(tipo)
+                    dao.delete(id)
+                        .then(productoEliminado =>{
+                            let msg = 'El producto ha sido eliminado'
+                            res.send({msg})
+                        })                           
+                        .catch(error=>
+                            res.send({error})
+                        )
+        }else{
+            let msg = 'Usted no cuenta con los permisos para realizar esta acción'
+            res.send({msg})
+        }
     
 })
 
