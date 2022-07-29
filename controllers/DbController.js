@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-//const config = require('config');
-//const { mongoDB } = require('../config/default');
+
 
 let baseConectada = false;
 

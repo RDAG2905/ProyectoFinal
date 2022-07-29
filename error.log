@@ -1093,3 +1093,118 @@ Require stack:
 [31merror[39m:   The From phone number +5491125111726 is not a valid, SMS-capable inbound phone number or short code for your account.
 [31merror[39m:   The From phone number +5491125111726 is not a valid, SMS-capable inbound phone number or short code for your account.
 [31merror[39m:   The From phone number +5491125111726 is not a valid, SMS-capable inbound phone number or short code for your account.
+[31merror[39m:   ReferenceError: logger is not defined
+    at Strategy._verify (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\middlewares\passport.js:19:11)
+    at Strategy.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport-local\lib\strategy.js:88:12)
+    at attempt (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\middleware\authenticate.js:369:16)
+    at authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\middleware\authenticate.js:370:7)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\index.js:346:12)
+[31merror[39m:   Query was already executed: usuarios.find({})
+[31merror[39m:   Error: Failed to serialize user into session
+    at pass (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:278:19)
+    at serialized (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:283:7)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\middlewares\passport.js:59:5
+    at pass (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:291:9)
+    at Authenticator.serializeUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:296:5)
+    at SessionManager.logIn (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\sessionmanager.js:14:8)
+    at IncomingMessage.req.login.req.logIn (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\http\request.js:39:26)
+    at Strategy.strategy.success (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\middleware\authenticate.js:256:13)
+    at verified (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport-local\lib\strategy.js:83:10)
+    at Strategy._verify (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\middlewares\passport.js:23:16)
+[31merror[39m:   Query was already executed: usuarios.find({})
+[31merror[39m:   Error: Failed to serialize user into session
+    at pass (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:278:19)
+    at serialized (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:283:7)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\middlewares\passport.js:60:5
+    at pass (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:291:9)
+    at Authenticator.serializeUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:296:5)
+    at SessionManager.logIn (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\sessionmanager.js:14:8)
+    at IncomingMessage.req.login.req.logIn (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\http\request.js:39:26)
+    at Strategy.strategy.success (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\middleware\authenticate.js:256:13)
+    at verified (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport-local\lib\strategy.js:83:10)
+    at Strategy._verify (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\middlewares\passport.js:23:16)
+[31merror[39m:   Query was already executed: usuarios.find({})
+[31merror[39m:   Error: Failed to serialize user into session
+    at pass (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:278:19)
+    at serialized (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:283:7)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\middlewares\passport.js:60:5
+    at pass (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:291:9)
+    at Authenticator.serializeUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:296:5)
+    at SessionManager.logIn (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\sessionmanager.js:14:8)
+    at IncomingMessage.req.login.req.logIn (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\http\request.js:39:26)
+    at Strategy.strategy.success (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\middleware\authenticate.js:256:13)
+    at verified (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport-local\lib\strategy.js:83:10)
+    at Strategy._verify (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\middlewares\passport.js:23:16)
+[31merror[39m:   Query was already executed: usuarios.find({})
+[31merror[39m:   Error: Failed to serialize user into session
+    at pass (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:278:19)
+    at serialized (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:283:7)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\middlewares\passport.js:60:5
+    at pass (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:291:9)
+    at Authenticator.serializeUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:296:5)
+    at SessionManager.logIn (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\sessionmanager.js:14:8)
+    at IncomingMessage.req.login.req.logIn (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\http\request.js:39:26)
+    at Strategy.strategy.success (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\middleware\authenticate.js:256:13)
+    at verified (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport-local\lib\strategy.js:83:10)
+    at Strategy._verify (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\middlewares\passport.js:23:16)
+[31merror[39m:   logger is not defined
+[31merror[39m:   Error: Failed to serialize user into session
+    at pass (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:278:19)
+    at serialized (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:283:7)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\middlewares\passport.js:60:5
+    at pass (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:291:9)
+    at Authenticator.serializeUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:296:5)
+    at SessionManager.logIn (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\sessionmanager.js:14:8)
+    at IncomingMessage.req.login.req.logIn (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\http\request.js:39:26)
+    at Strategy.strategy.success (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\middleware\authenticate.js:256:13)
+    at verified (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport-local\lib\strategy.js:83:10)
+    at Strategy._verify (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\middlewares\passport.js:23:16)
+[31merror[39m:   Query was already executed: usuarios.find({})
+[31merror[39m:   Error al buscar el usuario por email
+[31merror[39m:   Error: Failed to serialize user into session
+    at pass (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:278:19)
+    at serialized (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:283:7)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\middlewares\passport.js:60:5
+    at pass (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:291:9)
+    at Authenticator.serializeUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\authenticator.js:296:5)
+    at SessionManager.logIn (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\sessionmanager.js:14:8)
+    at IncomingMessage.req.login.req.logIn (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\http\request.js:39:26)
+    at Strategy.strategy.success (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport\lib\middleware\authenticate.js:256:13)
+    at verified (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\passport-local\lib\strategy.js:83:10)
+    at Strategy._verify (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\middlewares\passport.js:23:16)
+[31merror[39m:   Query was already executed: usuarios.find({})
+[31merror[39m:   Error al buscar el usuario por email
+[31merror[39m:   Query was already executed: usuarios.find({})
+[31merror[39m:   el nombre de usuario no está disponible
+[31merror[39m:   MongooseError: Operation `usuarios.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[31merror[39m:   MongooseError: Operation `usuarios.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:151:23)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[31merror[39m:   tipo is not defined
+[31merror[39m:   tipo is not defined
+[31merror[39m:   Productos validation failed: fotoUrl: Path `fotoUrl` is required.
+[31merror[39m:   Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+[31merror[39m:   Cast to ObjectId failed for value "klkl" (type string) at path "_id" for model "Productos"
+[31merror[39m:   TypeError: Cannot read properties of undefined (reading 'isAdmin')
+    at adminAuth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\middlewares\jwt.js:47:18)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\index.js:47:12)
+[31merror[39m:   Productos validation failed: precio: Path `precio` is required., fotoUrl: Path `fotoUrl` is required., nombre: Path `nombre` is required.
+[31merror[39m:   tipo is not defined
+[31merror[39m:   tipo is not defined

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const model = require('../models/User');
 const config = require('config');
+const logger = require('../logger');
 const mongoConnectionString = config.get('mongoDB.connection')  
   
 class ContenedorUsuariosMongoDB{
@@ -25,6 +26,9 @@ class ContenedorUsuariosMongoDB{
     async save(usuario){
         const productSaveModel = model(usuario);
         return await productSaveModel.save();
+       /* let user =  await productSaveModel.save();
+        if (!user) throw new Error('Error al guardar el Usuario')
+        return user*/
     }
 
 
@@ -38,6 +42,18 @@ class ContenedorUsuariosMongoDB{
         await model.findByIdAndRemove(id)
         
     }
+
+    async getUserByName(username) {
+        try {
+            logger.info(`username: ${username}`)
+            return await model.findOne({ 'username': username })
+        } catch (error) {
+            logger.error(error)
+            throw Error('Error al buscar el usuario por email')
+        }
+       
+    }
+    
 }
 
 module.exports = ContenedorUsuariosMongoDB

@@ -1,6 +1,7 @@
 const productosDaoMongo = require('../Dao/ProductosDaoMongoDB')
 const carritosDaoMongo = require('../Dao/CarritosDaoMongoDB')
 const usuariosDaoMongo = require('../Dao/UsuariosDaoMongoDB')
+const pedidosDaoMongo = require('../Dao/PedidosDaoMongoDB')
 const productosDaoSQL = require('../Dao/ProductosDaoSQL')
 const carritosDaoSQL = require('../Dao/CarritosDaoSQL')
 const modelProductoMongo = require('../models/ProductoMongoDB');  
@@ -27,7 +28,10 @@ class DaoFactory{
         }else
          if (this.tipoPersistencia == 'carritoMongo') {
             return new carritosDaoMongo()
-        }
+        }else
+        if (this.tipoPersistencia == 'pedidoMongo') {
+           return new pedidosDaoMongo()
+       }
         else{
             return new usuariosDaoMongo()
         }

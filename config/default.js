@@ -18,7 +18,8 @@
             "persistenciaA":'productoMongo',
             'persistenciaB':'carritoMongo',
             'persistenciaC':'productoSql',
-            'persistenciaD':'carritoSql'
+            'persistenciaD':'carritoSql',
+            'persistenciaE':'pedidoMongo'
         },
         optionsSqlLite3 : {
             client: 'sqlite3', 

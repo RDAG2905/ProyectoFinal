@@ -25,14 +25,15 @@ class ContenedorProductosMongo{
 
     async save(producto){
         const productSaveModel = model(producto);
-        await productSaveModel.save();
-        return await this.getAll()
+        return  await productSaveModel.save();
     }
 
 
     async update(producto,idBuscado){
-        return await model.findByIdAndUpdate(idBuscado,producto)     
-       
+        return await model.findByIdAndUpdate(idBuscado,producto)   
+        /*let obj = await model.findByIdAndUpdate({_id: idBuscado}, {$set: producto}) 
+        console.log(`obj: ${obj}`)
+        return  obj  */      
     }
 
 

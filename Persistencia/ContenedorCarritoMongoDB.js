@@ -15,18 +15,16 @@ class ContenedorCarritoMongo{
        
     }
    
-     
-    async getCarritoConProductos(idCarrito){
-        logger.info(`idCarrito :${idCarrito}, typeof : ${typeof(idCarrito)}`)
-        let carro = JSON.parse(idCarrito)
-        let array = Object.values(carro)
-        let idx = array[0]
-      return await model.findById(idx)
+  
+
+    async getCart(idCart){
+      return await model.findById(idCart)
     }
 
 
-
-    async saveCarrito(idUsuario){
+   
+    
+    async save(idUsuario){
         let unCarrito = new carrito(undefined)
         const modelCarrito = model(unCarrito);
         let changuito = await modelCarrito.save();
@@ -45,39 +43,30 @@ class ContenedorCarritoMongo{
 
 
 
-    async AgregarProductoAlCarrito(idCarro,producto){
-       
-        let carrito = await this.getCarritoConProductos(idCarro)
-        //logger.info(`carritoDB : ${carrito}`)
+    async addProductToCart(idCarro,producto){      
+        let carrito = await this.getCart(idCarro)
         carrito.productos.push(producto)
       
-        let carritoEditado = await this.editarCarrito(carrito,carrito._id)
-         //.then(carritoEditado =>{
-         //   return carrito
-         //} 
-         //)
+        let carritoEditado = await this.editCart(carrito,carrito._id)
+         
          logger.info(`carrito editado agregar: ${util.inspect(carritoEditado)}`)
         return carritoEditado;
        
-       // this.getCarritoConProductos(carrito._id)      
     } 
 
 
 
 
-    async eliminarProductoDelCarrito(idCarrito,idProducto){
-        let carrito = await this.getCarritoConProductos(idCarrito)
+    async removeProductFromCart(idCarrito,idProducto){
+        let carrito = await this.getCart(idCarrito)
         carrito.productos = carrito.productos.filter(prod =>prod._id != idProducto)
-        this.editarCarrito(carrito,carrito._id)
+        this.editCart(carrito,carrito._id)
     }
 
 
 
 
-     async editarCarrito(carrito,idBuscado){
-       // logger.info(`carrito a editar: ${carrito}`)
-       // logger.info(`idBuscado a editar: ${idBuscado}`)
-       // let id = new mongoose.Types.ObjectId(idBuscado) 
+     async editCart(carrito,idBuscado){
        return await model.findByIdAndUpdate(idBuscado,carrito) 
            
     }

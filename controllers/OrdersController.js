@@ -1,5 +1,37 @@
 const logger = require("../logger")
+const services = require('../services/orderServices')
 
 
-let user = passport.session
+const createOrder = (req,res)=>{
+    const { idCart,idUser } = req.body
+    services.createOrderDB(idCart,idUser)
+            .then(x =>
+                res.json(x))
+            .catch(err=>{
+                logger.error(err)
+                let msg = 'Error al crear la Orden'
+                res.send({msg})
+            })           
+}
 
+
+
+
+const getOrders = (req,res)=>{
+    let id = req.params.idUser   
+    services.getOrdersDB(id)
+            .then(orders =>
+                res.send({orders}))
+            .catch(err=>{
+                logger.error(err)
+                let msg = 'Error al obtener los Pedidos'
+                res.send({msg})
+            })      
+
+}
+
+
+
+module.exports = {
+    createOrder,getOrders
+}
