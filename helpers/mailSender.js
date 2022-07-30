@@ -6,9 +6,10 @@ const logger = require('../logger.js')
 
 
 
-const getMessage =(body)=>{
-   const {username,nombre,direccion,telefono} = passport.session
-   logger.info(`passport.session getMessage : ${passport.session}`)
+const getMessage =(body,user)=>{
+   const { username,nombre,direccion,telefono } = user //passport.session
+   logger.info(`user: ${user}`)
+   //logger.info(`passport.session getMessage : ${passport.session}`)
    let textoUserName = `<br>username : ${username}</br>`
    let textoNombre = `<br>nombre : ${nombre}</br>`
    let textoDireccion= `<br>direccion : ${direccion}</br>`
@@ -58,10 +59,10 @@ return mensajePedido
 
 
 
-const notificarPedido = async (chango)=>{
+const notificarPedido = async (chango,user)=>{
   
    let mensajePedido = armarPedidoHtml(chango) 
-   let {username } = passport.session
+   let {username } = user //passport.session
 
     const mailPedidoOptions = {
         from: username,

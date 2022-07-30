@@ -51,14 +51,14 @@ const getCart = (req,res)=>{
 
  const addProductToCart = (req,res)=>{
     let idCart = req.params.id   
-    const { idProduct } = req.body
+    const { idProduct, quantity } = req.body
     
-         addProductToCartDB(idCart,idProduct)
-            .then(productos =>
-                res.send({productos}))
+         addProductToCartDB(idCart,idProduct,quantity)
+            .then(cart =>
+                res.send({cart}))
             .catch(err =>
             {
-            logger.error(err)
+            logger.error(err. stack)
             let msg = 'Error al agregar el agregar producto al carrito'
             res.send({msg})
             })

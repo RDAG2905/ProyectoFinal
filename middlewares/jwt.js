@@ -1,9 +1,11 @@
 const jwt = require("jsonwebtoken");
+const logger = require("../logger");
+const util = require('util')
 
 const PRIVATE_KEY = "myprivatekey";
 
-const generateAuthToken = (nombre) => {
-  const token = jwt.sign({ nombre }, PRIVATE_KEY, { expiresIn: '1200s' });
+const generateAuthToken = (user) => {
+  const token = jwt.sign({ user }, PRIVATE_KEY, { expiresIn: '1800s' });
   return token;
 }
 
@@ -29,8 +31,23 @@ const auth = (req, res, next) =>{
   }
 
   try {
-    const objetoOriginal = jwt.verify(token, PRIVATE_KEY);
-    req.user = objetoOriginal
+    //const objetoOriginal = jwt.verify(token, PRIVATE_KEY);
+    //req.user = objetoOriginal
+
+    jwt.verify(token, PRIVATE_KEY, (err, decoded) => {
+      if (err) {
+        return res.status(403).json({
+          error: 'not authorized'
+        });
+      }
+      logger.info(util.inspect(decoded.user))
+      req.user = decoded.user;
+      logger.info(util.inspect(req.user))
+      //next();
+    });
+  
+    
+
   } catch (ex) {
     return res.status(403).json({
       error: 'token invalido',
@@ -40,6 +57,7 @@ const auth = (req, res, next) =>{
 
   next();
 }
+
 
 
 

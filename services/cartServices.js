@@ -20,7 +20,7 @@ const createCartDB = async (newCar)=>{
 
 
 const deleteCartDB = async (id) =>{
-    let factory = new daoFactory(config.get(tipoCart)) 
+    let factory = new daoFactory(tipoCart) 
     let dao = factory.getDao()  
     return await dao.delete(id)  
  }
@@ -29,7 +29,7 @@ const deleteCartDB = async (id) =>{
 
 
  const getCartDB = async (id) =>{
-    let factory = new daoFactory(config.get(tipoCart)) 
+    let factory = new daoFactory(tipoCart) 
     let dao = factory.getDao()  
     return await dao.getCart(id)  
  }
@@ -37,19 +37,24 @@ const deleteCartDB = async (id) =>{
 
 
 
- const addProductToCartDB = async (idCart,idProduct) =>{
-    let factory = new daoFactory(config.get(tipoCart)) 
+ const addProductToCartDB = async (idCart,idProduct,quantity) =>{
+    let factory = new daoFactory(tipoCart) 
     let cartDao = factory.getDao()  
-    let factory2 = new daoFactory(config.get(tipoProd)) 
+    let factory2 = new daoFactory(tipoProd) 
     let productDao = factory2.getDao()  
     let product = await productDao.getById(idProduct)
-    return await cartDao.addProductToCart(idCart,product)  
+    let cartProduct= {
+      nombre: product.nombre,
+      precio: product.precio,
+      cantidad : quantity
+    }
+    return await cartDao.addProductToCart(idCart,cartProduct)  
  }
 
 
  
  const removeProductFromCartDB = async (idCart,idProduct) =>{
-    let factory = new daoFactory(config.get(tipoCart)) 
+    let factory = new daoFactory(tipoCart) 
     let cartDao = factory.getDao()  
     return await dao.removeProductFromCart(idCart,idProduct)
  }

@@ -20,8 +20,8 @@ const register = (req, res)=>{
 const login = (req, res)=>{
     const { username,password } = req.body
     services.authenticate(username,password)
-            .then(result =>{
-                const access_token =jwt.generateAuthToken('token')
+            .then(user =>{
+                const access_token =jwt.generateAuthToken(user)
                 res.json({ access_token })
             })
             .catch(err=>{

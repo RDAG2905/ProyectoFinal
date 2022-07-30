@@ -7,7 +7,7 @@ const { enviarSms , enviarWhatsapp } = require('../helpers/twilioHelper')
 let Changuito = require('../Business/Carrito')
 
 
-const createOrderDB = async (idCart,idUser) => {
+const createOrderDB = async (idCart,idUser,user) => {
     let factory = new daoFactory(config.get('tipoPersistencia.persistenciaB')) 
     let cartDao = factory.getDao()
     let cart = await cartDao.getCart(idCart)
@@ -18,8 +18,8 @@ const createOrderDB = async (idCart,idUser) => {
     let newOrder = await orderDao.save(order)
     let chango = new Changuito(cart)
     if (newOrder){
-        notificarPedido(chango)
-        enviarSms('Su pedido ha sido recibido y se encuentra en proceso')
+        await notificarPedido(chango,user)
+        await enviarSms('Su pedido ha sido recibido y se encuentra en proceso')
         let msg = "Se ha notificado el pedido"
         return msg
     }
