@@ -1223,3 +1223,37 @@ Require stack:
     at param (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\index.js:376:14)
 [31merror[39m:   Cannot destructure property 'username' of 'user' as it is undefined.
 [31merror[39m:   The From phone number +5491125111726 is not a valid, SMS-capable inbound phone number or short code for your account.
+[31merror[39m:   The From phone number +5491125111726 is not a valid, SMS-capable inbound phone number or short code for your account.
+[31merror[39m:   The From phone number +5491125111726 is not a valid, SMS-capable inbound phone number or short code for your account.
+[31merror[39m:   Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:372:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\response.js:174:12)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\app.js:92:19
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   ReferenceError: getCart is not defined
+    at CarritosDaoMongoDB.addProductToCart (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\Persistencia\ContenedorCarritoMongoDB.js:53:9)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\services\cartServices.js:51:12)
+[31merror[39m:   TypeError: Cannot destructure property 'username' of 'user' as it is undefined.
+    at notificarPedido (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\helpers\mailSender.js:65:9)
+    at Object.createOrderDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\services\orderServices.js:21:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: No se encontró el carrito
+    at Object.createOrderDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\services\orderServices.js:14:22)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   The From phone number +5491125111726 is not a valid, SMS-capable inbound phone number or short code for your account.
+[31merror[39m:   Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:372:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\response.js:278:15)
+    at ServerResponse.send (C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\node_modules\express\lib\response.js:162:21)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 38\DivisionEnCapas\controllers\OrdersController.js:25:21
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)

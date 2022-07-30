@@ -31,24 +31,23 @@ const auth = (req, res, next) =>{
   }
 
   try {
-    //const objetoOriginal = jwt.verify(token, PRIVATE_KEY);
-    //req.user = objetoOriginal
-
+   
     jwt.verify(token, PRIVATE_KEY, (err, decoded) => {
       if (err) {
-        return res.status(403).json({
+        throw new Error(err)
+       /*return res.status(403).json({
           error: 'not authorized'
-        });
+        });*/ 
       }
-      logger.info(util.inspect(decoded.user))
+     
       req.user = decoded.user;
-      logger.info(util.inspect(req.user))
-      //next();
+    
     });
   
     
 
   } catch (ex) {
+    logger.error(ex.stack)
     return res.status(403).json({
       error: 'token invalido',
       detalle: 'nivel de acceso insuficiente para el recurso solicitado'
