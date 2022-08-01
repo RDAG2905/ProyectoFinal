@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const model = require('../models/User');
+const model = require('../SchemaModels/User');
 const config = require('config');
 const logger = require('../logger');
 const mongoConnectionString = config.get('mongoDB.connection')  

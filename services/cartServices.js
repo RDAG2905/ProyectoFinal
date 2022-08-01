@@ -5,10 +5,12 @@ let tipoCart = config.get('tipoPersistencia.persistenciaB')
 const logger = require('../logger')
 
 
+
 const getDao = (tipoPersistencia)=>{
     let factory = new daoFactory(tipoPersistencia) 
     return factory.getDao();
 }
+
 
 
 const createCartDB = async (newCar)=>{  

@@ -19,7 +19,8 @@
             'persistenciaB':'carritoMongo',
             'persistenciaC':'productoSql',
             'persistenciaD':'carritoSql',
-            'persistenciaE':'pedidoMongo'
+            'persistenciaE':'pedidoMongo',
+            'persistenciaF':'mensajeMongo'
         },
         optionsSqlLite3 : {
             client: 'sqlite3', 

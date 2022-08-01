@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const model = require('../models/ProductoMongoDB');
+const model = require('../SchemaModels/ProductoMongoDB');
 const config = require('config');
 const mongoConnectionString = config.get('mongoDB.connection')  
   

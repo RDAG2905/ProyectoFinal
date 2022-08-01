@@ -11,6 +11,7 @@ const routerCarrito = require('./Rutas/RouterCarrito')
 const routerPedidos = require('./Rutas/RouterPedidos')
 const routerAuth = require('./Rutas/AuthRouter')
 const routerSystem = require('./Rutas/SystemRouter')
+const routerHtml= require('./Rutas/HtmlOnWireRouter')
 
 const cluster = require('cluster')
 const {cpus} = require('os')
@@ -27,6 +28,8 @@ global.adminEmail = "tyrel.ullrich@ethereal.email"
 global.celAdmin = "+5491125111726"
 
 const jwt = require('./middlewares/jwt')
+const { Server: HttpServer } = require('http')
+const { Server: IOServer } = require('socket.io')
  
   /////////////////////////////////////
   /// Definiendo el número de procesos
@@ -49,7 +52,9 @@ if (modoCluster && cluster.isPrimary) {
 
 } else {
 
+    
 const app = express()
+
 app.use(express.json({limit: '25mb'}));
 app.use(express.urlencoded({limit: '25mb',extended:true}));
 
@@ -73,8 +78,7 @@ app.set("views","./public/plantillas")
 app.set("view engine","hbs")
 app.use(cookieParser())
 
-//app.get('/infoZip',compression(),controller.info)
-//app.get('/info',controller.info)
+app.use('/views',routerHtml)
 app.use('/api/randoms',randomRouter)
 app.use('/files', uploadFilesRouter)
 app.use('', routerAuth)
@@ -111,10 +115,14 @@ Db.conectarDB(process.env.MONGODB, err => {
 })
 
 
-app.listen(PORT, () => {    
+const httpServer = new HttpServer(app)
+const io = new IOServer(httpServer)
+
+
+httpServer.listen(PORT, () => {    
     logger.info(`Servidor express escuchando en el puerto ${PORT}`)
 })
 
-app.on('error', error => logger.error(`Error en servidor: ${error}`))
+httpServer.on('error', error => logger.error(`Error en servidor: ${error}`))
 
 }

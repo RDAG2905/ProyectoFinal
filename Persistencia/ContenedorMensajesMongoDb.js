@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const model = require('../SchemaModels/Order');
+const model = require('../models/MensajesMongoDb');
 const config = require('config');
 const logger = require('../logger');
 const mongoConnectionString = config.get('mongoDB.connection')  
@@ -22,9 +22,10 @@ class ContenedorPedidosMongoDB{
       return await model.findById(id)
     }
 
-    async getByUserId(id){
+    
+    async getByUserName(userName){
         //let idUser = new mongoose.Types.ObjectId(id)
-        return await model.find({idUser: id})
+        return await model.find({idUser: userName})
       }
 
 

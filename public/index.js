@@ -535,3 +535,44 @@ const agregarProductoAlCarrito =(element)=>{
     }
 
 
+    /////////////////   chat  /////////////////
+
+    const socket = io.connect()
+
+
+    function makeHtmlList(mensajes) {
+ 
+      const divMensajes = document.querySelector('#mensajes')
+      let lista = []
+      
+       mensajes.forEach(mensaje => {
+          let msg = (`
+              <tr style='width:400px;height:50px;'>
+                  <td style="color:blue;width:50px;">${mensaje.autor}</td>
+                  <td style="color:brown;width:60px;text-align:left">[${mensaje.fyh}]:</td>
+                  <td style="color:green;text-align:left">${mensaje.texto}</td>
+              </tr>
+          `)
+          lista.push(msg)
+      })
+      divMensajes.innerHTML = lista
+    }
+    socket.on('mensajes',data=>{
+      makeHtmlList(data)
+    })
+    
+
+
+    const enviarChat=()=>{
+      let texto = document.querySelector("#inputMensaje").value
+      let autor = document.querySelector("#inputUsername").value
+      let date =  new Date()
+      let fyh = date.toLocaleString() 
+      let chat = {
+      autor,
+      fyh,
+      texto
+      }
+      socket.emit("chateando",chat)
+    }
+

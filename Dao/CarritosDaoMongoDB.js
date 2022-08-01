@@ -2,10 +2,20 @@ const ContenedorCarritos = require('../Persistencia/ContenedorCarritoMongoDB');
 const mongoose = require('mongoose');
 
 class CarritosDaoMongoDB extends ContenedorCarritos{
-constructor(tipo){
- super(tipo)
-}
+    static instance 
 
+    constructor(){
+        super()
+        }
+
+
+    static getInstance(){
+    
+        if(!this.instance){
+            this.instance = new CarritosDaoMongoDB()
+        }
+        return this.instance
+    }
 
 }
 
