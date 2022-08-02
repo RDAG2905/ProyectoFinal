@@ -13,7 +13,7 @@ const saveMessage = async(data)=>{
 
 const getMessages = async() =>{
     let repository = new Repository()
-      return await repository.getAll()
+      return await repository.getAllMessages()
 }
 
 

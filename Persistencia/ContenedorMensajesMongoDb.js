@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-const model = require('../models/MensajesMongoDb');
+const model = require('../SchemaModels/MensajesMongoDb');
 const config = require('config');
 const logger = require('../logger');
 const mongoConnectionString = config.get('mongoDB.connection')  
   
-class ContenedorPedidosMongoDB{
+class ContenedorMensajesMongoDB{
 
     constructor(){
         
@@ -40,4 +40,4 @@ class ContenedorPedidosMongoDB{
     
 }
 
-module.exports = ContenedorPedidosMongoDB
+module.exports = ContenedorMensajesMongoDB

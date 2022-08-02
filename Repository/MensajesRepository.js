@@ -3,32 +3,35 @@
 const MensajeDto = require('../Dto/MensajeDto')
 const daoFactory = require('../Dao/DaoFactory')
 const config = require('config')
-const tipo = config('tipoPersistencia.persistenciaF')
+const tipo = config.get('tipoPersistencia.persistenciaF')
 
 
 class MensajesRepo {
 
     constructor() {
-        this.dao = new daoFactory(tipo)
+        this.dao = new daoFactory(tipo).getDao()
     }
 
-    async getAll() {
-        const dtos = await this.dao.getAll({})
+    async getAllMessages() {
+        const dtos = await this.dao.getAll()
         return dtos.map(dto => new  MensajeDto(dto))
     }
 
-    async getById(idProd) {
-        const dto = await this.dao.getById(idProd)
+    
+    async getById(id) {
+        const dto = await this.dao.getById(id)
         return new  MensajeDto(dto)
     }
+
 
     async add(prod) {
         const dto = new  MensajeDto(prod)
         return await this.dao.save(dto)
     }
 
-    async removeById(idProd) {
-        const dto = await this.dao.deleteById(idProd)
+
+    async removeById(id) {
+        const dto = await this.dao.deleteById(id)
         return new  MensajeDto(dto)
     }
 }

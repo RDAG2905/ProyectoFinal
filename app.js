@@ -30,6 +30,7 @@ global.celAdmin = "+5491125111726"
 const jwt = require('./middlewares/jwt')
 const { Server: HttpServer } = require('http')
 const { Server: IOServer } = require('socket.io')
+const webSocket = require('./WebSocket/socket')
  
   /////////////////////////////////////
   /// Definiendo el número de procesos
@@ -117,7 +118,7 @@ Db.conectarDB(process.env.MONGODB, err => {
 
 const httpServer = new HttpServer(app)
 const io = new IOServer(httpServer)
-
+webSocket(io)
 
 httpServer.listen(PORT, () => {    
     logger.info(`Servidor express escuchando en el puerto ${PORT}`)

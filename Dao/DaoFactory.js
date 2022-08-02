@@ -5,8 +5,8 @@ const pedidosDaoMongo = require('../Dao/PedidosDaoMongoDB')
 const mensajesDaoMongo = require('../Dao/MensajesDaoMongoDB')
 const productosDaoSQL = require('../Dao/ProductosDaoSQL')
 const carritosDaoSQL = require('../Dao/CarritosDaoSQL')
-const modelProductoMongo = require('../models/ProductoMongoDB');  
-const modelCarritoMongo = require('../models/CarritoMongoDb');  
+const modelProductoMongo = require('../SchemaModels/ProductoMongoDB');  
+const modelCarritoMongo = require('../SchemaModels/CarritoMongoDb');  
 const config = require('config');
 
 
