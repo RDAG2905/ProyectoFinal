@@ -1,9 +1,12 @@
+
 class ProductDto{
-    
-    constructor(product){      
-        this.nombre = product.nombre,
-        this.fotoUrl = product.fotoUrl,
-        this.precio = product.precio  
-    }
+   
+    constructor({ id,name,description,price,image }) {
+        this.id = id,
+        this.name = name,
+        this.description = description,
+        this.price = price,
+        this.image= image
+      }
 
 }

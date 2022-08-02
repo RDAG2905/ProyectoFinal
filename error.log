@@ -1450,3 +1450,39 @@ Require stack:
     at Socket.emitUntyped (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\socket.io\dist\typed-events.js:69:22)
     at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\socket.io\dist\socket.js:465:39
     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[31merror[39m:   Error: El email es un campo requerido
+    at Message.set email [as email] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\BusinessModels\Message.js:15:29)
+    at new Message (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\BusinessModels\Message.js:8:20)
+    at Object.saveMessage (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\services\messageServices.js:7:21)
+    at Socket.<anonymous> (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\WebSocket\socket.js:11:30)
+    at Socket.emit (node:events:527:28)
+    at Socket.emitUntyped (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\socket.io\dist\typed-events.js:69:22)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\socket.io\dist\socket.js:465:39
+    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[31merror[39m:   Error: El texto del mensaje es requerido
+    at Message.set text [as text] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\BusinessModels\Message.js:22:29)
+    at new Message (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\BusinessModels\Message.js:9:19)
+    at Object.saveMessage (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\services\messageServices.js:7:21)
+    at Socket.<anonymous> (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\WebSocket\socket.js:11:30)
+    at Socket.emit (node:events:527:28)
+    at Socket.emitUntyped (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\socket.io\dist\typed-events.js:69:22)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\socket.io\dist\socket.js:465:39
+    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[31merror[39m:   Error: El email es un campo requerido
+    at Message.set email [as email] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\BusinessModels\Message.js:15:29)
+    at new Message (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\BusinessModels\Message.js:8:20)
+    at Object.saveMessage (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\services\messageServices.js:7:21)
+    at Socket.<anonymous> (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\WebSocket\socket.js:11:30)
+    at Socket.emit (node:events:527:28)
+    at Socket.emitUntyped (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\socket.io\dist\typed-events.js:69:22)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\socket.io\dist\socket.js:465:39
+    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[31merror[39m:   Error: El texto del mensaje es requerido
+    at Message.set text [as text] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\BusinessModels\Message.js:22:29)
+    at new Message (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\BusinessModels\Message.js:9:19)
+    at Object.saveMessage (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\services\messageServices.js:7:21)
+    at Socket.<anonymous> (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\WebSocket\socket.js:11:30)
+    at Socket.emit (node:events:527:28)
+    at Socket.emitUntyped (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\socket.io\dist\typed-events.js:69:22)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\socket.io\dist\socket.js:465:39
+    at processTicksAndRejections (node:internal/process/task_queues:78:11)
