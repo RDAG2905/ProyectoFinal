@@ -1,7 +1,7 @@
 
 const services = require('../services/userServices')
 const jwt = require('../middlewares/jwt')
-
+const logger = require('../logger')
 
 
 const register = (req, res)=>{
@@ -9,7 +9,7 @@ const register = (req, res)=>{
             .then(user => 
                 res.send({user}))
             .catch(err=>{
-                logger.error(err)
+                logger.error(err.stack)
                 let msg = 'Error de Registro'
                 res.send({msg})
     })
@@ -18,14 +18,14 @@ const register = (req, res)=>{
     
 
 const login = (req, res)=>{
-    const { username,password } = req.body
-    services.authenticate(username,password)
+    const { email,password } = req.body
+    services.authenticate(email,password)
             .then(user =>{
                 const access_token =jwt.generateAuthToken(user)
                 res.json({ access_token })
             })
             .catch(err=>{
-                logger.error(err)
+                logger.error(err.stack)
                 let msg = 'Error de autenticación'
                 res.status(401).json({msg})
             })

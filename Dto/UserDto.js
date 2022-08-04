@@ -1,13 +1,14 @@
 class UserDto {
 
 constructor(user){
-    this.username = user.username,
-    this.nombre = user.nombre,
-    this.direccion = user.direccion,
-    this.edad = user.edad,
-    this.telefono = user.telefono,
+    this.name = user.name,
+    this.lastName = user.lastName,
+    this.email = user.email,
+    this.password = user.password,
+    this.phone = user.phone,
     this.isAdmin = user.isAdmin,
-    this.fotoUrl = user.fotoUrl
+    this.url = user.url
+    this.id = user.id
 }
 
 }

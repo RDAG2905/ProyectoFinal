@@ -4,18 +4,26 @@ const logger = require('../logger')
 const {notificarPedido} = require('../helpers/mailSender') 
 const util = require('util')
 const { enviarSms , enviarWhatsapp } = require('../helpers/twilioHelper')
-let Changuito = require('../BusinessModels/Carrito')
-
+let Changuito = require('../BusinessModels/Cart')
+const OrderRepository = require('../Repository/OrderRepository')
+const CartRepository = require('../Repository/CartRepository')
+const UserCart = require('../BusinessModels/Order')
 
 const createOrderDB = async (idCart,idUser,user) => {
-    let factory = new daoFactory(config.get('tipoPersistencia.persistenciaB')) 
-    let cartDao = factory.getDao()
-    let cart = await cartDao.getCart(idCart)
+   
+    let cartRepository = new CartRepository()
+    let cart = await cartRepository.getById(idCart)
+
     if (!cart) throw new Error('No se encontró el carrito')
     factory = new daoFactory(config.get('tipoPersistencia.persistenciaE')) 
     let orderDao = factory.getDao()
-    let order = {idCart,idUser}
-    let newOrder = await orderDao.save(order)
+    
+    let orderRepository = new OrderRepository()
+
+    let order = new UserCart({idCart,idUser})
+
+    let newOrder = await orderRepository.add(order)
+
     let chango = new Changuito(cart)
     if (newOrder){
         await notificarPedido(chango,user)
@@ -28,9 +36,8 @@ const createOrderDB = async (idCart,idUser,user) => {
 
 
 const getOrdersDB = async (idUser) => {
-    let factory = new daoFactory(config.get('tipoPersistencia.persistenciaE')) 
-    let dao = factory.getDao()
-    return await dao.getByUserId(idUser)
+    let orderRepository = new OrderRepository()
+    return await orderRepository.getByUserId(idUser)
 }
 
 

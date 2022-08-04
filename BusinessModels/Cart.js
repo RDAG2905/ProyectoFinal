@@ -3,7 +3,7 @@ const logger = require("../logger")
 class Carrito{
 
     constructor(carrito){
-        logger.info(`carrito constructo : ${carrito}`)
+        //logger.info(`carrito constructor : ${carrito}`)
         if(carrito){
             this._id = carrito._id
             this.timestamp = carrito.timestamp   

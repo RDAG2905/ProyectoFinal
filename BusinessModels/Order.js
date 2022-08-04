@@ -1,4 +1,4 @@
-class OrderDto {
+class Order {
   
      
     constructor({ idCart,idUser}){
@@ -10,4 +10,4 @@ class OrderDto {
 }
     
     
-    module.exports = OrderDto
+    module.exports = Order

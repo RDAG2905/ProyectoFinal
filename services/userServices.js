@@ -2,12 +2,13 @@ const daoUsuarios = require('../Dao/UsuariosDaoMongoDB')
 const logger = require('../logger')
 const bCrypt = require('../helpers/bCryptHelper')
 const util = require('util')
-
+const Repository = require('../Repository/UsuariosRepository')
+const User = require('../BusinessModels/User')
 
 
 const authenticate = async (username, password) => {
-        let dao = new daoUsuarios() 
-        let usuario = await dao.getUserByName(username)
+    let repository = new Repository()
+    let usuario =  await repository.getByEmail(username)
     if(!bCrypt.isValidPassword(usuario,password)){
         throw new Error('Invalid Password')
     }
@@ -18,14 +19,12 @@ const authenticate = async (username, password) => {
 
 
 
-const registerUser = async (datosUsuario) => {   
-    let newUser
-    let msg
- 
-        let userExists = await verifyName(datosUsuario.username)
+const registerUser = async (datosUsuario) => {      
+        let msg
+        let userExists = await verifyName(datosUsuario.email)
         logger.info(`userExists : ${userExists }`)
         if(!userExists){
-           newUser = await saveUser(datosUsuario)
+           await saveUser(datosUsuario)
            msg = 'EL Usuario ha sido registrado !!'          
         }else{
            msg = 'EL Usuario ya existe !!' 
@@ -37,21 +36,25 @@ const registerUser = async (datosUsuario) => {
 
 
 
-const saveUser = async (user) =>{
-    
-        let dao = new daoUsuarios() 
-        user.password =  bCrypt.createHash(user.password)
-        let  newUser = await dao.save(user)
-        return newUser
+
+
+const saveUser = async (user) =>{  
+       // user.password =  bCrypt.createHash(user.password)
+        logger.info(util.inspect(user))
+        let newUser = new User(user)
+        newUser.createId()
+        let repository = new Repository()
+        let  createdUser = await repository.add(newUser)
+        return createdUser
   
 }
 
 
 
 
-const verifyName = async (username) => {    
-        let dao = new daoUsuarios()
-        let user = await dao.getUserByName(username)
+const verifyName = async (username) => {  
+        let repository = new Repository()         
+        let user = await repository.getByEmail(username)
         if (user) throw new Error('el nombre de usuario no está disponible')
         return user
    

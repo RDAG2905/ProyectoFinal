@@ -20,7 +20,8 @@
             'persistenciaC':'productoSql',
             'persistenciaD':'carritoSql',
             'persistenciaE':'pedidoMongo',
-            'persistenciaF':'mensajeMongo'
+            'persistenciaF':'mensajeMongo',
+            'persistenciaG':'usuarioMongo'
         },
         optionsSqlLite3 : {
             client: 'sqlite3', 

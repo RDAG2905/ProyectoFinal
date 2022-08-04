@@ -35,9 +35,7 @@ const auth = (req, res, next) =>{
     jwt.verify(token, PRIVATE_KEY, (err, decoded) => {
       if (err) {
         throw new Error(err)
-       /*return res.status(403).json({
-          error: 'not authorized'
-        });*/ 
+      
       }
      
       req.user = decoded.user;

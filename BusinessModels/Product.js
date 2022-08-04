@@ -1,24 +1,20 @@
 class Product {
-    #id
+    //#id
     #name
     #description
     #price
     #image
   
-    constructor({ id,name,description,price,image }) {
-      this.id = id,
+    constructor({ id,name,description,price,image,quantity}) {
+      //this.id = id,
       this.name = name,
       this.description = description,
       this.price = price,
+      this.quantity = quantity
       this.image= image
     }
   
-    get id() { return this.#id }
-  
-    set id(id) {
-      if (!id) throw new Error('"id" es un campo requerido');
-      this.#id = id;
-    }
+   
   
     get name() { return this.#name }
   
@@ -50,5 +46,14 @@ class Product {
       if (!fotoUrl) throw new Error('"la foto" es un campo requerido');
       this.#image = fotoUrl;
     }
+
+   /*
+    get id() { return this.#id }
+  
+    set id(id) {
+      if (!id) throw new Error('"id" es un campo requerido');
+      this.#id = id;
+    }
+    */
 
   }

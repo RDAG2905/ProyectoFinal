@@ -4,15 +4,14 @@ const mongoose = require('mongoose');
 const usuariosCollection = 'usuarios';
 
 const usuariosSchema = new mongoose.Schema({
-    username: {type: String, max: 100, required: true},
+    email: {type: String, max: 100, required: true},
     password: {type: String, required: true},  
-    nombre : {type: String,required: true},
-    direccion : {type: String,required: true},
-    edad:{type: Number},
-    telefono:{type: String,required: true},
-    //tipoUsuario: {type: String,required: true},
-    isAdmin:{type: Boolean,default:false},
-    fotoUrl:  {type: String}
+    name : {type: String, required: true},
+    lastName : {type: String, required: true},
+    phone:{type: String, required: true},
+    isAdmin:{type: Boolean, default:false},
+    url: {type: String},
+    id: {type: String , required: true}
 })
 
 

@@ -26,9 +26,7 @@ class ContenedorUsuariosMongoDB{
     async save(usuario){
         const productSaveModel = model(usuario);
         return await productSaveModel.save();
-       /* let user =  await productSaveModel.save();
-        if (!user) throw new Error('Error al guardar el Usuario')
-        return user*/
+       
     }
 
 
@@ -43,10 +41,11 @@ class ContenedorUsuariosMongoDB{
         
     }
 
-    async getUserByName(username) {
+
+    async getUserByUserName(username) {
         try {
             logger.info(`username: ${username}`)
-            return await model.findOne({ 'username': username })
+            return await model.findOne({ 'email': username })
         } catch (error) {
             logger.error(error)
             throw Error('Error al buscar el usuario por email')
