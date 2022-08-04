@@ -7,13 +7,14 @@ const logger = require('../logger.js')
 
 
 const getMessage =(body,user)=>{
-   const { username,nombre,direccion,telefono } = user //passport.session
+ //  const { username,nombre,direccion,telefono } = user //passport.session
+   const { email,name,lastName,phone } = user //passport.session
    logger.info(`user: ${user}`)
    //logger.info(`passport.session getMessage : ${passport.session}`)
-   let textoUserName = `<br>username : ${username}</br>`
-   let textoNombre = `<br>nombre : ${nombre}</br>`
-   let textoDireccion= `<br>direccion : ${direccion}</br>`
-   let textoTelefono= `<br>telefono : ${telefono}</br>`
+   let textoUserName = `<br>username : ${email}</br>`
+   let textoNombre = `<br>nombre : ${name}</br>`
+   let textoDireccion= `<br>direccion : ${lastName}</br>`
+   let textoTelefono= `<br>telefono : ${phone}</br>`
    
    let mensajeRegistro = textoUserName + textoNombre + textoDireccion + textoTelefono
    return mensajeRegistro
@@ -25,7 +26,7 @@ const notificarRegistro = async (body)=>{
   
    let mensaje = getMessage(body)
     const mailRegisterOptions = {
-        from: body.username,
+        from: body.email,
         to: global.adminEmail,
         subject: 'Nuevo Registro',
         html: mensaje
@@ -46,9 +47,9 @@ const armarPedidoHtml = (chango)=>{
    let mensajePedido = ""
    let productos = chango.productos
    productos.forEach(element => {
-     let producto = `<br>producto : ${element.nombre}</br>`
-     let precio = `<br>precio : ${element.precio}</br>`
-     let cantidad = `<br>cantidad : ${element.cantidad}</br>`
+     let producto = `<br>producto : ${element.name}</br>`
+     let precio = `<br>precio : ${element.price}</br>`
+     let cantidad = `<br>cantidad : ${element.quantity}</br>`
      let salto = '<br>-----------------</br>'
      mensajePedido += (producto + precio + cantidad + salto)
    });
@@ -62,12 +63,12 @@ return mensajePedido
 const notificarPedido = async (chango,user)=>{
   
    let mensajePedido = armarPedidoHtml(chango) 
-   let {username } = user //passport.session
+   let { email } = user //passport.session
 
     const mailPedidoOptions = {
-        from: username,
+        from: email,
         to: global.adminEmail,
-        subject: 'Nuevo Pedido de ' + username,
+        subject: 'Nuevo Pedido de ' + email,
         html: mensajePedido
       }
 

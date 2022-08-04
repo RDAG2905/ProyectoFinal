@@ -3,54 +3,62 @@ const config = require('config');
 let tipoProd = config.get('tipoPersistencia.persistenciaA')
 let tipoCart = config.get('tipoPersistencia.persistenciaB')
 const logger = require('../logger')
+const CartRepository = require('../Repository/CartRepository')
+const ProductRepository = require('../Repository/ProductosRepository')
+const Product = require('../BusinessModels/Product')
+const util = require('util')
 
-
-
+/*
 const getDao = (tipoPersistencia)=>{
     let factory = new daoFactory(tipoPersistencia) 
     return factory.getDao();
 }
-
+*/
 
 
 const createCartDB = async (newCar)=>{  
-        let dao = getDao(tipoCart)
-        return await dao.save(newCar)
+        let repository = new CartRepository()
+        return await repository.add(newCar)
                   
 }
 
 
 
 const deleteCartDB = async (id) =>{
-    let factory = new daoFactory(tipoCart) 
-    let dao = factory.getDao()  
-    return await dao.delete(id)  
+    let repository = new CartRepository()
+    return await repository.removeById(id)  
  }
 
 
 
 
  const getCartDB = async (id) =>{
-    let factory = new daoFactory(tipoCart) 
-    let dao = factory.getDao()  
-    return await dao.getCart(id)  
+   let repository = new CartRepository()
+    return await repository.getCartById(id)  
  }
 
 
 
 
  const addProductToCartDB = async (idCart,idProduct,quantity) =>{
-    let factory = new daoFactory(tipoCart) 
-    let cartDao = factory.getDao()  
-    let factory2 = new daoFactory(tipoProd) 
-    let productDao = factory2.getDao()  
-    let product = await productDao.getById(idProduct)
-    let cartProduct= {
-      nombre: product.nombre,
-      precio: product.precio,
-      cantidad : quantity
-    }
-    return await cartDao.addProductToCart(idCart,cartProduct)  
+   
+
+    let cartRepository = new CartRepository()
+
+    let productRepository = new ProductRepository()
+
+    let product = await productRepository.getById(idProduct)
+    logger.info(`product: ${util.inspect(product)}`)
+    
+    let cartProduct = new Product(product)
+    cartProduct.quantity = quantity
+    logger.info(`cartProduct: ${util.inspect(cartProduct)}`)
+    let cart = await cartRepository.getCartById(idCart)
+    logger.info(`cart 1: ${ util.inspect(cart)}`)
+    cart.productos.push({cartProduct})
+    logger.info(`cart 2: ${util.inspect(cart)}`)
+    return await cartRepository.editCart(cart)
+    //return await cartRepository.addProduct(idCart,cartProduct)  
  }
 
 

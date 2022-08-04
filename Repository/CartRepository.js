@@ -20,8 +20,8 @@ class CartRepo {
     }
 
 
-    async getById(id) {
-        const dto = await this.dao.getById(id)
+    async getCartById(id) {
+        const dto = await this.dao.getCart(id)
         return new  CartDto(dto)
     }
 
@@ -33,10 +33,21 @@ class CartRepo {
 
 
     async removeById(id) {
-        const dto = await this.dao.delete(id)
-        return new  CartDto(dto)
+       return await this.dao.delete(id)
+       // const dto = await this.dao.delete(id)
+       // return new  CartDto(dto)
+    }
+
+
+    async editCart(cart){
+        return await this.dao.editCart(cart)
     }
 }
 
+/*
+    async addProduct(idCart,cartProduct) {
+        return await this.dao.addProductToCart(idCart,cartProduct)
+    }
+*/
 
 module.exports = CartRepo

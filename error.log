@@ -1592,3 +1592,97 @@ Require stack:
     at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:280:10)
     at Function.handle (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:175:3)
 [31merror[39m:   ProductDto is not a constructor
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   ReferenceError: cartDao is not defined
+    at addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\services\cartServices.js:57:5)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Cannot read properties of undefined (reading '_id')
+[31merror[39m:   TypeError: Cannot read properties of undefined (reading '_id')
+    at new CartDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\Dto\CartDto.js:4:24)
+    at CartRepo.removeById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\Repository\CartRepository.js:37:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async deleteCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\services\cartServices.js:28:12)
+[31merror[39m:   TypeError: Cannot read properties of undefined (reading 'timestamp')
+    at new CartDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\Dto\CartDto.js:5:30)
+    at CartRepo.removeById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\Repository\CartRepository.js:37:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async deleteCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\services\cartServices.js:28:12)
+[31merror[39m:   TypeError: Cannot read properties of undefined (reading '_id')
+    at new CartDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\Dto\CartDto.js:4:24)
+    at CartRepo.removeById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\Repository\CartRepository.js:37:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async deleteCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\services\cartServices.js:28:12)
+[31merror[39m:   TypeError: Cannot read properties of undefined (reading '_id')
+    at new CartDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\Dto\CartDto.js:4:24)
+    at CartRepo.removeById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\Repository\CartRepository.js:37:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async deleteCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\services\cartServices.js:28:12)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   TypeError: this.dao.getById is not a function
+    at CartRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\Repository\CartRepository.js:24:36)
+    at addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\services\cartServices.js:53:37)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)

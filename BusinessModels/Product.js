@@ -4,7 +4,8 @@ class Product {
     #description
     #price
     #image
-  
+    #quantity
+
     constructor({ id,name,description,price,image,quantity}) {
       //this.id = id,
       this.name = name,
@@ -47,6 +48,11 @@ class Product {
       this.#image = fotoUrl;
     }
 
+    get quantity() { return this.#quantity }
+  
+    set quantity(quantity) {
+      this.#quantity = quantity;
+    }
    /*
     get id() { return this.#id }
   
@@ -57,3 +63,5 @@ class Product {
     */
 
   }
+
+  module.exports = Product

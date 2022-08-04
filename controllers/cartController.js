@@ -8,7 +8,7 @@ const createCart = (req, res) =>{
                 res.send({idCart})
             })
             .catch(err =>{
-                logger.error(err)
+                logger.error(err.stack)
                 let msg = 'Error al crear al Carrito'
                 res.send({msg})  
             })
@@ -18,12 +18,13 @@ const createCart = (req, res) =>{
 
 const deleteCart = (req, res) =>{
     let id = req.params.id
+    let msg = 'El carrito ha sido eliminado'
       deleteCartDB(id)
-         .then(msg =>
+         .then(
              res.send({msg})
          )
          .catch(error=>{
-            logger.error(error)
+            logger.error(error.stack)
             let errMsg = 'Error al eliminar del carrito'
             res.send({errMsg})
          }         

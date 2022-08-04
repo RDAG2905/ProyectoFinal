@@ -42,20 +42,17 @@ class ContenedorCarritoMongo{
 
 
 
-
+/*
     async addProductToCart(idCarro,producto){      
         let carrito = await this.getCart(idCarro)
         carrito.productos.push(producto)
       
-       // let carritoEditado = await this.editCart(carrito,carrito._id)
-         
         await this.editCart(carrito,carrito._id)
         return await this.getCart(idCarro)
-        //logger.info(`carrito editado agregar: ${util.inspect(carritoEditado)}`)
-        //return carritoEditado;
+       
        
     } 
-
+*/
 
 
 
