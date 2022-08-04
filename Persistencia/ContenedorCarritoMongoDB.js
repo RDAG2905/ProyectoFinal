@@ -42,20 +42,6 @@ class ContenedorCarritoMongo{
 
 
 
-/*
-    async addProductToCart(idCarro,producto){      
-        let carrito = await this.getCart(idCarro)
-        carrito.productos.push(producto)
-      
-        await this.editCart(carrito,carrito._id)
-        return await this.getCart(idCarro)
-       
-       
-    } 
-*/
-
-
-
     async removeProductFromCart(idCarrito,idProducto){
         let carrito = await this.getCart(idCarrito)
         carrito.productos = carrito.productos.filter(prod =>prod._id != idProducto)
@@ -66,7 +52,10 @@ class ContenedorCarritoMongo{
 
 
      async editCart(carrito,idBuscado){
-       return await model.findByIdAndUpdate(idBuscado,carrito) 
+       let editado = await model.findByIdAndUpdate(idBuscado,carrito) 
+       if(editado){
+        return await this.getCart(idBuscado)
+       }
            
     }
 }

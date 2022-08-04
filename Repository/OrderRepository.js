@@ -35,6 +35,10 @@ class OrderRepo {
         const dto = await this.dao.delete(id)
         return new  OrderDto(dto)
     }
+
+    async getOrdersByUserId(id){
+        const dto = await this.dao.getOrdersByUserId(id)
+    }
 }
 
 

@@ -1,5 +1,5 @@
 const logger = require('../logger')
-const { createCartDB , deleteCartDB , getCartDB , addProductToCartDB ,removeProductFromCartDB } = require('../services/cartServices')
+const { createCartDB , deleteCartDB , getCartDB , addProductToCartDB ,removeProductFromCartDB , getProductsByCar} = require('../services/cartServices')
 
 
 const createCart = (req, res) =>{
@@ -86,4 +86,18 @@ const getCart = (req,res)=>{
  }
 
 
-module.exports = { createCart , deleteCart ,getCart ,addProductToCart,removeProductFromCart}
+ 
+const getProducts = (req, res) =>{
+    let idCart = req.params.id
+        getProductsByCar(idCart)
+                .then(idCart =>{
+                    res.send({idCart})
+                })
+                .catch(err =>{
+                    logger.error(err.stack)
+                    let msg = 'Error al recuperar los productos del carrito'
+                    res.send({msg})  
+                })
+}
+
+module.exports = { createCart , deleteCart ,getCart ,addProductToCart,removeProductFromCart,getProducts}

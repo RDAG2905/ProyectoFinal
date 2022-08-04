@@ -1686,3 +1686,112 @@ Require stack:
     at CartRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\Repository\CartRepository.js:24:36)
     at addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\services\cartServices.js:53:37)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   ReferenceError: cartProduct is not defined
+    at addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\services\cartServices.js:58:26)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Cannot destructure property 'id' of 'object null' as it is null.
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Cannot destructure property 'id' of 'object null' as it is null.
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   TypeError: orderRepository.getByUserId is not a function
+    at Object.getOrdersDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\services\orderServices.js:40:34)
+    at getOrders (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\controllers\OrdersController.js:23:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:421:3)
+[31merror[39m:   Cannot destructure property 'id' of 'object null' as it is null.
+[31merror[39m:   Cannot destructure property 'id' of 'object null' as it is null.
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Cannot destructure property 'id' of 'object null' as it is null.
+[31merror[39m:   Cannot destructure property 'id' of 'object null' as it is null.
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   ReferenceError: getProductsByCar is not defined
+    at getProducts (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\controllers\cartController.js:92:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:421:3)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Error: JsonWebTokenError: jwt malformed
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:37:15
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\jsonwebtoken\verify.js:63:12)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:265:14)
+[31merror[39m:   TypeError: cartRepository.getById is not a function
+    at Object.createOrderDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\services\orderServices.js:15:37)
+    at createOrder (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\controllers\OrdersController.js:8:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:175:3)
+[31merror[39m:   The From phone number +5491125111726 is not a valid, SMS-capable inbound phone number or short code for your account.
+[31merror[39m:   TypeError: orderRepository.getByUserId is not a function
+    at Object.getOrdersDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\services\orderServices.js:39:34)
+    at getOrders (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\controllers\OrdersController.js:23:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 40\Arquitectura\node_modules\express\lib\router\index.js:421:3)

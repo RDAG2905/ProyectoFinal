@@ -39,9 +39,12 @@ class CartRepo {
     }
 
 
-    async editCart(cart){
-        return await this.dao.editCart(cart)
+    async editCart(cart,id){
+        return await this.dao.editCart(cart,id)
     }
+
+
+    
 }
 
 /*

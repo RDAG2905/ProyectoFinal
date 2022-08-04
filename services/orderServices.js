@@ -12,11 +12,10 @@ const UserCart = require('../BusinessModels/Order')
 const createOrderDB = async (idCart,idUser,user) => {
    
     let cartRepository = new CartRepository()
-    let cart = await cartRepository.getById(idCart)
+    let cart = await cartRepository.getCartById(idCart)
 
     if (!cart) throw new Error('No se encontró el carrito')
-    factory = new daoFactory(config.get('tipoPersistencia.persistenciaE')) 
-    let orderDao = factory.getDao()
+    
     
     let orderRepository = new OrderRepository()
 
@@ -37,7 +36,7 @@ const createOrderDB = async (idCart,idUser,user) => {
 
 const getOrdersDB = async (idUser) => {
     let orderRepository = new OrderRepository()
-    return await orderRepository.getByUserId(idUser)
+    return await orderRepository.getOrdersByUserId(idUser)
 }
 
 

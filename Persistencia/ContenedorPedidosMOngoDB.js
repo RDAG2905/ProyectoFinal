@@ -22,7 +22,7 @@ class ContenedorPedidosMongoDB{
       return await model.findById(id)
     }
 
-    async getByUserId(id){
+    async getOrdersByUserId(id){
         //let idUser = new mongoose.Types.ObjectId(id)
         return await model.find({'idUser': id})
       }
