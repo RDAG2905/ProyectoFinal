@@ -35,6 +35,7 @@ const webSocket = require('./WebSocket/socket')
   /////////////////////////////////////
   /// Definiendo el número de procesos
   ////////////////////////////////////
+function createServer(){ 
 
 if (modoCluster && cluster.isPrimary) {
     const numCPUs = cpus().length
@@ -115,7 +116,7 @@ Db.conectarDB(process.env.MONGODB, err => {
     logger.info('BASE DE DATOS CONECTADA');
 })
 
-
+/*
 const httpServer = new HttpServer(app)
 const io = new IOServer(httpServer)
 webSocket(io)
@@ -127,3 +128,10 @@ httpServer.listen(PORT, () => {
 httpServer.on('error', error => logger.error(`Error en servidor: ${error}`))
 
 }
+*/
+return app
+} 
+}
+
+
+module.exports = { createServer }

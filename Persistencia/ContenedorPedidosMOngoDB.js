@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const model = require('../SchemaModels/Order');
 const config = require('config');
 const logger = require('../logger');
-const mongoConnectionString = config.get('mongoDB.connection')  
+const mongoConnectionString = config.get('mongoDB.connection') 
+const util = require('util') 
   
 class ContenedorPedidosMongoDB{
 
@@ -24,7 +25,10 @@ class ContenedorPedidosMongoDB{
 
     async getOrdersByUserId(id){
         //let idUser = new mongoose.Types.ObjectId(id)
-        return await model.find({'idUser': id})
+        //let x = await model.find({'idUser': id})
+        let x = await model.find({})
+        logger.info(util.inspect(x))
+        return x
       }
 
 

@@ -31,7 +31,7 @@ const createProduct = (req, res) =>{
             .catch(err =>{
                 logger.error(err)
              //   let msg = 'Error al crear al Producto'
-                res.send({err})  
+                res.status(400).send({err})  
             })
 }
 
