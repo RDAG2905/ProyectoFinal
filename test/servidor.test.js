@@ -35,7 +35,7 @@ describe('Connect to Server', () => {
    
     const email = "admin@gmail.com"
     const password = "1234"
-    const productoID = "62eedf5735cd8e68765f02ae"
+    const productoID = "62eee27f2d244e51098afb61"
     const productoNuevo = {                    
                             "name": "Inspiron 15 3000",
                             "description":"Notebook DELL",
@@ -94,7 +94,8 @@ describe('Connect to Server', () => {
         describe('API GET api/productos/id/{idProducto}', () => {
             it('deberia retornar la info del producto solicitado', async () => {
                 axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
-                const { data } = await axios.get( url + '/api/productos?id=' + productoID)              
+                const { data } = await axios.get( url + '/api/productos/' + productoID)
+                        
                 assert.ok(data.name)
                 assert.ok(data.description)
                 assert.ok(data.price)               

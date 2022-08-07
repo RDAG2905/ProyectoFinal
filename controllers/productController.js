@@ -8,6 +8,7 @@ const { getProductsFromDB , createProductFromDB , editProductFromDB , deleteProd
 
 const getProducts = (req, res)=>{
     let idProducto = req.params.id 
+    logger.info('idProducto : ' + idProducto)
     getProductsFromDB(idProducto)
             .then(prod => 
                 res.send(prod))
