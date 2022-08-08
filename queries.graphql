@@ -1,0 +1,52 @@
+
+
+query {
+  obtenerProductos {
+    name
+    description
+  }
+}
+
+# query { obtenerProductos  { name description }}
+
+
+
+
+query { 
+  obtenerUnProducto(id: "62eee27f2d244e51098afb61") {
+    name
+    description
+    price
+  }
+}
+
+# obtenerUnProducto(id: \"62eee27f2d244e51098afb61\") { name description price }
+
+
+
+
+mutation {
+  agregarProducto(datos: {
+    name:"Samsung Galaxy",
+    description:"Smartphone",
+    price:50000,
+    image:"photo.jpg"
+  }) {
+    id
+    name
+    description
+    price
+  }
+}
+
+
+mutation {
+  borrarProducto(id: "5500a074e06424aabfc7") {
+    name
+    description
+    price
+  }
+}
+
+
+

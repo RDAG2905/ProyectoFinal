@@ -31,11 +31,12 @@ const jwt = require('./middlewares/jwt')
 const { Server: HttpServer } = require('http')
 const { Server: IOServer } = require('socket.io')
 const webSocket = require('./WebSocket/socket')
+const { graphqlMiddleware } = require('./middlewares/graphQL')
  
   /////////////////////////////////////
   /// Definiendo el número de procesos
   ////////////////////////////////////
-function createServer(){ 
+//function createServer(){ 
 
 if (modoCluster && cluster.isPrimary) {
     const numCPUs = cpus().length
@@ -80,6 +81,7 @@ app.set("views","./public/plantillas")
 app.set("view engine","hbs")
 app.use(cookieParser())
 
+app.use('/graphql', graphqlMiddleware)
 app.use('/views',routerHtml)
 app.use('/api/randoms',randomRouter)
 app.use('/files', uploadFilesRouter)
@@ -116,7 +118,7 @@ Db.conectarDB(process.env.MONGODB, err => {
     logger.info('BASE DE DATOS CONECTADA');
 })
 
-/*
+
 const httpServer = new HttpServer(app)
 const io = new IOServer(httpServer)
 webSocket(io)
@@ -128,10 +130,10 @@ httpServer.listen(PORT, () => {
 httpServer.on('error', error => logger.error(`Error en servidor: ${error}`))
 
 }
-*/
-return app
-} 
-}
+
+//return app
+//} 
+//}
 
 
-module.exports = { createServer }
+//module.exports = { createServer }
