@@ -1,15 +1,22 @@
 const mongoose = require('mongoose');
 const model = require('../SchemaModels/User');
-const config = require('config');
+//const config = require('config');
+//const mongoConnectionString = config.get('mongoDB.connection')  
 const logger = require('../logger');
-const mongoConnectionString = config.get('mongoDB.connection')  
-  
+
+const { MONGO_URI } = require('../config/config')
+const mongoConnectionString = MONGO_URI 
+//const mongoConnectionString = process.env.MONGODB
+
+logger.info(`MONGO_URI: ${MONGO_URI}`)
+logger.info(`MONGO_URI: ${typeof(MONGO_URI)}`)
+
 class ContenedorUsuariosMongoDB{
 
     constructor(){
         
-        const URL = mongoConnectionString
-        mongoose.connect(URL, {});   
+      //  const URL = mongoConnectionString
+      //  mongoose.connect(URL, {});   
     }
    
 
@@ -44,7 +51,7 @@ class ContenedorUsuariosMongoDB{
 
     async getUserByUserName(username) {
         try {
-            logger.info(`username: ${username}`)
+            logger.info(`email: ${username}`)
             return await model.findOne({ 'email': username })
         } catch (error) {
             logger.error(error)

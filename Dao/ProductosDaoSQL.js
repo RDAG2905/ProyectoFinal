@@ -1,3 +1,4 @@
+/*
 const ContenedorSQL = require("../Persistencia/ContenedorSQL")
 
 class ProductosDaoSQL extends ContenedorSQL{
@@ -9,3 +10,4 @@ class ProductosDaoSQL extends ContenedorSQL{
     }
     
     module.exports = ProductosDaoSQL
+    */

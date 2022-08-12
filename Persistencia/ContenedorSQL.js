@@ -1,4 +1,5 @@
-const config = require('config')
+//const config = require('config')
+/*
 const knex = require('knex')
 
 class ContenedorSQL{
@@ -180,4 +181,4 @@ class ContenedorSQL{
 }
 
 module.exports = ContenedorSQL
- 
+ */

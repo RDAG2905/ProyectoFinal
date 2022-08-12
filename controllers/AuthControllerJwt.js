@@ -10,7 +10,7 @@ const register = (req, res)=>{
                 res.send({user}))
             .catch(err=>{
                 logger.error(err.stack)
-                let msg = 'Error de Registro'
+                let msg = 'Error de Registro : ' + err
                 res.send({msg})
     })
 }
@@ -18,8 +18,8 @@ const register = (req, res)=>{
     
 
 const login = (req, res)=>{
-    const { email,password } = req.body
-    services.authenticate(email,password)
+    //const { email,password } = req.body
+    services.authenticate(req.body)
             .then(user =>{
                 const access_token =jwt.generateAuthToken(user)
                 res.json({ access_token })

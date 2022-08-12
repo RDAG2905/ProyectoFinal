@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 const model = require('../SchemaModels/CarritoMongoDb');    
 const carrito = require('../BusinessModels/Cart')
-const config = require('config');
+//const config = require('config');
 const logger = require('../logger');
-const mongoConnectionString = config.get('mongoDB.connection')  
+//const mongoConnectionString = config.get('mongoDB.connection')  
 const util = require('util')
+const { MONGO_URI } = require('../config/config')
+const mongoConnectionString = MONGO_URI 
 
 class ContenedorCarritoMongo{
        

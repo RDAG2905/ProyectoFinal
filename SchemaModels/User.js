@@ -7,7 +7,7 @@ const usuariosSchema = new mongoose.Schema({
     email: {type: String, max: 100, required: true},
     password: {type: String, required: true},  
     name : {type: String, required: true},
-    lastName : {type: String, required: true},
+    lastname : {type: String, required: true},
     phone:{type: String, required: true},
     isAdmin:{type: Boolean, default:false},
     url: {type: String},

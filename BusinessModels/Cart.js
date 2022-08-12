@@ -3,7 +3,7 @@ const logger = require("../logger")
 class Carrito{
 
     constructor(carrito){
-        //logger.info(`carrito constructor : ${carrito}`)
+       
         if(carrito){
             this._id = carrito._id
             this.timestamp = carrito.timestamp   
@@ -22,8 +22,10 @@ class Carrito{
     EliminarProducto(idProducto){
     this.productos = this.productos.filter(p=>p.id != idProducto)}
 
+    
     GetProducts(){this.productos}
 
+   
     calcularTotal(){
         if(this.productos.length > 0){
             this.productos.forEach(element => {

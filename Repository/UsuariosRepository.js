@@ -1,9 +1,8 @@
 
 const UserDto = require('../Dto/UserDto')
 const daoFactory = require('../Dao/DaoFactory')
-const config = require('config')
-const tipo = config.get('tipoPersistencia.persistenciaG')
 
+const tipo = 'usuarioMongo'
 
 class UserRepo {
 

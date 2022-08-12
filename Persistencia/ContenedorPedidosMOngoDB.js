@@ -1,16 +1,19 @@
 const mongoose = require('mongoose');
 const model = require('../SchemaModels/Order');
-const config = require('config');
+//const config = require('config');
 const logger = require('../logger');
-const mongoConnectionString = config.get('mongoDB.connection') 
-const util = require('util') 
-  
+//const mongoConnectionString = config.get('mongoDB.connection') 
+const util = require('util')
+const { MONGO_URI } = require('../config/config')
+const mongoConnectionString = MONGO_URI  
+
+
 class ContenedorPedidosMongoDB{
 
     constructor(){
         
-        const URL = mongoConnectionString
-        mongoose.connect(URL, {});   
+       // const URL = mongoConnectionString
+       // mongoose.connect(URL, {});   
     }
    
 

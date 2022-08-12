@@ -2,9 +2,8 @@
 
 const OrderDto = require('../Dto/OrderDto')
 const DaoFactory = require('../Dao/DaoFactory')
-const config = require('config')
-const tipo = config.get('tipoPersistencia.persistenciaE')
 
+const tipo = 'pedidoMongo'
 
 class OrderRepo {
 
@@ -37,7 +36,7 @@ class OrderRepo {
     }
 
     async getOrdersByUserId(id){
-        const dto = await this.dao.getOrdersByUserId(id)
+        return await this.dao.getOrdersByUserId(id)
     }
 }
 

@@ -1,5 +1,4 @@
 const daoFactory = require('../Dao/DaoFactory')
-const config = require('config');
 
 const logger = require('../logger')
 const Repository = require('../Repository/ProductosRepository')

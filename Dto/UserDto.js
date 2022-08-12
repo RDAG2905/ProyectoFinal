@@ -2,7 +2,7 @@ class UserDto {
 
 constructor(user){
     this.name = user.name,
-    this.lastName = user.lastName,
+    this.lastname = user.lastname,
     this.email = user.email,
     this.password = user.password,
     this.phone = user.phone,

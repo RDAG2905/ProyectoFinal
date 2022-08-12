@@ -1,4 +1,4 @@
-const config = require('config');
+
 const daoFactory = require('../Dao/DaoFactory')
 const logger = require('../logger')
 const {notificarPedido} = require('../helpers/mailSender') 

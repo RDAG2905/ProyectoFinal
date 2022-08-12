@@ -4,7 +4,7 @@ const { v4 } = require("uuid");
 class User {
     #id
     #name
-    #lastName
+    #lastname
     #email
     #password
     #phone
@@ -12,14 +12,17 @@ class User {
     #url
 
     constructor(user){
+        if(!user){
+           throw new Error('User data is required')
+        }
         this.name = user.name,
-        this.lastName = user.lastName,
+        this.lastname = user.lastname,
         this.email = user.email,
         this.password = user.password,
         this.phone = user.phone,
         this.isAdmin = user.isAdmin,
         this.url = user.url
-        //this.id = user.id ? user.id : this.createId()
+        
     }
     
    
@@ -31,11 +34,11 @@ class User {
         this.#name = nombre
     }
 
-    get lastName() { return this.#lastName }
+    get lastname() { return this.#lastname }
 
-    set lastName(apellido) {
+    set lastname(apellido) {
         if (!apellido) throw new Error('The "lastName" is required')
-        this.#lastName = apellido
+        this.#lastname = apellido
     }
 
     get email() { return this.#email }
@@ -61,12 +64,16 @@ class User {
         this.#phone = nro
     }
 
-    createId (){
+    
+
+    isValidPassword(user,password){
+        return bCrypt.isValidPassword(user,password)
+    }
+    
+    createId(){
         this.id = v4()
     }
-     
 
-    
 
 
     }
@@ -75,27 +82,3 @@ class User {
     module.exports = User
 
     
-
-     /*
-    constructor(user){
-        this.username = user.username,
-        this.nombre = user.nombre,
-        this.direccion = user.direccion,
-        this.edad = user.edad,
-        this.telefono = user.telefono,
-        this.isAdmin = user.isAdmin,
-        this.fotoUrl = user.fotoUrl
-    }
-   */ 
-
-    
-     
-
-     /*
-     get id() { return this.#id }
-
-    set id(id) {
-        if (!id) throw new Error('The"id" is required')
-        this.#id = id
-    }
-     */

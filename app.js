@@ -1,10 +1,19 @@
+/*
 const express = require('express')
 const cookieParser = require('cookie-parser')
+*/
+const path = require('path')
+const dotenv = require('dotenv')
+
+const config = require('./config/config')
 const Db = require('./controllers/DbController')
 
 let util = require('util');
 const parseArgs = require('minimist');
-const dotenv = require('dotenv').config()
+//const dotenv = require('dotenv').config()
+const { init } = require('./server')
+
+/*
 const randomRouter = require('./Rutas/RandomRouter')
 const routerProductos = require('./Rutas/RouterProductos')
 const routerCarrito = require('./Rutas/RouterCarrito')
@@ -12,31 +21,43 @@ const routerPedidos = require('./Rutas/RouterPedidos')
 const routerAuth = require('./Rutas/AuthRouter')
 const routerSystem = require('./Rutas/SystemRouter')
 const routerHtml= require('./Rutas/HtmlOnWireRouter')
+*/
+//const uploadFilesRouter = require('./Rutas/uploadFileRouter.js')
 
 const cluster = require('cluster')
 const {cpus} = require('os')
 
-let PORT = process.env.PORT
+//let PORT = process.env.PORT
 const modoCluster = process.argv[4] == 'CLUSTER'
 const compression = require('compression')
 const logger = require('./logger.js')
-const uploadFilesRouter = require('./Rutas/uploadFileRouter.js')
-const path = require('path')
+
+
 
 global.root = __dirname;
 global.adminEmail = "tyrel.ullrich@ethereal.email"
 global.celAdmin = "+5491125111726"
 
-const jwt = require('./middlewares/jwt')
+//const jwt = require('./middlewares/jwt')
 const { Server: HttpServer } = require('http')
 const { Server: IOServer } = require('socket.io')
 const webSocket = require('./WebSocket/socket')
-const { graphqlMiddleware } = require('./middlewares/graphQL')
+//const { graphqlMiddleware } = require('./middlewares/graphQL')
  
   /////////////////////////////////////
   /// Definiendo el número de procesos
   ////////////////////////////////////
 //function createServer(){ 
+
+    dotenv.config({
+        path:
+          
+          process.argv[2] == 'desa'
+            ? path.resolve(__dirname, 'desa.env')
+            : path.resolve(__dirname, 'prod.env'),
+      })
+
+
 
 if (modoCluster && cluster.isPrimary) {
     const numCPUs = cpus().length
@@ -55,7 +76,8 @@ if (modoCluster && cluster.isPrimary) {
 
 } else {
 
-    
+const app = init()
+ /* 
 const app = express()
 
 app.use(express.json({limit: '25mb'}));
@@ -107,10 +129,19 @@ app.use(function(err, req, res, next) {
   next()
  });
  
+*/  
 
 
+/*
+Db.conectarDB(process.env.MONGODB, err => { 
+    if (err) 
+    logger.error(`error en conexión de base de datos : ${err}`)
+    else
+    logger.info('BASE DE DATOS CONECTADA');
+})
+*/
+//logger.info(util.inspect(process.env))
 
-//Db.conectarDB(process.env.MONGOATLASCONNECTION, err => {  
 Db.conectarDB(process.env.MONGODB, err => { 
     if (err) 
     logger.error(`error en conexión de base de datos : ${err}`)
@@ -118,13 +149,17 @@ Db.conectarDB(process.env.MONGODB, err => {
     logger.info('BASE DE DATOS CONECTADA');
 })
 
-
 const httpServer = new HttpServer(app)
 const io = new IOServer(httpServer)
 webSocket(io)
-
+/*
 httpServer.listen(PORT, () => {    
     logger.info(`Servidor express escuchando en el puerto ${PORT}`)
+})
+*/
+
+httpServer.listen(process.env.PORT, () => {    
+    logger.info(`Servidor express escuchando en el puerto ${process.env.PORT}`)
 })
 
 httpServer.on('error', error => logger.error(`Error en servidor: ${error}`))

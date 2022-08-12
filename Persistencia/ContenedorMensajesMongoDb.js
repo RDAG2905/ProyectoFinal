@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 const model = require('../SchemaModels/MensajesMongoDb');
-const config = require('config');
+//const config = require('config');
+//const mongoConnectionString = config.get('mongoDB.connection')  
 const logger = require('../logger');
-const mongoConnectionString = config.get('mongoDB.connection')  
-  
+const { MONGO_URI } = require('../config/config')
+const mongoConnectionString = MONGO_URI
+
 class ContenedorMensajesMongoDB{
 
     constructor(){

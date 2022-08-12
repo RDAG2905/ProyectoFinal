@@ -1,8 +1,8 @@
 const bCrypt = require('bcrypt');
 
 
-function isValidPassword(user, password) {
-    return bCrypt.compareSync(password, user.password);
+async function isValidPassword(user, password) {
+    return await bCrypt.compare(password, user.password);
   }
   
   function createHash(password) {

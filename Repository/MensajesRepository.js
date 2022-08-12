@@ -2,9 +2,8 @@
 
 const MensajeDto = require('../Dto/MensajeDto')
 const daoFactory = require('../Dao/DaoFactory')
-const config = require('config')
-const tipo = config.get('tipoPersistencia.persistenciaF')
 
+const tipo = 'mensajeMongo'
 
 class MensajesRepo {
 

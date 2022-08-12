@@ -2409,3 +2409,128 @@ Require stack:
 [31merror[39m:   Productos validation failed: name: Path `name` is required., description: Path `description` is required., price: Path `price` is required., image: Path `image` is required.
 [31merror[39m:   Productos validation failed: name: Path `name` is required., description: Path `description` is required., price: Path `price` is required., image: Path `image` is required.
 [31merror[39m:   Productos validation failed: name: Path `name` is required., description: Path `description` is required., price: Path `price` is required., image: Path `image` is required.
+[31merror[39m:   TypeError: Cannot read properties of null (reading 'name')
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:15:26)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:12:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   TypeError: Cannot read properties of null (reading 'name')
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:15:26)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:12:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   TypeError: Cannot read properties of null (reading 'name')
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:15:26)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:13:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   TypeError: Cannot read properties of null (reading 'name')
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:15:26)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:13:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: Invalid Password
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: Invalid Password
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: Invalid Password
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: Invalid Password
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:16:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: JsonWebTokenError: jwt malformed
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:63:12)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:265:14)
+[31merror[39m:   Error: The "lastName" is required
+    at User.set lastName [as lastName] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:37:30)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:16:23)
+    at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:47:23)
+    at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:30:18)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: User data is required
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:16:18)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:13:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: The "lastName" is required
+    at User.set lastname [as lastname] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:40:30)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:19:23)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:13:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: The "lastName" is required
+    at User.set lastname [as lastname] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:40:30)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:19:23)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:13:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: The "lastName" is required
+    at User.set lastname [as lastname] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:40:30)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:19:23)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:13:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: Email and password are required !!
+    at checkLoginData (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:69:15)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:10:5)
+    at login (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\AuthControllerJwt.js:22:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Error: Email and password are required !!
+    at checkLoginData (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:69:15)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:10:5)
+    at login (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\AuthControllerJwt.js:22:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Error: The "lastName" is required
+    at User.set lastname [as lastname] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:40:30)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:19:23)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:13:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: The "lastName" is required
+    at User.set lastname [as lastname] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:40:30)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:19:23)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:13:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: Email and password are required !!
+    at checkLoginData (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:69:15)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:10:5)
+    at login (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\AuthControllerJwt.js:22:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Error: el nombre de usuario no está disponible
+    at verifyName (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:61:25)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:27:26)
+[31merror[39m:   Error: the username is not available
+    at verifyName (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:58:25)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:27:26)
+[31merror[39m:   Error: the username is not available
+    at verifyName (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:58:25)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:27:26)
+[31merror[39m:   Error: The "name" is required
+    at User.set name [as name] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:33:28)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:18:19)
+    at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:43:23)
+    at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:30:18)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)

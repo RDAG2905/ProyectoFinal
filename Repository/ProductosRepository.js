@@ -2,9 +2,8 @@
 
 const ProductDto = require('../Dto/ProductDto')
 const daoFactory = require('../Dao/DaoFactory')
-const config = require('config')
-let tipo = config.get('tipoPersistencia.persistenciaA')
 
+const tipo = 'productoMongo'
 
 class ProductosRepo {
 

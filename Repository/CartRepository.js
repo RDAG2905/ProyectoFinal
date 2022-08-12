@@ -3,9 +3,8 @@
 
 const CartDto = require('../Dto/CartDto')
 const DaoFactory = require('../Dao/DaoFactory')
-const config = require('config')
-const tipo = config.get('tipoPersistencia.persistenciaB')
 
+const tipo = 'carritoMongo'
 
 class CartRepo {
 

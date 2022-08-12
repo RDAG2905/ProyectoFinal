@@ -1,15 +1,18 @@
-const daoUsuarios = require('../Dao/UsuariosDaoMongoDB')
+
 const logger = require('../logger')
-const bCrypt = require('../helpers/bCryptHelper')
+
 const util = require('util')
 const Repository = require('../Repository/UsuariosRepository')
 const User = require('../BusinessModels/User')
+let repository = new Repository()
 
 
-const authenticate = async (username, password) => {
-    let repository = new Repository()
-    let usuario =  await repository.getByEmail(username)
-    if(!bCrypt.isValidPassword(usuario,password)){
+const authenticate = async ({email, password}) => {
+    checkLoginData(email,password)
+    let usuario =  await repository.getByEmail(email)
+    let user = new User(usuario)
+    
+    if(!user.isValidPassword(user,password)){    
         throw new Error('Invalid Password')
     }
     return usuario
@@ -20,14 +23,13 @@ const authenticate = async (username, password) => {
 
 
 const registerUser = async (datosUsuario) => {      
-        let msg
+    checkRegisterData(datosUsuario)    
+    let msg
         let userExists = await verifyName(datosUsuario.email)
-        logger.info(`userExists : ${userExists }`)
+        
         if(!userExists){
            await saveUser(datosUsuario)
-           msg = 'EL Usuario ha sido registrado !!'          
-        }else{
-           msg = 'EL Usuario ya existe !!' 
+           msg = 'The User has been registered !!'                 
         }
         return msg
      
@@ -38,29 +40,37 @@ const registerUser = async (datosUsuario) => {
 
 
 
-const saveUser = async (user) =>{  
-       // user.password =  bCrypt.createHash(user.password)
-        logger.info(util.inspect(user))
+const saveUser = async (user) =>{            
         let newUser = new User(user)
-        newUser.createId()
-        let repository = new Repository()
-        let  createdUser = await repository.add(newUser)
-        return createdUser
-  
+        newUser.createId()      
+        return await repository.add(newUser)
+         
 }
 
 
 
 
-const verifyName = async (username) => {  
-        let repository = new Repository()         
+const verifyName = async (username) => {     
         let user = await repository.getByEmail(username)
-        if (user) throw new Error('el nombre de usuario no está disponible')
+        if (user) throw new Error('the username is not available')
         return user
    
 }
 
 
+const checkLoginData=(email,password)=>{
+     if(!email || !password){
+        throw new Error('Email and password are required !!')
+     }
+}
+
+
+
+const checkRegisterData = (userData)=>{
+        if(!userData){
+            throw new Error('User data is required')
+        }
+}
 
 
 

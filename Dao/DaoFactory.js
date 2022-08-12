@@ -7,7 +7,7 @@ const productosDaoSQL = require('../Dao/ProductosDaoSQL')
 const carritosDaoSQL = require('../Dao/CarritosDaoSQL')
 const modelProductoMongo = require('../SchemaModels/ProductoMongoDB');  
 const modelCarritoMongo = require('../SchemaModels/CarritoMongoDb');  
-const config = require('config');
+
 
 
 class DaoFactory{
