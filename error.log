@@ -2534,3 +2534,9 @@ Require stack:
     at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:43:23)
     at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:30:18)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: The "name" is required
+    at User.set name [as name] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:33:28)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:18:19)
+    at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:43:23)
+    at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:30:18)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)

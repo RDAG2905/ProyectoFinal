@@ -1,9 +1,11 @@
 class OrderDto {
   
      
-    constructor({ idCart,idUser}){
+    constructor({ idCart,idUser,id,productos}){
        this.idCart =  idCart,
-       this.idUser = idUser
+       this.idUser = idUser,
+       this.id = id,
+       this.productos = productos
     }
     
    

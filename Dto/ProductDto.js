@@ -2,7 +2,7 @@
 class ProductDto{
    
     constructor({ id,name,description,price,image,quantity }) {
-       // this.id = id,
+        this.id = id,
         this.name = name,
         this.description = description,
         this.price = price,

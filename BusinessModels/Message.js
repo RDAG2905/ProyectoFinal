@@ -12,14 +12,14 @@ class Message{
     get email() { return this.#email }
 
     set email(unEmail) {
-        if (!unEmail) throw new Error('El email es un campo requerido')
+        if (!unEmail) throw new Error('email is required')
         this.#email = unEmail
     }
 
     get text() { return this.#text }
 
     set text(unTexto) {
-        if (!unTexto) throw new Error('El texto del mensaje es requerido')
+        if (!unTexto) throw new Error('text is required')
         this.#text = unTexto
     }
 

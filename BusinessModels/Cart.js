@@ -1,11 +1,13 @@
 const logger = require("../logger")
+const { v4 } = require("uuid")
 
-class Carrito{
+class ShoppingCart{
 
     constructor(carrito){
        
         if(carrito){
             this._id = carrito._id
+            this.id = carrito.id
             this.timestamp = carrito.timestamp   
             this.productos = carrito.productos
             this.usuarioId = carrito.usuarioId
@@ -17,8 +19,15 @@ class Carrito{
     
     Vaciar(){this.productos = []}
     
-    AgregarProducto(producto){ this.productos.push(producto)}
+
+    AgregarProducto(producto){ 
+        if(!producto){
+            throw new Error('Product was not added')
+        }
+        this.productos.push(producto)
+    }
     
+
     EliminarProducto(idProducto){
     this.productos = this.productos.filter(p=>p.id != idProducto)}
 
@@ -29,13 +38,19 @@ class Carrito{
     calcularTotal(){
         if(this.productos.length > 0){
             this.productos.forEach(element => {
-                this.totalGeneral += element.cantidad * element.precio 
+                this.totalGeneral += element.product.cant * element.price 
             });
         }else{
             this.totalGeneral = 0
         }
         
     }
+
+
+    createId(){
+        this.id = v4()
+    }
 }
 
-module.exports = Carrito
+
+module.exports = ShoppingCart
