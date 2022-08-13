@@ -10,11 +10,6 @@ const {   failLoginController, successLoginController,
 const authController = require('../controllers/AuthControllerJwt')
 
 
-// registro
-authRouter.post('/register', authController.register)
-authRouter.post('/successRegister', successRegisterController)
-authRouter.post('/failRegister', failRegisterController)
-
 // login
 authRouter.post('/login', authController.login)
 authRouter.post('/successLogin', successLoginController)

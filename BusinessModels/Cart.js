@@ -20,7 +20,7 @@ class ShoppingCart{
     Vaciar(){this.productos = []}
     
 
-    AgregarProducto(producto){ 
+    addProduct(producto){ 
         if(!producto){
             throw new Error('Product was not added')
         }
@@ -28,7 +28,7 @@ class ShoppingCart{
     }
     
 
-    EliminarProducto(idProducto){
+    removeProduct(idProducto){
     this.productos = this.productos.filter(p=>p.id != idProducto)}
 
     

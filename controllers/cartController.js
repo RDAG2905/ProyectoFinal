@@ -4,8 +4,8 @@ const { createCartDB , deleteCartDB , getCartDB , addProductToCartDB ,removeProd
 
 const createCart = (req, res) =>{
     createCartDB(req.body)
-            .then(idCart =>{
-                res.send({idCart})
+            .then(data =>{
+                res.send({data})
             })
             .catch(err =>{
                 logger.error(err.stack)
@@ -36,8 +36,8 @@ const deleteCart = (req, res) =>{
 const getCart = (req,res)=>{
     let idCart = req.params.id
          getCartDB(idCart)
-            .then(productos =>
-                res.send({productos}))
+            .then(product =>
+                res.send({product}))
             .catch(err =>
                 {
                 logger.error(err)

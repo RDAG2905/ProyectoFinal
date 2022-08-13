@@ -24,8 +24,7 @@ class UserRepo {
 
     async getByEmail(email) {
         let dto = await this.dao.getUserByUserName(email)
-        return dto
-        //return new  UserDto(dto)
+        return new  UserDto(dto)
     }
 
     async add(user) {

@@ -30,6 +30,11 @@ class ProductosRepo {
     }
 
 
+    async edit(prod,idBuscado) {
+        const dto = new ProductDto(prod)
+        return await this.dao.update(dto,idBuscado)
+    }
+
     async removeById(idProd) {
         const dto = await this.dao.deleteById(idProd)
         return new ProductDto(dto)

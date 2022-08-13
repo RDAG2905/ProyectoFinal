@@ -1,14 +1,19 @@
-const express = require('express')
-const cookieParser = require('cookie-parser')
 
-const randomRouter = require('./Rutas/RandomRouter')
-const routerProductos = require('./Rutas/RouterProductos')
-const routerCarrito = require('./Rutas/RouterCarrito')
-const routerPedidos = require('./Rutas/RouterPedidos')
-const routerAuth = require('./Rutas/AuthRouter')
-const routerSystem = require('./Rutas/SystemRouter')
-const routerHtml= require('./Rutas/HtmlOnWireRouter')
-const uploadFilesRouter = require('./Rutas/uploadFileRouter.js')
+const express = require('express')
+//const cookieParser = require('cookie-parser')
+
+const uploadFilesRouter = require('./Routes/uploadFileRouter.js')
+const userRouter = require('./Routes/UserRouter')
+const productRouter= require('./Routes/RouterProductos')
+
+const randomRouter = require('./Routes/RandomRouter')
+
+const routerCarrito = require('./Routes/RouterCarrito')
+const routerPedidos = require('./Routes/RouterPedidos')
+const routerAuth = require('./Routes/AuthRouter')
+const routerSystem = require('./Routes/SystemRouter')
+const routerHtml= require('./Routes/HtmlOnWireRouter')
+
 const path = require('path')
 const handlebars = require('express-handlebars')    
 const { header, redirect } = require('express/lib/response')
@@ -46,14 +51,19 @@ const init =() =>{
     app.use('/graphql', graphqlMiddleware)
     app.use('/views',routerHtml)
     app.use('/api/randoms',randomRouter)
-    app.use('/files', uploadFilesRouter)
-    app.use('', routerAuth)
-    app.use('/api/productos',routerProductos)
-    app.use('/api/carrito',jwt.auth,routerCarrito)
-    app.use('/api/pedidos',jwt.auth,routerPedidos)
+   // app.use('/files', uploadFilesRouter)
+    
+    
+    
+    
     app.use('/api/system',routerSystem)
-    
-    
+    ///////////////////////////////////////
+    app.use('', routerAuth)
+    app.use('/api/images', uploadFilesRouter)
+    app.use('/api/users',userRouter)
+    app.use('/api/products',productRouter)
+    app.use('/api/shoppingcartproducts',jwt.auth,routerCarrito)
+    app.use('/api/orders',jwt.auth,routerPedidos)
     ///////////// Manejo de rutas no implementadas ////////////////
     
     app.use((req, res, next) => {

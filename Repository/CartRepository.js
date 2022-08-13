@@ -39,7 +39,8 @@ class CartRepo {
 
 
     async editCart(cart,id){
-        return await this.dao.editCart(cart,id)
+        const dto = new CartDto(cart)
+        return await this.dao.editCart(dto,id)
     }
 
 

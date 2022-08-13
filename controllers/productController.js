@@ -14,9 +14,9 @@ const getProducts = (req, res)=>{
                 res.send(prod))
             .catch(err =>
                 {
-                logger.error(err)
-                let msg = 'Error al obtener productos'
-                res.send({err})   
+                logger.error(err.stack)
+                let msg = 'Error getting products'
+                res.status(400).send({err})   
                 }) 
 }
 
@@ -30,9 +30,9 @@ const createProduct = (req, res) =>{
                 res.send(productos)
             })
             .catch(err =>{
-                logger.error(err)
-             //   let msg = 'Error al crear al Producto'
-                res.status(400).send({err})  
+                logger.error(err.stack)
+                let msg = 'Error creating Product'
+                res.status(400).send({msg})  
             })
 }
 
@@ -46,14 +46,13 @@ const editProduct = (req, res) =>{
     
              editProductFromDB(productoEdicion,idProducto)
                  .then( productoEditado =>{
-                    let msg = 'Producto editado correctamente'
-                    res.send({msg})
+                    res.send({productoEditado})
                  }                    
                  )
                  .catch( error => {
-                    logger.error(error)
-                    let msg = 'Error al editar al Producto'   
-                    res.send({msg})
+                    logger.error(error.stack)
+                    let msg = 'Error editing product'   
+                    res.status(404).send({msg})
                  }
                 )    
 }
@@ -65,13 +64,13 @@ const deleteProduct = (req, res) =>{
         let id = req.params.id   
                 deleteProductFromDB(id)
                         .then(productoEliminado =>{
-                            let msg = 'Producto ha sido eliminado'
-                            res.send({msg})
+                            let resultado = 'The product has been removed'
+                            res.send({resultado})
                         })                           
                         .catch(error=>{
-                            logger.error(error)
-                            let msg = 'Error al eliminar el producto'
-                            res.send({msg})
+                            logger.error(error.stack)
+                            let msg = 'Error deleting product'
+                            res.status(400).send({msg})
                         }
                             
                         )

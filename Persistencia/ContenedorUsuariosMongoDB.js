@@ -1,22 +1,17 @@
 const mongoose = require('mongoose');
 const model = require('../SchemaModels/User');
-//const config = require('config');
-//const mongoConnectionString = config.get('mongoDB.connection')  
+
 const logger = require('../logger');
 
 const { MONGO_URI } = require('../config/config')
 const mongoConnectionString = MONGO_URI 
-//const mongoConnectionString = process.env.MONGODB
 
-logger.info(`MONGO_URI: ${MONGO_URI}`)
-logger.info(`MONGO_URI: ${typeof(MONGO_URI)}`)
+
 
 class ContenedorUsuariosMongoDB{
 
     constructor(){
-        
-      //  const URL = mongoConnectionString
-      //  mongoose.connect(URL, {});   
+      
     }
    
 
@@ -29,7 +24,7 @@ class ContenedorUsuariosMongoDB{
       return await model.findById(idUsuario)
     }
 
-
+z
     async save(usuario){
         const productSaveModel = model(usuario);
         return await productSaveModel.save();
@@ -50,6 +45,9 @@ class ContenedorUsuariosMongoDB{
 
 
     async getUserByUserName(username) {
+        return await model.findOne({ 'email': username })
+       
+       /*
         try {
             logger.info(`email: ${username}`)
             return await model.findOne({ 'email': username })
@@ -57,7 +55,7 @@ class ContenedorUsuariosMongoDB{
             logger.error(error)
             throw Error('Error al buscar el usuario por email')
         }
-       
+       */
     }
     
 }
