@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
+const logger = require('../logger');
 const model = require('../SchemaModels/ProductoMongoDB');
 //const config = require('config');
 //const mongoConnectionString = config.get('mongoDB.connection')  
-const { MONGO_URI } = require('../config/config')
-const mongoConnectionString = MONGO_URI 
+//const { MONGO_URI } = require('../config/config')
+//const mongoConnectionString = MONGO_URI 
   
 class ContenedorProductosMongo{
 
     constructor(){
         
-        const URL = mongoConnectionString
-        mongoose.connect(URL, {});   
+      //  const URL = mongoConnectionString
+      //  mongoose.connect(URL, {});   
     }
    
 
@@ -18,12 +19,19 @@ class ContenedorProductosMongo{
         return await model.find({});
     }
      
-
+/*
     async getById(idProducto){
       let id = new mongoose.Types.ObjectId(idProducto)
       return await model.findById(id)
     }
-
+*/
+    async getById(idProducto){
+        logger.info(`idProducto: ${idProducto}`)
+        logger.info(typeof(idProducto))
+        return await model.findOne({'id':idProducto})
+    }
+  
+    
 
     async save(producto){
         const productSaveModel = model(producto);
@@ -31,16 +39,19 @@ class ContenedorProductosMongo{
     }
 
 
+
     async update(producto,idBuscado){
-        return await model.findByIdAndUpdate(idBuscado,producto)   
-        /*let obj = await model.findByIdAndUpdate({_id: idBuscado}, {$set: producto}) 
-        console.log(`obj: ${obj}`)
-        return  obj  */      
+        let product = await this.getById(idBuscado)    
+        await model.findByIdAndUpdate(product._id,producto)   
+        return await this.getById(idBuscado)  
+          
     }
 
 
+
     async delete(id){
-        await model.findByIdAndRemove(id)
+        let product = await this.getById(id)
+        return await model.findByIdAndRemove(product._id)
         
     }
 }

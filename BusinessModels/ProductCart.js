@@ -20,7 +20,7 @@ class ProductCart{
       if (!cantidad) throw new Error('"cant" is required');
       if (isNaN(cantidad)) throw new Error('cant must be numerical');
       if (cantidad <= 0) throw new Error('cant must be greater than zero');
-      this.#price = precio;
+      this.#cant = cantidad;
     }
  
 }

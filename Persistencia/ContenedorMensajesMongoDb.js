@@ -3,15 +3,15 @@ const model = require('../SchemaModels/MensajesMongoDb');
 //const config = require('config');
 //const mongoConnectionString = config.get('mongoDB.connection')  
 const logger = require('../logger');
-const { MONGO_URI } = require('../config/config')
-const mongoConnectionString = MONGO_URI
+//const { MONGO_URI } = require('../config/config')
+//const mongoConnectionString = MONGO_URI
 
 class ContenedorMensajesMongoDB{
 
     constructor(){
         
-        const URL = mongoConnectionString
-        mongoose.connect(URL, {});   
+       // const URL = mongoConnectionString
+       // mongoose.connect(URL, {});   
     }
    
 

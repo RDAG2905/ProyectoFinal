@@ -24,6 +24,9 @@ class UserRepo {
 
     async getByEmail(email) {
         let dto = await this.dao.getUserByUserName(email)
+        if(!dto){
+            return false
+        }
         return new  UserDto(dto)
     }
 

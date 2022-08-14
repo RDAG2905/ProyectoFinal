@@ -10,7 +10,7 @@ const authController = require('../controllers/AuthControllerJwt')
 
 
 // registro de usuarios
-userRouter.post('/register', authController.register)
+userRouter.post('/', authController.register)
 userRouter.post('/successRegister', successRegisterController)
 userRouter.post('/failRegister', failRegisterController)
 

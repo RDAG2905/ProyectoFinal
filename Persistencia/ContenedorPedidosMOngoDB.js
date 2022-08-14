@@ -23,16 +23,27 @@ class ContenedorPedidosMongoDB{
      
 
     async getById(id){
+      return await model.findOne({ 'id': id })
+  }
+ 
+
+  async getOrdersByUserId(id){
+    return await model.findOne({ 'idUser': id })
+  }
+
+/*
+    async getById(id){
       return await model.findById(id)
     }
 
+
     async getOrdersByUserId(id){
-        //let idUser = new mongoose.Types.ObjectId(id)
-        //let x = await model.find({'idUser': id})
         let x = await model.find({})
         logger.info(util.inspect(x))
         return x
       }
+*/
+    
 
 
 

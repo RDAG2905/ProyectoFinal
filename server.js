@@ -1,5 +1,7 @@
 
 const express = require('express')
+const sesion = require('express-session')
+const logger = require('./logger')
 //const cookieParser = require('cookie-parser')
 
 const uploadFilesRouter = require('./Routes/uploadFileRouter.js')

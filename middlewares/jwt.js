@@ -1,8 +1,8 @@
 const jwt = require("jsonwebtoken");
 const logger = require("../logger");
 const util = require('util')
-const { PRIVATE_KEY } = require('../config/config')
-//const PRIVATE_KEY = "myprivatekey";
+const { PRIVATE_KEY,adminEmail } = require('../config/config')
+
 
 const generateAuthToken = (user) => {
   const token = jwt.sign({ user }, PRIVATE_KEY, { expiresIn: '3600s' });
@@ -34,11 +34,10 @@ const auth = (req, res, next) =>{
    
     jwt.verify(token, PRIVATE_KEY, (err, decoded) => {
       if (err) {
-        throw new Error(err)
-      
-      }
-     
+        throw new Error(err)   
+      }     
       req.user = decoded.user;
+      logger.info('req.user : ' + util.inspect(req.user))
     
     });
   
@@ -59,7 +58,8 @@ const auth = (req, res, next) =>{
 
 
 const adminAuth  = (req, res, next)=>{
-    if(req.user && !req.user.isAdmin){
+   // if(req.user && !req.user.isAdmin){
+    if(req.user && !(req.user.email == adminEmail)){
       return res.status(401).json({
         error: 'Acceso denegado'
       })

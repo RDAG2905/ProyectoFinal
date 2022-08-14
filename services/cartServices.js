@@ -22,6 +22,14 @@ const createCartDB = async (data)=>{
 }
 
 
+const createCartByUser = async (userId)=>{        
+   let shoppingCart = new Cart()
+   shoppingCart.initialize(userId)
+   return await cartRepository.add(shoppingCart)
+             
+}
+
+
 
 const deleteCartDB = async (id) =>{
     return await cartRepository.removeById(id)  
@@ -83,4 +91,4 @@ const deleteCartDB = async (id) =>{
 
 
 
-module.exports= { createCartDB , deleteCartDB ,getCartDB ,addProductToCartDB , removeProductFromCartDB, getProductsByCar}
+module.exports= { createCartDB , deleteCartDB ,getCartDB ,addProductToCartDB , removeProductFromCartDB, getProductsByCar ,createCartByUser }

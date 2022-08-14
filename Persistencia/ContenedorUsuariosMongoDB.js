@@ -19,12 +19,15 @@ class ContenedorUsuariosMongoDB{
         return await model.find({});
     }
      
-
+/*
     async getById(idUsuario){
       return await model.findById(idUsuario)
     }
+*/
+    async getById(id){
+        return await model.findOne({ 'id': id })
+    }
 
-z
     async save(usuario){
         const productSaveModel = model(usuario);
         return await productSaveModel.save();

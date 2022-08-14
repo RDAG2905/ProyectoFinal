@@ -1,20 +1,22 @@
 const { v4 } = require("uuid");
 
 class Product {
-   
+    #id
     #name
     #description
     #price
     #image
 
-    constructor({ name,description,price,image}) {
+    constructor({ id,name,description,price,image}) {
       this.name = name,
       this.description = description,
       this.price = price,
-      this.image= image
+      this.image= image,
+      this.id = id
     }
   
-   
+    get id() { return this.#id }
+    set id(id) { this.#id = id }
   
     get name() { return this.#name }
   

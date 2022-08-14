@@ -34,9 +34,9 @@ const logger = require('./logger.js')
 
 
 
-global.root = __dirname;
-global.adminEmail = "tyrel.ullrich@ethereal.email"
-global.celAdmin = "+5491125111726"
+//global.root = __dirname;
+//global.adminEmail = "tyrel.ullrich@ethereal.email"
+//global.celAdmin = "+5491125111726"
 
 //const jwt = require('./middlewares/jwt')
 const { Server: HttpServer } = require('http')

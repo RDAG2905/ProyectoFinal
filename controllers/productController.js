@@ -1,22 +1,35 @@
 
 const logger = require('../logger')
-const { getProductsFromDB , createProductFromDB , editProductFromDB , deleteProductFromDB } = require('../services/productServices')
-
+const { getProductsFromDB , createProductFromDB , editProductFromDB , deleteProductFromDB,getProductById } = require('../services/productServices')
+const jwt = require("jsonwebtoken");
 
 
 
 
 const getProducts = (req, res)=>{
-    let idProducto = req.params.id 
-    logger.info('idProducto : ' + idProducto)
-    getProductsFromDB(idProducto)
+    getProductsFromDB()
             .then(prod => 
                 res.send(prod))
             .catch(err =>
                 {
                 logger.error(err.stack)
                 let msg = 'Error getting products'
-                res.status(400).send({err})   
+                res.status(400).send({msg})   
+                }) 
+}
+
+
+const getProduct = (req, res)=>{
+    let idProducto = req.params.id 
+   
+    getProductById(idProducto)
+            .then(prod => 
+                res.send(prod))
+            .catch(err =>
+                {
+                logger.error(err.stack)
+                let msg = 'Error getting product'
+                res.status(400).send({msg})   
                 }) 
 }
 
@@ -64,8 +77,8 @@ const deleteProduct = (req, res) =>{
         let id = req.params.id   
                 deleteProductFromDB(id)
                         .then(productoEliminado =>{
-                            let resultado = 'The product has been removed'
-                            res.send({resultado})
+                            let result = 'The product has been removed'
+                            res.send({result})
                         })                           
                         .catch(error=>{
                             logger.error(error.stack)
@@ -80,4 +93,4 @@ const deleteProduct = (req, res) =>{
 
 
 
-module.exports = { getProducts,createProduct,editProduct,deleteProduct}
+module.exports = { getProducts,createProduct,editProduct,deleteProduct,getProduct}

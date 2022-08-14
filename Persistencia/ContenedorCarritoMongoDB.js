@@ -12,10 +12,14 @@ class ContenedorCarritoMongo{
     constructor(){
        
     }
-   
+   /*
     async getCart(idCart){
       return await model.findById(idCart)
-    }
+    }*/
+
+    async getCart(idCart){
+        return await model.findOne({'id': idCart})
+      }
 
     
     async save(unCarrito){

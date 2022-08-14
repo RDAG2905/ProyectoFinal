@@ -2540,3 +2540,421 @@ Require stack:
     at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:43:23)
     at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:30:18)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+    at new BSONTypeError (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\bson\lib\error.js:41:28)
+    at new ObjectId (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\bson\lib\objectid.js:66:23)
+    at ProductosDaoMongoDB.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Persistencia\ContenedorProductosMongoDB.js:23:16)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:22:36)
+    at getProductsFromDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:16:51)
+    at getProducts (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\productController.js:14:5)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+[31merror[39m:   TypeError: Cannot read properties of undefined (reading 'length')
+    at ShoppingCart.calcularTotal (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\Cart.js:41:27)
+    at new ShoppingCart (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\Cart.js:12:18)
+    at createCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\cartServices.js:18:20)
+    at createCart (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\cartController.js:6:5)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+[31merror[39m:   BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer
+    at new BSONTypeError (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\bson\lib\error.js:41:28)
+    at new ObjectId (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\bson\lib\objectid.js:66:23)
+    at ProductosDaoMongoDB.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Persistencia\ContenedorProductosMongoDB.js:23:16)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:22:36)
+    at getProductsFromDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:16:51)
+    at getProducts (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\productController.js:14:5)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+[31merror[39m:   Error: Please upload a file
+    at uploadFileController (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\uploadFiles.js:8:23)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at multerMiddleware (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\multer\lib\make-middleware.js:13:41)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+[31merror[39m:   Error: Please upload a file
+    at uploadFileController (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\uploadFiles.js:8:23)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at multerMiddleware (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\multer\lib\make-middleware.js:13:41)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+[31merror[39m:   Error: Please upload a file
+    at uploadFileController (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\uploadFiles.js:8:23)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at multerMiddleware (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\multer\lib\make-middleware.js:13:41)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+[31merror[39m:   Error: Please upload a file
+    at uploadFileController (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\uploadFiles.js:8:23)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at multerMiddleware (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\multer\lib\make-middleware.js:13:41)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+[31merror[39m:   Error: Please upload a file
+    at uploadFileController (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\uploadFiles.js:8:23)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at done (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\multer\lib\make-middleware.js:49:68)
+    at Multipart.<anonymous> (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\multer\lib\make-middleware.js:166:7)
+    at Multipart.emit (node:events:527:28)
+    at emitCloseNT (node:internal/streams/destroy:138:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+[31merror[39m:   Error: Please upload a file
+    at uploadFileController (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\uploadFiles.js:8:23)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at done (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\multer\lib\make-middleware.js:45:7)
+    at indicateDone (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\multer\lib\make-middleware.js:49:68)
+    at Multipart.<anonymous> (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\multer\lib\make-middleware.js:166:7)
+    at Multipart.emit (node:events:527:28)
+    at emitCloseNT (node:internal/streams/destroy:138:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+[31merror[39m:   TypeError: Cannot read properties of null (reading 'name')
+    at new UserDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\UserDto.js:4:22)
+    at UserRepo.getByEmail (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\UsuariosRepository.js:27:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async verifyName (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:55:20)
+    at async Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:30:26)
+[31merror[39m:   Error: The "name" is required
+    at User.set name [as name] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:33:28)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:18:19)
+    at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:47:23)
+    at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:33:32)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: The "name" is required
+    at User.set name [as name] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:33:28)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:18:19)
+    at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:47:23)
+    at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:33:32)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: The "name" is required
+    at User.set name [as name] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:33:28)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:18:19)
+    at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:47:23)
+    at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:33:32)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: The "name" is required
+    at User.set name [as name] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:33:28)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:18:19)
+    at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:47:23)
+    at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:33:32)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: The "name" is required
+    at User.set name [as name] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:33:28)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:18:19)
+    at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:47:23)
+    at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:33:32)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: The "name" is required
+    at User.set name [as name] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:33:28)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:18:19)
+    at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:47:23)
+    at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:33:32)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: The "name" is required
+    at User.set name [as name] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:33:28)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:18:19)
+    at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:47:23)
+    at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:33:32)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: The "name" is required
+    at User.set name [as name] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:33:28)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:18:19)
+    at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:47:23)
+    at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:33:32)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: The "name" is required
+    at User.set name [as name] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:33:28)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:18:19)
+    at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:47:23)
+    at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:33:32)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: the username is not available
+    at verifyName (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:61:25)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:31:30)
+[31merror[39m:   Error: "phone" is required
+    at User.set phone [as phone] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:63:25)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:22:20)
+    at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:52:23)
+    at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:34:33)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:36:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:34:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:23:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getProductsFromDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:16:26)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:36:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:34:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:36:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:34:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+[31merror[39m:   ReferenceError: getProductById is not defined
+    at getProduct (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\productController.js:25:5)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:421:3)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Error: JsonWebTokenError: jwt malformed
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:36:15
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:63:12)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:34:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   ValidationError: Productos validation failed: id: Path `id` is required.
+    at model.Document.invalidate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\document.js:2966:32)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\document.js:2755:17
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\schematype.js:1333:9
+    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[31merror[39m:   CastError: Cast to ObjectId failed for value "b5f826ae-93ef-42cf-87d2-74685e300cb8" (type string) at path "_id" for model "Productos"
+    at model.Query.exec (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\query.js:4719:21)
+    at model.Query.Query.then (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\query.js:4818:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   TypeError: this.dao.deleteById is not a function
+    at ProductosRepo.removeById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:39:36)
+    at deleteProductFromDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:53:33)
+    at deleteProduct (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\productController.js:78:17)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at adminAuth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:67:5)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:54:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+[31merror[39m:   TypeError: this.dao.deleteById is not a function
+    at ProductosRepo.removeById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:39:36)
+    at deleteProductFromDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:53:33)
+    at deleteProduct (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\productController.js:78:17)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at adminAuth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:67:5)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:54:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+[31merror[39m:   Error: User data is required
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:16:18)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:15:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   TypeError: logger.ingo is not a function
+    at getProducts (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\cartController.js:91:12)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:47:12)
+[31merror[39m:   TypeError: Cannot read properties of null (reading 'id')
+    at new CartDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\CartDto.js:4:23)
+    at CartRepo.getCartById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\CartRepository.js:24:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\cartServices.js:42:12)
+    at async getProductsByCar (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\cartServices.js:87:20)
+[31merror[39m:   TypeError: Cannot read properties of undefined (reading 'length')
+    at ShoppingCart.calcularTotal (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\Cart.js:41:27)
+    at new ShoppingCart (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\Cart.js:12:18)
+    at createCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\cartServices.js:18:20)
+    at createCart (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\cartController.js:6:5)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:23:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\cartServices.js:50:19)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:23:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\cartServices.js:50:19)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:23:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\cartServices.js:50:19)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:23:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\cartServices.js:50:19)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:23:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getProductById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:18:20)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:23:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getProductById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:18:20)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:23:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getProductById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:18:20)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:23:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getProductById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:18:20)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:23:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getProductById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:18:20)
+[31merror[39m:   ReferenceError: logger is not defined
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:23:9)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getProductById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:18:20)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:25:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getProductById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:18:20)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:25:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getProductById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:18:20)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:25:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getProductById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:18:20)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:25:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getProductById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:18:20)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:25:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async editProductFromDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:41:20)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:25:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\cartServices.js:50:19)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:25:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getProductById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:18:20)

@@ -1,23 +1,25 @@
 const logger = require("../logger")
-const { v4 } = require("uuid")
 
 class ShoppingCart{
 
     constructor(carrito){
        
         if(carrito){
-            this._id = carrito._id
             this.id = carrito.id
             this.timestamp = carrito.timestamp   
-            this.productos = carrito.productos
-            this.usuarioId = carrito.usuarioId
-            this.totalGeneral = 0
+            this.productos = carrito.productos 
+            this.totalGeneral = 0        
             this.calcularTotal()
         }
     }
    
     
-    Vaciar(){this.productos = []}
+    initialize =(userId)=>{
+        this.id = userId
+        this.productos = []       
+    }
+
+    removeAll(){this.productos = []}
     
 
     addProduct(producto){ 
@@ -47,9 +49,6 @@ class ShoppingCart{
     }
 
 
-    createId(){
-        this.id = v4()
-    }
 }
 
 

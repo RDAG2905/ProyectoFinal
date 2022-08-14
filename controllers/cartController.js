@@ -1,6 +1,6 @@
 const logger = require('../logger')
 const { createCartDB , deleteCartDB , getCartDB , addProductToCartDB ,removeProductFromCartDB , getProductsByCar} = require('../services/cartServices')
-
+const util = require('util')
 
 const createCart = (req, res) =>{
     createCartDB(req.body)
@@ -17,7 +17,7 @@ const createCart = (req, res) =>{
 
 
 const deleteCart = (req, res) =>{
-    let id = req.params.id
+    let id = req.user.id
     let msg = 'El carrito ha sido eliminado'
       deleteCartDB(id)
          .then(
@@ -34,7 +34,7 @@ const deleteCart = (req, res) =>{
 
 
 const getCart = (req,res)=>{
-    let idCart = req.params.id
+    let idCart = req.user.id
          getCartDB(idCart)
             .then(product =>
                 res.send({product}))
@@ -51,7 +51,7 @@ const getCart = (req,res)=>{
 
 
  const addProductToCart = (req,res)=>{
-    let idCart = req.params.id   
+    let idCart = req.user.id   
     const { idProduct, quantity } = req.body
     
          addProductToCartDB(idCart,idProduct,quantity)
@@ -70,9 +70,9 @@ const getCart = (req,res)=>{
 
 
  const removeProductFromCart = (req,res)=>{
-    let idCart = req.params.id
+    //let idCart = req.params.id
     let idProduct = req.params.id_prod   
-    
+    let idCart = req.user.id
         removeProductFromCartDB(idCart,idProduct)
             .then(cart =>
                 res.send({cart}))
@@ -88,7 +88,8 @@ const getCart = (req,res)=>{
 
  
 const getProducts = (req, res) =>{
-    let idCart = req.params.id
+    //logger.info(util.inspect(req.user))
+    let idCart = req.user.id
         getProductsByCar(idCart)
                 .then(idCart =>{
                     res.send({idCart})

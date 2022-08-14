@@ -4,7 +4,9 @@ const logger = require('../logger')
 const util = require('util')
 const Repository = require('../Repository/UsuariosRepository')
 const User = require('../BusinessModels/User')
+const Cart = require('../BusinessModels/Cart')
 let repository = new Repository()
+const { createCartByUser } = require('../services/cartServices')
 
 
 const authenticate = async ({email, password}) => {
@@ -23,19 +25,25 @@ const authenticate = async ({email, password}) => {
 
 
 const registerUser = async (datosUsuario) => {      
-    checkRegisterData(datosUsuario)    
+  //  checkRegisterData(typeof(datosUsuario))    
     let msg
-        let userExists = await verifyName(datosUsuario.email)
-        
-        if(!userExists){
-           await saveUser(datosUsuario)
-           msg = 'The User has been registered !!'                 
+        if(datosUsuario.email){
+            let userExists = await verifyName(datosUsuario.email)
+            
+            if(!userExists){
+            let newUser = await saveUser(datosUsuario)
+                    if(newUser){
+                    await createShoppingCart(newUser)           
+                    }
+            msg = 'The User has been registered !!'                 
+            }
+            
+        }
+        else{
+            msg = 'The data sent is wrong. Email not found'
         }
         return msg
-     
-    
 }
-
 
 
 
@@ -43,10 +51,8 @@ const registerUser = async (datosUsuario) => {
 const saveUser = async (user) =>{            
         let newUser = new User(user)
         newUser.createId()      
-        return await repository.add(newUser)
-         
+        return await repository.add(newUser)        
 }
-
 
 
 
@@ -54,8 +60,14 @@ const verifyName = async (username) => {
         let user = await repository.getByEmail(username)
         if (user) throw new Error('the username is not available')
         return user
-   
 }
+
+
+
+const createShoppingCart = async(userData)=>{
+    return await createCartByUser(userData.id) 
+}
+
 
 
 const checkLoginData=(email,password)=>{
@@ -67,7 +79,8 @@ const checkLoginData=(email,password)=>{
 
 
 const checkRegisterData = (userData)=>{
-        if(!userData){
+    logger.info(Object.getOwnPropertyNames(userData))
+        if(userData=={}){
             throw new Error('User data is required')
         }
 }

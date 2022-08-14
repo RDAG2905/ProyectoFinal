@@ -7,24 +7,26 @@ let repository = new Repository()
 const Product = require('../BusinessModels/Product')
 
 
-const  getProductsFromDB = async (idProducto)=>{    
-    let productos        
-    
-                if(!idProducto){
-                    productos  =  await repository.getAll() 
-                }else{
-                    productos  = await repository.getById(idProducto)
-                    
-                }
-                //logger.info(util.inspect(productos))
-                return productos
+const  getProductsFromDB = async ()=>{       
+            return await repository.getAll()      
 }
 
+
+const getProductById = async(idProducto)=>{
+   
+        if(idProducto){
+            return await repository.getById(idProducto)
+        }else{
+            throw new Error('Product Id is required')
+        }
+      
+}
 
 
 
 const createProductFromDB = async (productData)=> {    
         let productoNuevo = new Product(productData)
+        productoNuevo.createId()
         let productSave = await repository.add(productoNuevo)  
             if(!productSave){           
                 logger.error(`creating Product : ${productSave}`)
@@ -32,6 +34,7 @@ const createProductFromDB = async (productData)=> {
             }   
         return productSave    
 }
+
 
 
 const editProductFromDB = async(productoEdicion,idProducto)=>{
@@ -45,10 +48,11 @@ const editProductFromDB = async(productoEdicion,idProducto)=>{
 }
 
 
+
 const deleteProductFromDB = async(id)=>{
         return await repository.removeById(id) 
 }
 
 
 
-module.exports = { getProductsFromDB,createProductFromDB,deleteProductFromDB}
+module.exports = { getProductsFromDB,createProductFromDB,deleteProductFromDB,getProductById,editProductFromDB}
