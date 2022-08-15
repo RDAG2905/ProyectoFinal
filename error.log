@@ -3256,3 +3256,16 @@ Require stack:
     at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
     at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
     at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Email and password are required !!
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   ShoppingCart Product not found

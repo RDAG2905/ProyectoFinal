@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const logger = require('../logger');
-const model = require('../SchemaModels/ProductoMongoDB');
+const model = require('../SchemaModels/ProductoMongoDb');
 
   
 class ContenedorProductosMongo{
