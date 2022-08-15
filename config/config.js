@@ -23,5 +23,9 @@ module.exports =  {
     PRIVATE_KEY : "myprivatekey",
     MONGO_URI ,
     getNodemailerArgs,
-    adminEmail : "admin@admin.com"
+    adminEmail : "admin@admin.com",
+    hostNodeMailer: 'smtp.ethereal.email',
+    portNodeMailer: 587,
+    userNodeMailer: 'tyrel.ullrich@ethereal.email',
+    passNodeMailer: 'SHPDeCxnpKuT3hzJph'
   }

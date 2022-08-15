@@ -5,10 +5,10 @@ const ordersCollection = 'orders';
 
 
 const orderSchema = new mongoose.Schema({
-    idCart:{type:String,required:true},
     idUser:{type:String,required:true},
     timestamp: {type: Date, default: Date.now},
-    products:  {type: Array}
+    products:  {type: Array},
+    id:{type:String,required:true}
 })
 
 

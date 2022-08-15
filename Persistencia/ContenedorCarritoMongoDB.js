@@ -48,11 +48,14 @@ class ContenedorCarritoMongo{
 
 
 
-     async editCart(carrito,idBuscado){
-       let editado = await model.findByIdAndUpdate(idBuscado,carrito) 
-       if(editado){
-        return await this.getCart(idBuscado)
-       }
+     async editCart(carrito){
+        let editCart = await this.getCart(carrito.id)
+        logger.info(`editCart  : ${editCart}`)
+        let editado = await model.findByIdAndUpdate(editCart._id,carrito) 
+        logger.info(`editado  : ${editado}`)
+        if(editado){
+            return await this.getCart(carrito.id)
+        }
            
     }
 }

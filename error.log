@@ -2958,3 +2958,156 @@ Require stack:
     at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:25:16)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
     at async getProductById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\productServices.js:18:20)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:25:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\cartServices.js:50:19)
+[31merror[39m:   CastError: Cast to ObjectId failed for value "ee18bc75-6907-47f6-86df-ebf08fd8a193" (type string) at path "_id" for model "Carritos"
+    at model.Query.exec (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\query.js:4719:21)
+    at model.Query.Query.then (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\query.js:4818:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   SyntaxError: Unexpected token f in JSON at position 19
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\body-parser\lib\types\json.js:89:19)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:202:9)
+    at invokeCallback (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\raw-body\index.js:231:16)
+    at done (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\raw-body\index.js:220:7)
+    at IncomingMessage.onEnd (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\raw-body\index.js:280:7)
+    at IncomingMessage.emit (node:events:539:35)
+    at endReadableNT (node:internal/streams/readable:1345:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+[31merror[39m:   CastError: Cast to ObjectId failed for value "ee18bc75-6907-47f6-86df-ebf08fd8a193" (type string) at path "_id" for model "Carritos"
+    at model.Query.exec (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\query.js:4719:21)
+    at model.Query.Query.then (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\query.js:4818:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   CastError: Cast to ObjectId failed for value "95a0d77a-b95f-47cd-b5ba-d84ec96493fd" (type string) at path "_id" for model "Carritos"
+    at model.Query.exec (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\query.js:4719:21)
+    at model.Query.Query.then (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\query.js:4818:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   CastError: Cast to ObjectId failed for value "95a0d77a-b95f-47cd-b5ba-d84ec96493fd" (type string) at path "_id" for model "Carritos"
+    at model.Query.exec (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\query.js:4719:21)
+    at model.Query.Query.then (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\query.js:4818:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:25:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\cartServices.js:52:15)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:25:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\cartServices.js:52:15)
+[31merror[39m:   TypeError: Cannot destructure property 'id' of 'object null' as it is null.
+    at new ProductDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\ProductDto.js:4:19)
+    at ProductosRepo.getById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\ProductosRepository.js:25:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\cartServices.js:52:15)
+[31merror[39m:   Error: "product" is required
+    at ProductCart.set product [as product] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\ProductCart.js:13:30)
+    at new ProductCart (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\ProductCart.js:6:20)
+    at addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\cartServices.js:55:27)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: "product" is required
+    at ProductCart.set product [as product] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\ProductCart.js:13:30)
+    at new ProductCart (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\ProductCart.js:6:20)
+    at addProductToCartDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\cartServices.js:55:27)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error en servidor: Error: listen EADDRINUSE: address already in use :::3000
+[31merror[39m:   Error en servidor: Error: listen EADDRINUSE: address already in use :::3000
+[31merror[39m:   Error en servidor: Error: listen EADDRINUSE: address already in use :::3000
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   TypeError: Cannot read properties of null (reading 'id')
+    at new CartDto (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Dto\CartDto.js:4:23)
+    at CartRepo.getCartById (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\CartRepository.js:26:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Object.createOrderDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\orderServices.js:17:16)
+[31merror[39m:   ValidationError: orders validation failed: idCart: Path `idCart` is required., idUser: Path `idUser` is required.
+    at model.Document.invalidate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\document.js:2966:32)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\document.js:2755:17
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\schematype.js:1333:9
+    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[31merror[39m:   No recipients defined
+[31merror[39m:   No recipients defined
+[31merror[39m:   No recipients defined
+[31merror[39m:   No recipients defined
+[31merror[39m:   No recipients defined
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   TypeError: Cannot read properties of undefined (reading 'totalGeneral')
+    at armarPedidoHtml (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\helpers\mailSender.js:63:53)
+    at notificarPedido (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\helpers\mailSender.js:72:24)
+    at Object.createOrderDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\orderServices.js:29:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   ReferenceError: Cannot access 'precio' before initialization
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\helpers\mailSender.js:63:37
+    at Proxy.forEach (<anonymous>)
+    at armarPedidoHtml (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\helpers\mailSender.js:52:14)
+    at notificarPedido (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\helpers\mailSender.js:77:24)
+    at Object.createOrderDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\orderServices.js:29:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)

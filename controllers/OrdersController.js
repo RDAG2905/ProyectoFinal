@@ -3,9 +3,9 @@ const services = require('../services/orderServices')
 
 
 const createOrder = (req,res)=>{
-    const { idCart,idUser } = req.body
+    //const { idCart,idUser } = req.body
     const user = req.user
-    services.createOrderDB(idCart,idUser,user)
+    services.createOrderDB(user)
             .then(x =>
                 res.json(x))
             .catch(err=>{
@@ -19,7 +19,7 @@ const createOrder = (req,res)=>{
 
 
 const getOrders = (req,res)=>{
-    let id = req.params.idUser   
+    let id = req.user.id  
     services.getOrdersDB(id)
             .then(orders =>
                 res.send({orders}))

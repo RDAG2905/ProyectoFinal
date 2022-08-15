@@ -9,7 +9,7 @@ const createCart = (req, res) =>{
             })
             .catch(err =>{
                 logger.error(err.stack)
-                let msg = 'Error al crear al Carrito'
+                let msg = 'Cart creation failed'
                 res.send({msg})  
             })
 }
@@ -18,14 +18,14 @@ const createCart = (req, res) =>{
 
 const deleteCart = (req, res) =>{
     let id = req.user.id
-    let msg = 'El carrito ha sido eliminado'
+    let msg = 'Cart has been removed'
       deleteCartDB(id)
          .then(
              res.send({msg})
          )
          .catch(error=>{
             logger.error(error.stack)
-            let errMsg = 'Error al eliminar del carrito'
+            let errMsg = 'Cart deletion failed'
             res.send({errMsg})
          }         
          )
@@ -41,7 +41,7 @@ const getCart = (req,res)=>{
             .catch(err =>
                 {
                 logger.error(err)
-                let msg = 'Error al recuperar los productos del carrito'
+                let msg = 'product recovery failed'
                 res.send({msg})
                 })
           
@@ -52,15 +52,15 @@ const getCart = (req,res)=>{
 
  const addProductToCart = (req,res)=>{
     let idCart = req.user.id   
-    const { idProduct, quantity } = req.body
+    const { productId, quantity } = req.body
     
-         addProductToCartDB(idCart,idProduct,quantity)
+         addProductToCartDB(idCart,productId,quantity)
             .then(cart =>
                 res.send({cart}))
             .catch(err =>
             {
             logger.error(err. stack)
-            let msg = 'Error al agregar el agregar producto al carrito'
+            let msg = 'Error adding product to cart'
             res.send({msg})
             })
           
@@ -79,7 +79,7 @@ const getCart = (req,res)=>{
             .catch(err =>
             {
             logger.error(err)
-            let msg = 'Error al eliminar el producto del carrito'
+            let msg = 'Error deleting product from cart'
             res.send({msg})
             })
           
@@ -91,12 +91,12 @@ const getProducts = (req, res) =>{
     //logger.info(util.inspect(req.user))
     let idCart = req.user.id
         getProductsByCar(idCart)
-                .then(idCart =>{
-                    res.send({idCart})
+                .then(products =>{
+                    res.send({products})
                 })
                 .catch(err =>{
                     logger.error(err.stack)
-                    let msg = 'Error al recuperar los productos del carrito'
+                    let msg = 'Error recovering products from cart'
                     res.send({msg})  
                 })
 }

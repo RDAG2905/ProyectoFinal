@@ -1,10 +1,10 @@
 class ProductCart{
-#product
-#cant
+  #product
+  #cant
 
-    constructor(product,quantity){
-      this.product = product,
-      this.cant = quantity
+    constructor(producto,cantidad){
+      this.product = producto,
+      this.cant = cantidad
     }
 
     get product() { return this.#product }
@@ -24,4 +24,6 @@ class ProductCart{
     }
  
 }
+
+
 module.exports = ProductCart

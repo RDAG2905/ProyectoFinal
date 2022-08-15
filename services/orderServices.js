@@ -11,21 +11,21 @@ const UserOrder = require('../BusinessModels/Order')
 const cartRepository = new CartRepository()
 const orderRepository = new OrderRepository()
 
-const createOrderDB = async (idCart,idUser,user) => {
-   
-   
-    let cart = await cartRepository.getCartById(idCart)
+
+const createOrderDB = async (user) => {
+    
+    let cart = await cartRepository.getCartById(user.id)
 
     if (!cart) throw new Error('shoppingCart not found')
-    
-    let order = new UserOrder({idCart,idUser})
-
+    let chango = new Changuito(cart)
+    let order = new UserOrder(user.id,chango.productos)
+    order.createId()
     let newOrder = await orderRepository.add(order)
 
-    let chango = new Changuito(cart)
     if (newOrder){
         await notificarPedido(chango,user)
-        //await enviarSms('Su pedido ha sido recibido y se encuentra en proceso')
+        //chango.removeAll()
+        //await cartRepository.editCart(chango)
         let msg = "Se ha notificado el pedido"
         return msg
     }

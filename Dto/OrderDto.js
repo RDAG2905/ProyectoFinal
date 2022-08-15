@@ -1,8 +1,7 @@
 class OrderDto {
   
      
-    constructor({ idCart,idUser,id,productos}){
-       this.idCart =  idCart,
+    constructor({ idUser,id,productos}){
        this.idUser = idUser,
        this.id = id,
        this.productos = productos

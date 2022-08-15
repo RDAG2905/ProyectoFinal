@@ -28,7 +28,7 @@ class ContenedorPedidosMongoDB{
  
 
   async getOrdersByUserId(id){
-    return await model.findOne({ 'idUser': id })
+    return await model.find({ 'idUser': id })
   }
 
 /*

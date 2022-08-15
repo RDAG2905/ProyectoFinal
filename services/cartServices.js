@@ -45,17 +45,26 @@ const deleteCartDB = async (id) =>{
 
 
 
- const addProductToCartDB = async (idCart,idProduct,quantity) =>{
-   
-    let product = await productRepository.getById(idProduct)
+ const addProductToCartDB = async (idCart,productId,quantity) =>{
+   let productCart
+   let product
+   let cartDto 
+    product = await productRepository.getById(productId)
+    logger.info('1 - product :  ' + util.inspect(product))
          if(product){
-            let productCart = new ProductCart(product,quantity)
-            let cartDto = await cartRepository.getCartById(idCart)
+            //productCart = new ProductCart(product,quantity)
+            productCart ={product,quantity}
+            logger.info('2 - productCart :  ' + util.inspect(productCart))
+
+            cartDto = await cartRepository.getCartById(idCart)
+            logger.info('3 - cartDto :  ' + util.inspect(cartDto))
                if(cartDto){
                   let cart = new Cart(cartDto)
                  // cart.productos.push(productCart)
-                 cart.addProduct(productCart)
-                  return await cartRepository.editCart(cart,idCart)
+                 cart.productos.push(productCart)
+                 logger.info('4 - cart :  ' + util.inspect(cart))
+
+                  return await cartRepository.editCart(cart)
                }else{
                   throw new Error(cartError)       
                }              

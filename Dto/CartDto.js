@@ -1,5 +1,5 @@
 class CartDto{
-
+   
 constructor(carrito){
     this.id = carrito.id
     this.timestamp = carrito.timestamp   
@@ -8,6 +8,5 @@ constructor(carrito){
 
 
 }
-
 
 module.exports = CartDto

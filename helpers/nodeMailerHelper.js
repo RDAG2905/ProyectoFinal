@@ -1,12 +1,15 @@
 const { createTransport} = require('nodemailer')
-const { getNodemailerArgs} = require('../config/config')
+const { hostNodeMailer,portNodeMailer,userNodeMailer,passNodeMailer} = require('../config/config')
 
 
-const transporter = createTransport(getNodemailerArgs);
-
-
-module.exports = { transporter}
-
+const transporter = createTransport({
+    host: hostNodeMailer,
+    port: portNodeMailer,
+    auth: {
+        user: userNodeMailer,
+        pass: passNodeMailer
+    }
+});
 /*
 const transporter = createTransport({
     host: 'smtp.ethereal.email',
@@ -15,4 +18,9 @@ const transporter = createTransport({
         user: 'tyrel.ullrich@ethereal.email',
         pass: 'SHPDeCxnpKuT3hzJph'
     }
-});*/
+});
+*/
+
+
+
+module.exports = { transporter}

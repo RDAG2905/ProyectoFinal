@@ -3,6 +3,8 @@
 
 const CartDto = require('../Dto/CartDto')
 const DaoFactory = require('../Dao/DaoFactory')
+const logger = require('../logger')
+const util = require('util')
 
 const tipo = 'carritoMongo'
 
@@ -38,9 +40,10 @@ class CartRepo {
     }
 
 
-    async editCart(cart,id){
+    async editCart(cart){
         const dto = new CartDto(cart)
-        return await this.dao.editCart(dto,id)
+        logger.info(' cart Dto :' + util.inspect(dto))
+        return await this.dao.editCart(dto)
     }
 
 

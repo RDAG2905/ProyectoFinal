@@ -3,10 +3,10 @@ const { v4 } = require("uuid");
 class Order {
   
      
-    constructor({ idCart,idUser,products}){
-       this.idCart =  idCart,
+    constructor(idUser,products,id){
        this.idUser = idUser,
        this.products = products
+       this.id = id
     }
     
 

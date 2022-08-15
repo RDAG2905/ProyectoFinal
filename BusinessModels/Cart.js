@@ -40,7 +40,7 @@ class ShoppingCart{
     calcularTotal(){
         if(this.productos.length > 0){
             this.productos.forEach(element => {
-                this.totalGeneral += element.product.cant * element.price 
+                this.totalGeneral += element.product.price * element.quantity
             });
         }else{
             this.totalGeneral = 0
