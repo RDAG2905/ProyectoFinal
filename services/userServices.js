@@ -25,7 +25,7 @@ const authenticate = async ({email, password}) => {
 
 
 const registerUser = async (datosUsuario) => {      
-  //  checkRegisterData(typeof(datosUsuario))    
+     
     let msg
         if(datosUsuario.email){
             let userExists = await verifyName(datosUsuario.email)

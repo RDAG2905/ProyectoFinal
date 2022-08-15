@@ -3170,3 +3170,89 @@ Require stack:
 [31merror[39m:   Error: shoppingCart is empty. It cannot create orders
     at Object.createOrderDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\orderServices.js:21:32)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: shoppingCart is empty. It cannot create orders
+    at Object.createOrderDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\orderServices.js:21:32)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   ShoppingCart Product not found
+[31merror[39m:   ShoppingCart Product not found
+[31merror[39m:   Error: The "lastName" is required
+    at User.set lastname [as lastname] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:42:30)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:21:23)
+    at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:52:23)
+    at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:34:33)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   ValidationError: usuarios validation failed: password: Path `password` is required.
+    at model.Document.invalidate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\document.js:2966:32)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\document.js:2755:17
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\schematype.js:1333:9
+    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[31merror[39m:   Error: User data is required
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:18:18)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:15:16)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   ValidationError: usuarios validation failed: password: Path `password` is required.
+    at model.Document.invalidate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\document.js:2966:32)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\document.js:2755:17
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\mongoose\lib\schematype.js:1333:9
+    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[31merror[39m:   Error: "phone" is required
+    at User.set phone [as phone] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:81:25)
+    at new User (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\User.js:24:20)
+    at saveUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:52:23)
+    at Object.registerUser (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:34:33)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+[31merror[39m:   Error: Email and password are required !!
+    at checkLoginData (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:75:15)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:13:5)
+    at login (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\AuthControllerJwt.js:22:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Error: Email and password are required !!
+    at checkLoginData (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:75:15)
+    at Object.authenticate (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\userServices.js:13:5)
+    at login (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\AuthControllerJwt.js:22:14)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)

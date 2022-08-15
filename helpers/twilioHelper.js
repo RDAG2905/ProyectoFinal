@@ -2,8 +2,6 @@ const twilio = require('twilio')
 const logger = require('../logger')
 
 
-//const accountSid = 'AC10f649afb3b45c73c7251640a90fec3d'
-//const authToken = '133a978e5fc2b308adfcb7bf7a5eaee8'
 
 const enviarSms = async (msg)=>{
 

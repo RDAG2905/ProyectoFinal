@@ -4,6 +4,9 @@ const parseArgs = require('minimist')
 const MONGO_URI = process.env.MONGODB
 const PORT =  process.env.PORT
 
+//twilio credentials
+//const accountSid = 'AC10f649afb3b45c73c7251640a90fec3d'
+//const authToken = '133a978e5fc2b308adfcb7bf7a5eaee8'
 
 const getNodemailerArgs = {
   host: 'smtp.ethereal.email',

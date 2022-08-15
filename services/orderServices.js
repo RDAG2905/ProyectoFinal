@@ -20,17 +20,10 @@ const createOrderDB = async (user) => {
     let chango = new Changuito(cart)
     if(chango.isEmpty()) throw new Error('shoppingCart is empty. It cannot create orders')
     
-logger.info(` 1 - chango : ${util.inspect(chango)}`)
-
     let order = new UserOrder(user.id,chango.productos)
-
-logger.info(` 2 - order : ${util.inspect(order)}`)   
-
     order.createId()
     let newOrder = await orderRepository.add(order)
-
-    logger.info(` 3 - neworder : ${newOrder}`)   
-
+    
     if (newOrder){
         await notificarPedido(chango,user)
         chango.removeAll()

@@ -1,19 +1,14 @@
 const mongoose = require('mongoose');
 const model = require('../SchemaModels/Order');
-//const config = require('config');
 const logger = require('../logger');
-//const mongoConnectionString = config.get('mongoDB.connection') 
 const util = require('util')
-const { MONGO_URI } = require('../config/config')
-const mongoConnectionString = MONGO_URI  
+
 
 
 class ContenedorPedidosMongoDB{
 
     constructor(){
-        
-       // const URL = mongoConnectionString
-       // mongoose.connect(URL, {});   
+         
     }
    
 
@@ -31,18 +26,7 @@ class ContenedorPedidosMongoDB{
     return await model.find({ 'idUser': id })
   }
 
-/*
-    async getById(id){
-      return await model.findById(id)
-    }
 
-
-    async getOrdersByUserId(id){
-        let x = await model.find({})
-        logger.info(util.inspect(x))
-        return x
-      }
-*/
     
 
 

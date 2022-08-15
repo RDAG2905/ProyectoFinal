@@ -3,8 +3,6 @@ const model = require('../SchemaModels/User');
 
 const logger = require('../logger');
 
-const { MONGO_URI } = require('../config/config')
-const mongoConnectionString = MONGO_URI 
 
 
 
@@ -19,11 +17,7 @@ class ContenedorUsuariosMongoDB{
         return await model.find({});
     }
      
-/*
-    async getById(idUsuario){
-      return await model.findById(idUsuario)
-    }
-*/
+
     async getById(id){
         return await model.findOne({ 'id': id })
     }
@@ -50,15 +44,8 @@ class ContenedorUsuariosMongoDB{
     async getUserByUserName(username) {
         return await model.findOne({ 'email': username })
        
-       /*
-        try {
-            logger.info(`email: ${username}`)
-            return await model.findOne({ 'email': username })
-        } catch (error) {
-            logger.error(error)
-            throw Error('Error al buscar el usuario por email')
-        }
-       */
+      
+      
     }
     
 }

@@ -14,7 +14,7 @@ const cluster = require('cluster')
 const {cpus} = require('os')
 
 
-const modoCluster = process.argv[4] == 'CLUSTER'
+
 const compression = require('compression')
 const logger = require('./logger.js')
 
@@ -35,7 +35,7 @@ const webSocket = require('./WebSocket/socket')
             : path.resolve(__dirname, 'prod.env'),
       })
 
-
+const modoCluster = process.argv[4] == 'CLUSTER'
 
 if (modoCluster && cluster.isPrimary) {
     const numCPUs = cpus().length

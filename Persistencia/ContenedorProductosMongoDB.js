@@ -1,17 +1,12 @@
 const mongoose = require('mongoose');
 const logger = require('../logger');
 const model = require('../SchemaModels/ProductoMongoDB');
-//const config = require('config');
-//const mongoConnectionString = config.get('mongoDB.connection')  
-//const { MONGO_URI } = require('../config/config')
-//const mongoConnectionString = MONGO_URI 
+
   
 class ContenedorProductosMongo{
 
     constructor(){
-        
-      //  const URL = mongoConnectionString
-      //  mongoose.connect(URL, {});   
+      
     }
    
 
@@ -19,12 +14,7 @@ class ContenedorProductosMongo{
         return await model.find({});
     }
      
-/*
-    async getById(idProducto){
-      let id = new mongoose.Types.ObjectId(idProducto)
-      return await model.findById(id)
-    }
-*/
+
     async getById(idProducto){
         logger.info(`idProducto: ${idProducto}`)
         logger.info(typeof(idProducto))

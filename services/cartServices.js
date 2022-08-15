@@ -52,19 +52,14 @@ const deleteCartDB = async (id) =>{
    let product
    let cartDto 
         product = await productRepository.getById(productId)
-logger.info('1 - product :  ' + util.inspect(product))
          if(product){
-            //productCart = new ProductCart(product,quantity)
             productCart ={product,quantity}
-   logger.info('2 - productCart :  ' + util.inspect(productCart))
 
             cartDto = await cartRepository.getCartById(idCart)
-   logger.info('3 - cartDto :  ' + util.inspect(cartDto))
                if(cartDto){
                   let cart = new Cart(cartDto)
-                 // cart.productos.push(productCart)
+                 
                  cart.productos.push(productCart)
-    logger.info('4 - cart :  ' + util.inspect(cart))
 
                   return await cartRepository.editCart(cart)
                }else{
@@ -83,13 +78,9 @@ logger.info('1 - product :  ' + util.inspect(product))
       if (!idCart) throw new Error(cartIdError)
       let cartDto = await cartRepository.getCartById(idCart)
 
-logger.info(`1 - cartDto : ${util.inspect(cartDto)}`)
-
          if(cartDto){
             let cart = new Cart(cartDto)
-logger.info(`2 - cart before : ${util.inspect(cart)}`)        
             cart.removeProduct(idProduct)
-logger.info(`3 - cart after: ${util.inspect(cart)}`)
             return await cartRepository.editCart(cart)
          }else{
             throw new Error(cartError)
@@ -100,7 +91,6 @@ logger.info(`3 - cart after: ${util.inspect(cart)}`)
 
   const getProductsByCar = async (idCart)=>{
         let cart = await getCartDB(idCart)
- //logger.info(util.inspect(cart))
         return cart.productos
   }
 

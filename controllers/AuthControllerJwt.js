@@ -18,14 +18,14 @@ const register = (req, res)=>{
     
 
 const login = (req, res)=>{
-    //const { email,password } = req.body
+
     services.authenticate(req.body)
             .then(user =>{
                 const access_token =jwt.generateAuthToken(user)
                 res.json({ access_token })
             })
             .catch(err=>{
-                logger.error(err.stack)
+                logger.error(err)
                 let msg = 'Error de autenticación'
                 res.status(401).json({msg})
             })

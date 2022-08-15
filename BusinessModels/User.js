@@ -1,5 +1,7 @@
 const bCrypt = require('../helpers/bCryptHelper')
 const { v4 } = require("uuid");
+const logger = require('../logger');
+const util = require('util')
 
 class User {
     #id
@@ -54,6 +56,22 @@ class User {
     set password(clave) {
         if (!clave) throw new Error('"password" is required')
         this.#password = bCrypt.createHash(clave)
+        
+       /*
+       let passw
+        this.#password = async function(clave){
+           return await bCrypt.createHash(clave)
+        } 
+        bCrypt.createHash(clave)
+               .then(res => {
+                logger.info('hash async' + util.inspect(res))
+                passw = res
+                this.#password = res
+               })
+               .catch(err => logger.error(err.stack))
+               */
+         //this.#password = passw        
+       
     }
 
 
@@ -66,8 +84,8 @@ class User {
 
     
 
-    isValidPassword(user,password){
-        return bCrypt.isValidPassword(user,password)
+    async isValidPassword(user,password){
+        return await bCrypt.isValidPassword(user,password)
     }
     
     createId(){

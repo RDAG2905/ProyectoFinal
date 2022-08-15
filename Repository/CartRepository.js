@@ -35,8 +35,7 @@ class CartRepo {
 
     async removeById(id) {
        return await this.dao.delete(id)
-       // const dto = await this.dao.delete(id)
-       // return new  CartDto(dto)
+      
     }
 
 
@@ -50,10 +49,5 @@ class CartRepo {
     
 }
 
-/*
-    async addProduct(idCart,cartProduct) {
-        return await this.dao.addProductToCart(idCart,cartProduct)
-    }
-*/
 
 module.exports = CartRepo
