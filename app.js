@@ -1,7 +1,4 @@
-/*
-const express = require('express')
-const cookieParser = require('cookie-parser')
-*/
+
 const path = require('path')
 const dotenv = require('dotenv')
 
@@ -10,45 +7,26 @@ const Db = require('./controllers/DbController')
 
 let util = require('util');
 const parseArgs = require('minimist');
-//const dotenv = require('dotenv').config()
-const { init } = require('./server')
 
-/*
-const randomRouter = require('./Rutas/RandomRouter')
-const routerProductos = require('./Rutas/RouterProductos')
-const routerCarrito = require('./Rutas/RouterCarrito')
-const routerPedidos = require('./Rutas/RouterPedidos')
-const routerAuth = require('./Rutas/AuthRouter')
-const routerSystem = require('./Rutas/SystemRouter')
-const routerHtml= require('./Rutas/HtmlOnWireRouter')
-*/
-//const uploadFilesRouter = require('./Rutas/uploadFileRouter.js')
+const { init } = require('./server')
 
 const cluster = require('cluster')
 const {cpus} = require('os')
 
-//let PORT = process.env.PORT
+
 const modoCluster = process.argv[4] == 'CLUSTER'
 const compression = require('compression')
 const logger = require('./logger.js')
 
 
 
-//global.root = __dirname;
-//global.adminEmail = "tyrel.ullrich@ethereal.email"
-//global.celAdmin = "+5491125111726"
 
-//const jwt = require('./middlewares/jwt')
 const { Server: HttpServer } = require('http')
 const { Server: IOServer } = require('socket.io')
 const webSocket = require('./WebSocket/socket')
-//const { graphqlMiddleware } = require('./middlewares/graphQL')
- 
-  /////////////////////////////////////
-  /// Definiendo el número de procesos
-  ////////////////////////////////////
-//function createServer(){ 
 
+ 
+  
     dotenv.config({
         path:
           
@@ -77,70 +55,7 @@ if (modoCluster && cluster.isPrimary) {
 } else {
 
 const app = init()
- /* 
-const app = express()
-
-app.use(express.json({limit: '25mb'}));
-app.use(express.urlencoded({limit: '25mb',extended:true}));
-
-app.use(express.static('public'));
-app.use(express.static(path.join(__dirname, "/files")));
-
-const handlebars = require('express-handlebars')    
-const { header, redirect } = require('express/lib/response')
-
-app.engine(
-    "hbs",
-    handlebars.engine({
-        etname: ".hbs",
-        defaultLayout : "layout.hbs",
-        layoutsDir: __dirname + "/public/layouts",
-        partialsDir: __dirname + "/public/plantillas"
-    })
-)
-
-app.set("views","./public/plantillas")
-app.set("view engine","hbs")
-app.use(cookieParser())
-
-app.use('/graphql', graphqlMiddleware)
-app.use('/views',routerHtml)
-app.use('/api/randoms',randomRouter)
-app.use('/files', uploadFilesRouter)
-app.use('', routerAuth)
-app.use('/api/productos',routerProductos)
-app.use('/api/carrito',jwt.auth,routerCarrito)
-app.use('/api/pedidos',jwt.auth,routerPedidos)
-app.use('/api/system',routerSystem)
-
-
-///////////// Manejo de rutas no implementadas ////////////////
-
-app.use((req, res, next) => {
-  const { url, method } = req
-  const respuesta = `Ruta ${req.originalUrl} y metodo ${req.method} no implementados`
-  res.status(404).send(respuesta)
-});
-
-
-app.use(function(err, req, res, next) {
-  logger.error(err.stack);
-  res.status(500).send('Ocurrió un Error. Consulte con el administrador del sistema');
-  next()
- });
- 
-*/  
-
-
-/*
-Db.conectarDB(process.env.MONGODB, err => { 
-    if (err) 
-    logger.error(`error en conexión de base de datos : ${err}`)
-    else
-    logger.info('BASE DE DATOS CONECTADA');
-})
-*/
-//logger.info(util.inspect(process.env))
+  
 
 Db.conectarDB(process.env.MONGODB, err => { 
     if (err) 
@@ -152,11 +67,7 @@ Db.conectarDB(process.env.MONGODB, err => {
 const httpServer = new HttpServer(app)
 const io = new IOServer(httpServer)
 webSocket(io)
-/*
-httpServer.listen(PORT, () => {    
-    logger.info(`Servidor express escuchando en el puerto ${PORT}`)
-})
-*/
+
 
 httpServer.listen(process.env.PORT, () => {    
     logger.info(`Servidor express escuchando en el puerto ${process.env.PORT}`)
@@ -166,9 +77,3 @@ httpServer.on('error', error => logger.error(`Error en servidor: ${error}`))
 
 }
 
-//return app
-//} 
-//}
-
-
-//module.exports = { createServer }

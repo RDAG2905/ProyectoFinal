@@ -7,7 +7,7 @@ const ordersCollection = 'orders';
 const orderSchema = new mongoose.Schema({
     idUser:{type:String,required:true},
     timestamp: {type: Date, default: Date.now},
-    products:  {type: Array},
+    products:  {type: Array,required:true},
     id:{type:String,required:true}
 })
 

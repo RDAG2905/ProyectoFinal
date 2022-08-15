@@ -18,14 +18,23 @@ const createOrderDB = async (user) => {
 
     if (!cart) throw new Error('shoppingCart not found')
     let chango = new Changuito(cart)
+    if(chango.isEmpty()) throw new Error('shoppingCart is empty. It cannot create orders')
+    
+logger.info(` 1 - chango : ${util.inspect(chango)}`)
+
     let order = new UserOrder(user.id,chango.productos)
+
+logger.info(` 2 - order : ${util.inspect(order)}`)   
+
     order.createId()
     let newOrder = await orderRepository.add(order)
 
+    logger.info(` 3 - neworder : ${newOrder}`)   
+
     if (newOrder){
         await notificarPedido(chango,user)
-        //chango.removeAll()
-        //await cartRepository.editCart(chango)
+        chango.removeAll()
+        await cartRepository.editCart(chango)
         let msg = "Se ha notificado el pedido"
         return msg
     }
@@ -41,32 +50,3 @@ const getOrdersDB = async (idUser) => {
 
 module.exports = { createOrderDB , getOrdersDB }
 
-/*
-router.post('/crearPedido', async (req,res)=>{
-    let carritoReq = req.body
-    logger.info(`carritoReq :  ${util.inspect(carritoReq)}`)
-    let factory = new daoFactory(config.get('tipoPersistencia.persistenciaB')) 
-        let dao = factory.getDao()
-        let carrito;
-        try {
-            carrito = await dao.getCarritoConProductos(JSON.stringify(carritoReq))
-        } catch (error) {
-            logger.error(error)
-        }
-       
-        if(!carrito){           
-            let error = `Carrito de compras vacio : ${carrito}`
-            logger.info(`carrito vacio :  ${carrito}`)
-            res.send({error})
-        } else{
-           
-            let lista = ""
-            let chango = new Changuito(carrito)
-            notificarPedido(chango)
-            enviarSms('Su pedido ha sido recibido y se encuentra en proceso')
-
-            let msg = "Se ha notificado el pedido"
-            res.send({msg})
-        }
-
-})*/

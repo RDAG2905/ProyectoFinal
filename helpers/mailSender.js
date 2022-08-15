@@ -10,7 +10,7 @@ const util = require('util')
 const getMessage =(body,user)=>{
  //  const { username,nombre,direccion,telefono } = user //passport.session
    const { email,name,lastName,phone } = user //passport.session
-   logger.info(`user: ${user}`)
+  // logger.info(`user: ${user}`)
    //logger.info(`passport.session getMessage : ${passport.session}`)
    let textoUserName = `<br>username : ${email}</br>`
    let textoNombre = `<br>nombre : ${name}</br>`
@@ -35,9 +35,9 @@ const notificarRegistro = async (body)=>{
 
  try {
     let info = await transporter.sendMail(mailRegisterOptions)
-    logger.info(info)
- } catch (error) {
-    logger.error(err)
+    
+ } catch (err) {
+    logger.error(err.stack)
  }
 
 }
@@ -50,18 +50,18 @@ const armarPedidoHtml = (chango)=>{
    let total = chango.totalGeneral 
    
    productos.forEach(element => {
-      logger.info('element: ' + util.inspect(element))
-      logger.info('product: ' + util.inspect(element.product))
-      logger.info(': ' + ( Object.entries(element.product)[3]))
+     // logger.info('element: ' + util.inspect(element))
+     // logger.info('product: ' + util.inspect(element.product))
+     // logger.info(': ' + ( Object.entries(element.product)[3]))
      let name = Object.entries(element.product)[1][1]
      let price = Object.entries(element.product)[3][1]
-     logger.info(' name: ' + name)
-     logger.info(' price: ' + price)
+     //logger.info(' name: ' + name)
+     //logger.info(' price: ' + price)
      //let producto = `<br>producto : ${name}</br>`
      //let precio = `<br>precio : ${price}</br>`
      let producto = '<br>producto :' + name + '</br>'
      let precio = '<br>precio :' +  price + '</br>'
-     let cantidad = `<br>cantidad : ${element.product.quantity}</br>`
+     let cantidad = `<br>cantidad : ${element.quantity}</br>`
      let salto = '<br>-----------------</br>'
      mensajePedido += (producto + precio + cantidad + salto)
    });

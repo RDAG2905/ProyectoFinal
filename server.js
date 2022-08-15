@@ -1,8 +1,6 @@
-
+global.root = __dirname
 const express = require('express')
-const sesion = require('express-session')
 const logger = require('./logger')
-//const cookieParser = require('cookie-parser')
 
 const uploadFilesRouter = require('./Routes/uploadFileRouter.js')
 const userRouter = require('./Routes/UserRouter')
@@ -22,7 +20,6 @@ const { header, redirect } = require('express/lib/response')
 
 
 const jwt = require('./middlewares/jwt')
-const { graphqlMiddleware } = require('./middlewares/graphQL')
 
 const init =() =>{
     
@@ -48,24 +45,21 @@ const init =() =>{
     
     app.set("views","./public/plantillas")
     app.set("view engine","hbs")
-    //app.use(cookieParser())
     
-    app.use('/graphql', graphqlMiddleware)
+    
     app.use('/views',routerHtml)
     app.use('/api/randoms',randomRouter)
-   // app.use('/files', uploadFilesRouter)
-    
-    
-  
-    
     app.use('/api/system',routerSystem)
+
     ///////////////////////////////////////
+
     app.use('', routerAuth)
     app.use('/api/images', uploadFilesRouter)
     app.use('/api/users',userRouter)
     app.use('/api/products',productRouter)
     app.use('/api/shoppingcartproducts',jwt.auth,routerCarrito)
     app.use('/api/orders',jwt.auth,routerPedidos)
+
     ///////////// Manejo de rutas no implementadas ////////////////
     
     app.use((req, res, next) => {

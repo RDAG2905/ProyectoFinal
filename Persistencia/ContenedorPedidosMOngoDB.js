@@ -48,6 +48,7 @@ class ContenedorPedidosMongoDB{
 
 
     async save(element){
+logger.info(` 5 - element : ${util.inspect(element)}`)   
         const saveModel = model(element);
         return await saveModel.save();
     }

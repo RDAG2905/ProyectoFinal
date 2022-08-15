@@ -2,6 +2,8 @@
 
 const OrderDto = require('../Dto/OrderDto')
 const DaoFactory = require('../Dao/DaoFactory')
+const logger = require('../logger')
+const util = require('util')
 
 const tipo = 'pedidoMongo'
 
@@ -26,6 +28,7 @@ class OrderRepo {
 
     async add(orden) {
         const dto = new  OrderDto(orden)
+logger.info(` 4 - dto : ${util.inspect(dto)}`)   
         return await this.dao.save(dto)
     }
 

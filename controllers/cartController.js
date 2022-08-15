@@ -9,7 +9,7 @@ const createCart = (req, res) =>{
             })
             .catch(err =>{
                 logger.error(err.stack)
-                let msg = 'Cart creation failed'
+                let msg = 'Cart creation failed . ' + err
                 res.send({msg})  
             })
 }
@@ -25,7 +25,7 @@ const deleteCart = (req, res) =>{
          )
          .catch(error=>{
             logger.error(error.stack)
-            let errMsg = 'Cart deletion failed'
+            let errMsg = 'Cart deletion failed . ' + error
             res.send({errMsg})
          }         
          )
@@ -41,7 +41,7 @@ const getCart = (req,res)=>{
             .catch(err =>
                 {
                 logger.error(err)
-                let msg = 'product recovery failed'
+                let msg = 'product recovery failed . ' + err
                 res.send({msg})
                 })
           
@@ -60,7 +60,7 @@ const getCart = (req,res)=>{
             .catch(err =>
             {
             logger.error(err. stack)
-            let msg = 'Error adding product to cart'
+            let msg = 'Error adding product to cart . ' + err
             res.send({msg})
             })
           
@@ -70,8 +70,7 @@ const getCart = (req,res)=>{
 
 
  const removeProductFromCart = (req,res)=>{
-    //let idCart = req.params.id
-    let idProduct = req.params.id_prod   
+    let idProduct = req.params.id
     let idCart = req.user.id
         removeProductFromCartDB(idCart,idProduct)
             .then(cart =>
@@ -79,7 +78,7 @@ const getCart = (req,res)=>{
             .catch(err =>
             {
             logger.error(err)
-            let msg = 'Error deleting product from cart'
+            let msg = 'Error deleting product from cart . ' + err
             res.send({msg})
             })
           
@@ -88,7 +87,6 @@ const getCart = (req,res)=>{
 
  
 const getProducts = (req, res) =>{
-    //logger.info(util.inspect(req.user))
     let idCart = req.user.id
         getProductsByCar(idCart)
                 .then(products =>{
@@ -96,7 +94,7 @@ const getProducts = (req, res) =>{
                 })
                 .catch(err =>{
                     logger.error(err.stack)
-                    let msg = 'Error recovering products from cart'
+                    let msg = 'Error recovering products from cart . ' + err
                     res.send({msg})  
                 })
 }

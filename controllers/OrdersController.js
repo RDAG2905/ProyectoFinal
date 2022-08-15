@@ -3,14 +3,13 @@ const services = require('../services/orderServices')
 
 
 const createOrder = (req,res)=>{
-    //const { idCart,idUser } = req.body
     const user = req.user
     services.createOrderDB(user)
             .then(x =>
                 res.json(x))
             .catch(err=>{
                 logger.error(err.stack)
-                let msg = 'Error al crear la Orden'
+                let msg = 'Error creating Order . ' + err
                 res.send({msg})
             })           
 }
@@ -25,7 +24,7 @@ const getOrders = (req,res)=>{
                 res.send({orders}))
             .catch(err=>{
                 logger.error(err.stack)
-                let msg = 'Error al obtener los Pedidos'
+                let msg = 'Error getting Orders . ' + err 
                 res.send({msg})
             })      
 

@@ -3111,3 +3111,62 @@ Require stack:
     at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:286:9
     at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
     at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   Error: ENOENT: no such file or directory, stat 'C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\public\salaDeChat.html'
+[31merror[39m:   Error: ENOENT: no such file or directory, stat 'C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\controllers\public\salaDeChat.html'
+[31merror[39m:   Error: email is required
+    at Message.set email [as email] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\Message.js:15:29)
+    at new Message (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\Message.js:8:20)
+    at Object.saveMessage (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\messageServices.js:7:21)
+    at Socket.<anonymous> (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\WebSocket\socket.js:11:30)
+    at Socket.emit (node:events:527:28)
+    at Socket.emitUntyped (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\socket.io\dist\typed-events.js:69:22)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\socket.io\dist\socket.js:465:39
+    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[31merror[39m:   Error: email is required
+    at Message.set email [as email] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\Message.js:15:29)
+    at new Message (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\Message.js:8:20)
+    at Object.saveMessage (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\messageServices.js:7:21)
+    at Socket.<anonymous> (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\WebSocket\socket.js:11:30)
+    at Socket.emit (node:events:527:28)
+    at Socket.emitUntyped (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\socket.io\dist\typed-events.js:69:22)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\socket.io\dist\socket.js:465:39
+    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[31merror[39m:   Error: text is required
+    at Message.set text [as text] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\Message.js:22:29)
+    at new Message (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\BusinessModels\Message.js:9:19)
+    at Object.saveMessage (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\messageServices.js:7:21)
+    at Socket.<anonymous> (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\WebSocket\socket.js:11:30)
+    at Socket.emit (node:events:527:28)
+    at Socket.emitUntyped (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\socket.io\dist\typed-events.js:69:22)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\socket.io\dist\socket.js:465:39
+    at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   ReferenceError: logger is not defined
+    at OrderRepo.add (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\Repository\OrderRepository.js:29:1)
+    at Object.createOrderDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\orderServices.js:29:42)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[31merror[39m:   Error: TokenExpiredError: jwt expired
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:37:15
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:152:16
+    at getSecret (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\jsonwebtoken\verify.js:94:10)
+    at auth (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\middlewares\jwt.js:35:9)
+    at Layer.handle [as handle_request] (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
+[31merror[39m:   ShoppingCart Product not found
+[31merror[39m:   Error: shoppingCart is empty. It cannot create orders
+    at Object.createOrderDB (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\services\orderServices.js:21:32)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
