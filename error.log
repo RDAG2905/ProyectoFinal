@@ -3269,3 +3269,4 @@ Require stack:
     at Function.process_params (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:346:12)
     at next (C:\Users\RDAG\Documents\CODERHOUSE\Clase 46\ProyectoFinal\node_modules\express\lib\router\index.js:280:10)
 [31merror[39m:   ShoppingCart Product not found
+[31merror[39m:   User data is required

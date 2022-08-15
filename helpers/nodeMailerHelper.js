@@ -10,16 +10,7 @@ const transporter = createTransport({
         pass: passNodeMailer
     }
 });
-/*
-const transporter = createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
-    auth: {
-        user: 'tyrel.ullrich@ethereal.email',
-        pass: 'SHPDeCxnpKuT3hzJph'
-    }
-});
-*/
+
 
 
 
